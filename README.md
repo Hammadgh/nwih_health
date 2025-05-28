@@ -1,56 +1,37 @@
-# Northwest Integrated Health (NWIH)
+# NWIH Website
 
-A modern healthcare platform built with Next.js and React.
+This is the web application for Northwest Integrated Health (NWIH), built with Next.js and React.
 
 ## 🚀 Features
+- Modern, responsive UI
+- Fast server-side rendering
+- API routes for backend integration
+- Authentication-ready
+- Easy deployment to Vercel or any Node.js server
 
-- Modern, responsive design
-- Fast and efficient performance
-- Secure authentication
-- Real-time updates
-- Cross-platform compatibility
+## 📦 Getting Started
 
-## 🛠️ Tech Stack
+1. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-- Next.js
-- React
-- Node.js
-- TypeScript
-- Tailwind CSS
+2. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
 
-## 📦 Installation
+3. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-1. Clone the repository:
-```bash
-git clone https://github.com/Hammadgh/nwih.git
-cd nwih
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Start the development server:
-```bash
-npm run dev
-```
-
-## 🔧 Environment Variables
-
-Create a `.env` file in the root directory and add the following variables:
-```env
-# Add your environment variables here
-```
+## 🛠️ Project Structure
+- `app/` - Main application pages and routes
+- `public/` - Static assets
+- `components/` - React components (if present)
+- `styles/` - CSS/Tailwind styles (if present)
 
 ## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👥 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📞 Contact
-
-For any queries or support, please reach out to [Your Contact Information]
+This project is licensed under the MIT License. See the main repository LICENSE file.
