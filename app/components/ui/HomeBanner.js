@@ -47,9 +47,7 @@ const HomeBanner = () => {
               Compassionate, Evidence-Based Care for Opioid Use Disorder
             </h2>
             <p className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 max-w-2xl drop-shadow-md text-white">
-              At NWIH, we understand that recovery is a journey—and we're here to support you every step of the way. 
-              Whether you're reaching out for the first time or continuing your treatment; 
-              our dedicated team provides nonjudgmental, integrated care designed around you.
+            At NWIH, we’re here for every step of your recovery offering compassionate, personalized care that meets you where you are.
             </p>
             
             <div className="flex flex-wrap gap-4">
