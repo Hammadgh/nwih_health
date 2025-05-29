@@ -42,54 +42,61 @@ export default function Header() {
       
       {/* Main header with logo and secondary navigation */}
       <div className="bg-white/95 backdrop-blur-sm border-b border-gray-100">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          {/* Logo - larger */}
-          <Link href="/" className="logo-container flex items-center">
-            <Image 
-              src="/Nwih-logo-vector (1) (1).png" 
-              alt="NWIH Logo" 
-              width={200} 
-              height={60} 
-              className="h-auto" 
-              priority
-            />
-          </Link>
-          
-          {/* Main Navigation */}
-          <nav className="hidden md:flex items-center space-x-2 header-nav">
-            <Link href="/" className="nav-link text-[#0077C8]">
-              Home
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex items-center">
+            {/* Logo */}
+            <Link href="/" className="logo-container flex items-center">
+              <Image 
+                src="/Nwih-logo-vector (1) (1).png" 
+                alt="NWIH Logo" 
+                width={200} 
+                height={60} 
+                className="h-auto" 
+                priority
+              />
             </Link>
             
-            {/* Patients Mega Menu */}
-            <div 
-              className="relative"
-              onMouseEnter={() => setIsPatientsMenuOpen(true)}
-              onMouseLeave={() => setIsPatientsMenuOpen(false)}
-            >
-              <button className="dropdown-button nav-link text-[#0077C8] flex items-center">
-                Patients
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
+            {/* Main Navigation - Centered */}
+            <nav className="hidden md:flex items-center justify-center flex-1 space-x-8 header-nav ml-8">
+              <Link href="/" className="nav-link text-[#0077C8]">
+                Home
+              </Link>
               
-              {/* Mega Menu Dropdown */}
-              {isPatientsMenuOpen && (
-                <div className="mega-menu absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-100 overflow-hidden z-50">
+              {/* Patients Mega Menu */}
+              <div 
+                className="relative"
+                onMouseEnter={() => setIsPatientsMenuOpen(true)}
+                onMouseLeave={() => setIsPatientsMenuOpen(false)}
+              >
+                <button className="dropdown-button nav-link text-[#0077C8] flex items-center">
+                  Patients
+                  <svg 
+                    className={`w-4 h-4 ml-1 transition-transform duration-300 ${isPatientsMenuOpen ? 'rotate-180' : ''}`} 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                
+                {/* Mega Menu Dropdown */}
+                <div className={`mega-menu absolute top-full left-1/2 transform -translate-x-1/2 mt-2 w-96 bg-white rounded-lg shadow-xl border border-gray-100 overflow-hidden z-50 transition-all duration-300 ${
+                  isPatientsMenuOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
+                }`}>
                   <div className="p-6">
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-2 gap-6">
                       {/* New Patients */}
                       <div className="space-y-3">
-                        <h3 className="font-semibold text-[#0077C8] text-sm uppercase tracking-wider">New Patients</h3>
+                        <h3 className="font-semibold text-[#0077C8] text-sm uppercase tracking-wider border-b border-gray-100 pb-2">New Patients</h3>
                         <div className="space-y-2">
-                          <Link href="/new-patients" className="mega-menu-link block text-gray-700 hover:text-[#0077C8] transition-colors duration-200 text-sm">
+                          <Link href="/new-patients" className="mega-menu-link block text-gray-700 hover:text-[#0077C8] transition-colors duration-200 text-sm py-1">
                             Getting Started
                           </Link>
-                          <Link href="/new-patients/intake" className="mega-menu-link block text-gray-700 hover:text-[#0077C8] transition-colors duration-200 text-sm">
+                          <Link href="/new-patients/intake" className="mega-menu-link block text-gray-700 hover:text-[#0077C8] transition-colors duration-200 text-sm py-1">
                             Intake Process
                           </Link>
-                          <Link href="/new-patients/what-to-expect" className="mega-menu-link block text-gray-700 hover:text-[#0077C8] transition-colors duration-200 text-sm">
+                          <Link href="/new-patients/what-to-expect" className="mega-menu-link block text-gray-700 hover:text-[#0077C8] transition-colors duration-200 text-sm py-1">
                             What to Expect
                           </Link>
                         </div>
@@ -97,15 +104,15 @@ export default function Header() {
                       
                       {/* Current Patients */}
                       <div className="space-y-3">
-                        <h3 className="font-semibold text-[#0077C8] text-sm uppercase tracking-wider">Current Patients</h3>
+                        <h3 className="font-semibold text-[#0077C8] text-sm uppercase tracking-wider border-b border-gray-100 pb-2">Current Patients</h3>
                         <div className="space-y-2">
-                          <Link href="/current-patients" className="mega-menu-link block text-gray-700 hover:text-[#0077C8] transition-colors duration-200 text-sm">
+                          <Link href="/current-patients" className="mega-menu-link block text-gray-700 hover:text-[#0077C8] transition-colors duration-200 text-sm py-1">
                             Patient Portal
                           </Link>
-                          <Link href="/current-patients/remote-check-in" className="mega-menu-link block text-gray-700 hover:text-[#0077C8] transition-colors duration-200 text-sm">
+                          <Link href="/current-patients/remote-check-in" className="mega-menu-link block text-gray-700 hover:text-[#0077C8] transition-colors duration-200 text-sm py-1">
                             Remote Check-in
                           </Link>
-                          <Link href="/current-patients/resources" className="mega-menu-link block text-gray-700 hover:text-[#0077C8] transition-colors duration-200 text-sm">
+                          <Link href="/current-patients/resources" className="mega-menu-link block text-gray-700 hover:text-[#0077C8] transition-colors duration-200 text-sm py-1">
                             Resources
                           </Link>
                         </div>
@@ -123,37 +130,41 @@ export default function Header() {
                     </div>
                   </div>
                 </div>
-              )}
+              </div>
+              
+              <Link href="/resources" className="nav-link text-[#0077C8]">
+                Resources
+              </Link>
+            </nav>
+
+            {/* Call Now Button - Right aligned */}
+            <div className="hidden md:block ml-auto">
+              <a 
+                href="tel:1-877-522-1275" 
+                className="cta-button bg-gradient-to-r from-[#16A53F] to-[#128a35] hover:from-[#128a35] hover:to-[#0f7a2e] text-white font-semibold px-6 py-3 rounded-full transition-all duration-300 text-base shadow-lg flex items-center"
+              >
+                <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                </svg>
+                Call Now
+              </a>
             </div>
             
-            <Link href="/resources" className="nav-link text-[#0077C8]">
-              Resources
-            </Link>
-            <a 
-              href="tel:1-877-522-1275" 
-              className="cta-button bg-gradient-to-r from-[#16A53F] to-[#128a35] hover:from-[#128a35] hover:to-[#0f7a2e] text-white font-semibold px-8 py-3 rounded-full ml-4 transition-all duration-300 text-base shadow-lg flex items-center"
+            {/* Mobile menu button */}
+            <button 
+              className="menu-button md:hidden text-[#0077C8] hover:text-[#005a9e] ml-auto" 
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
             >
-              <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+              <svg className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                {isMenuOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                )}
               </svg>
-              Call Now
-            </a>
-          </nav>
-          
-          {/* Mobile menu button */}
-          <button 
-            className="menu-button md:hidden text-[#0077C8] hover:text-[#005a9e]" 
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            <svg className="h-7 w-7" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-              {isMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
-          </button>
+            </button>
+          </div>
         </div>
         
         {/* Mobile menu dropdown */}
