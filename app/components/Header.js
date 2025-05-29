@@ -5,6 +5,7 @@ import { useState } from 'react';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isPatientsMenuOpen, setIsPatientsMenuOpen] = useState(false);
   
   return (
     <header className="w-full header-shadow sticky top-0 z-50 bg-white/95 backdrop-blur-sm">
@@ -25,9 +26,6 @@ export default function Header() {
           <div className="hidden md:flex items-center space-x-6 header-nav">
             <Link href="/about" className="nav-link text-white hover:text-white">
               About Us
-            </Link>
-            <Link href="/services" className="nav-link text-white hover:text-white">
-              Services
             </Link>
             <Link href="/find-clinic" className="nav-link text-white hover:text-white">
               Find a Clinic
@@ -62,18 +60,84 @@ export default function Header() {
             <Link href="/" className="nav-link text-[#0077C8]">
               Home
             </Link>
-            <Link href="/new-patients" className="nav-link text-[#0077C8]">
-              New Patients
-            </Link>
-            <Link href="/current-patients" className="nav-link text-[#0077C8]">
-              Current Patients
-            </Link>
+            
+            {/* Patients Mega Menu */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setIsPatientsMenuOpen(true)}
+              onMouseLeave={() => setIsPatientsMenuOpen(false)}
+            >
+              <button className="dropdown-button nav-link text-[#0077C8] flex items-center">
+                Patients
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              
+              {/* Mega Menu Dropdown */}
+              {isPatientsMenuOpen && (
+                <div className="mega-menu absolute top-full left-0 mt-2 w-80 bg-white rounded-lg shadow-xl border border-gray-100 overflow-hidden z-50">
+                  <div className="p-6">
+                    <div className="grid grid-cols-2 gap-4">
+                      {/* New Patients */}
+                      <div className="space-y-3">
+                        <h3 className="font-semibold text-[#0077C8] text-sm uppercase tracking-wider">New Patients</h3>
+                        <div className="space-y-2">
+                          <Link href="/new-patients" className="mega-menu-link block text-gray-700 hover:text-[#0077C8] transition-colors duration-200 text-sm">
+                            Getting Started
+                          </Link>
+                          <Link href="/new-patients/intake" className="mega-menu-link block text-gray-700 hover:text-[#0077C8] transition-colors duration-200 text-sm">
+                            Intake Process
+                          </Link>
+                          <Link href="/new-patients/what-to-expect" className="mega-menu-link block text-gray-700 hover:text-[#0077C8] transition-colors duration-200 text-sm">
+                            What to Expect
+                          </Link>
+                        </div>
+                      </div>
+                      
+                      {/* Current Patients */}
+                      <div className="space-y-3">
+                        <h3 className="font-semibold text-[#0077C8] text-sm uppercase tracking-wider">Current Patients</h3>
+                        <div className="space-y-2">
+                          <Link href="/current-patients" className="mega-menu-link block text-gray-700 hover:text-[#0077C8] transition-colors duration-200 text-sm">
+                            Patient Portal
+                          </Link>
+                          <Link href="/current-patients/remote-check-in" className="mega-menu-link block text-gray-700 hover:text-[#0077C8] transition-colors duration-200 text-sm">
+                            Remote Check-in
+                          </Link>
+                          <Link href="/current-patients/resources" className="mega-menu-link block text-gray-700 hover:text-[#0077C8] transition-colors duration-200 text-sm">
+                            Resources
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* Bottom CTA */}
+                    <div className="mt-6 pt-4 border-t border-gray-100">
+                      <div className="bg-gradient-to-r from-[#e6f7fa] to-[#f0fdf4] p-3 rounded-lg">
+                        <p className="text-sm text-gray-600 mb-2">Need immediate help?</p>
+                        <a href="tel:1-877-522-1275" className="text-[#0077C8] font-medium text-sm hover:text-[#005a9e] transition-colors duration-200">
+                          Call us at 1-877-522-1275
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+            
             <Link href="/resources" className="nav-link text-[#0077C8]">
               Resources
             </Link>
-            <Link href="/get-help" className="cta-button bg-gradient-to-r from-[#16A53F] to-[#128a35] hover:from-[#128a35] hover:to-[#0f7a2e] text-white font-semibold px-8 py-3 rounded-full ml-4 transition-all duration-300 text-base shadow-lg">
-              Get Help Now
-            </Link>
+            <a 
+              href="tel:1-877-522-1275" 
+              className="cta-button bg-gradient-to-r from-[#16A53F] to-[#128a35] hover:from-[#128a35] hover:to-[#0f7a2e] text-white font-semibold px-8 py-3 rounded-full ml-4 transition-all duration-300 text-base shadow-lg flex items-center"
+            >
+              <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+              </svg>
+              Call Now
+            </a>
           </nav>
           
           {/* Mobile menu button */}
@@ -102,9 +166,6 @@ export default function Header() {
                 <Link href="/about" className="nav-link py-3 border-b border-gray-50 text-[#0077C8]" onClick={() => setIsMenuOpen(false)}>
                   About Us
                 </Link>
-                <Link href="/services" className="nav-link py-3 border-b border-gray-50 text-[#0077C8]" onClick={() => setIsMenuOpen(false)}>
-                  Services
-                </Link>
                 <Link href="/find-clinic" className="nav-link py-3 border-b border-gray-50 text-[#0077C8]" onClick={() => setIsMenuOpen(false)}>
                   Find a Clinic
                 </Link>
@@ -115,7 +176,7 @@ export default function Header() {
                   Contact
                 </Link>
                 
-                {/* Secondary navigation for mobile */}
+                {/* Patient navigation for mobile */}
                 <h3 className="header-nav font-semibold text-sm text-gray-500 pt-4 pb-2 uppercase tracking-wider">Patients</h3>
                 <Link href="/" className="nav-link py-3 border-b border-gray-50 text-[#0077C8]" onClick={() => setIsMenuOpen(false)}>
                   Home
@@ -132,20 +193,17 @@ export default function Header() {
                 
                 {/* CTA and phone for mobile */}
                 <div className="pt-6">
-                  <Link 
-                    href="/get-help" 
+                  <a 
+                    href="tel:1-877-522-1275" 
                     className="cta-button block bg-gradient-to-r from-[#16A53F] to-[#128a35] hover:from-[#128a35] hover:to-[#0f7a2e] text-white text-center font-semibold px-8 py-4 rounded-full transition-all duration-300 text-base shadow-lg"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    Get Help Now
-                  </Link>
-                </div>
-                <div className="py-4 text-center">
-                  <a href="tel:1-877-522-1275" className="phone-link header-phone font-semibold hover:text-[#16A53F] transition-all duration-300 text-base inline-flex items-center">
-                    <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-                    </svg>
-                    1-877-522-1275
+                    <div className="flex items-center justify-center">
+                      <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                      </svg>
+                      Call Now
+                    </div>
                   </a>
                 </div>
               </div>

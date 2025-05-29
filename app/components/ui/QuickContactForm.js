@@ -207,16 +207,28 @@ const QuickContactForm = ({ className = '' }) => {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full py-3 px-4 bg-[#0077C8] hover:bg-[#005fa0] text-white font-medium rounded-md shadow-md transition-colors duration-200"
+          className="btn-primary w-full py-3 px-4 bg-[#0077C8] hover:bg-[#005fa0] text-white font-medium rounded-md shadow-md transition-colors duration-200"
         >
           {isSubmitting ? 'Sending...' : 'Get Help Now'}
         </button>
       </form>
       
-      <div className="mt-4">
+      <div className="mt-4 space-y-3">
+        {/* Call Now Button */}
+        <a 
+          href="tel:1-877-522-1275" 
+          className="call-button w-full py-3 px-4 bg-gradient-to-r from-[#16A53F] to-[#128a35] hover:from-[#128a35] hover:to-[#0f7a2e] text-white font-medium rounded-md shadow-md transition-colors duration-200 flex items-center justify-center"
+        >
+          <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+          </svg>
+          Call Now: 1-877-522-1275
+        </a>
+        
+        {/* Find a Clinic Button */}
         <Link 
           href="/find-clinic" 
-          className="block w-full text-center py-3 px-4 border border-[#0077C8] text-[#0077C8] font-medium rounded-md hover:bg-gray-50 transition-colors duration-200"
+          className="btn-secondary block w-full text-center py-3 px-4 border border-[#0077C8] text-[#0077C8] font-medium rounded-md hover:bg-gray-50 transition-colors duration-200"
         >
           Find a Clinic
         </Link>
