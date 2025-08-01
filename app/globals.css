@@ -1,0 +1,430 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis: none;
+  letter-spacing: -0.01em;
+  --primary-blue: #0077C8;
+  --primary-green: #16A53F;
+  --hover-blue: #005a9e;
+  --hover-green: #128a35;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Professional header typography */
+.header-brand {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.header-nav {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.header-phone {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+/* Enhanced navigation link styles */
+.nav-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  position: relative;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
+  background: transparent;
+  overflow: hidden;
+}
+
+.nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 119, 200, 0.08), rgba(0, 119, 200, 0.12));
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0.5rem;
+}
+
+.nav-link:hover::before, .nav-link:focus::before {
+  opacity: 1;
+}
+
+.nav-link:hover, .nav-link:focus {
+  color: var(--primary-blue);
+  transform: translateY(-1px);
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 119, 200, 0.15);
+}
+
+/* White navigation links for top header */
+.nav-link.text-white::before {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.15));
+}
+
+.nav-link.text-white:hover, .nav-link.text-white:focus {
+  color: white !important;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+.nav-link.text-white::after {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), var(--primary-green));
+}
+
+.nav-link.active {
+  color: #f8971d;
+  background: rgba(248, 151, 29, 0.10);
+  box-shadow: 0 2px 8px rgba(248, 151, 29, 0.2);
+}
+
+.nav-link::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: 0.3rem;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-blue), var(--primary-green));
+  border-radius: 1px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.nav-link:hover::after, .nav-link:focus::after {
+  left: 20%;
+  right: 20%;
+}
+
+/* Enhanced CTA button */
+.cta-button {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0);
+  box-shadow: 0 4px 14px rgba(22, 165, 63, 0.25);
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cta-button:hover::before {
+  left: 100%;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(22, 165, 63, 0.35);
+  background: var(--hover-green);
+}
+
+.cta-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 14px rgba(22, 165, 63, 0.25);
+}
+
+/* Phone number hover effect */
+.phone-link {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+}
+
+.phone-link:hover {
+  background: rgba(22, 165, 63, 0.1);
+  transform: scale(1.02);
+}
+
+/* Enhanced header shadow */
+.header-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Mobile menu animations */
+.mobile-menu {
+  animation: slideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Logo hover effect */
+.logo-container {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+}
+
+.logo-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 119, 200, 0.1);
+}
+
+/* Mobile menu button animation */
+.menu-button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.menu-button:hover {
+  background: rgba(0, 119, 200, 0.1);
+  transform: scale(1.05);
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced mega menu dropdown styles */
+.mega-menu {
+  animation: megaMenuSlideDown 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-origin: top center;
+  pointer-events: auto;
+}
+
+.mega-menu.opacity-0 {
+  pointer-events: none;
+}
+
+@keyframes megaMenuSlideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+/* Mega menu link hover effects */
+.mega-menu-link {
+  position: relative;
+  padding: 0.5rem 0;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.mega-menu-link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--primary-blue);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 1px;
+}
+
+.mega-menu-link:hover::before {
+  width: 3px;
+}
+
+.mega-menu-link:hover {
+  background: rgba(0, 119, 200, 0.05);
+  color: var(--primary-blue) !important;
+  padding-left: 1rem;
+}
+
+/* Enhanced dropdown button */
+.dropdown-button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+.dropdown-button:hover {
+  background: rgba(0, 119, 200, 0.08);
+  transform: translateY(-1px);
+}
+
+.dropdown-button svg {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Call button enhancements */
+.call-button {
+  background: linear-gradient(135deg, var(--primary-green), #0f8a2e);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 3px 12px rgba(22, 165, 63, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.call-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.call-button:hover::before {
+  left: 100%;
+}
+
+.call-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 18px rgba(22, 165, 63, 0.35);
+  background: linear-gradient(135deg, #128a35, #0d7129);
+}
+
+.call-button:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 12px rgba(22, 165, 63, 0.25);
+}
+
+/* Professional typography improvements */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.2;
+}
+
+.section-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #1a202c;
+}
+
+/* Additional subtle animations for medical site appropriateness */
+@keyframes gentlePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.pulse-gentle {
+  animation: gentlePulse 3s ease-in-out infinite;
+}
+
+/* Loading state enhancements */
+.loading-subtle {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* Form validation enhanced styling */
+.validation-error {
+  animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  75% { transform: translateX(2px); }
+}
+
+/* Success state styling */
+.success-gentle {
+  background: linear-gradient(135deg, rgba(22, 165, 63, 0.1), rgba(22, 165, 63, 0.05));
+  border-left: 4px solid var(--primary-green);
+  animation: slideInFromLeft 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideInFromLeft {
+  0% { transform: translateX(-20px); opacity: 0; }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+/* Improved navigation spacing and centering */
+.header-nav {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+/* Enhanced flex layout for header */
+.flex-1 {
+  flex: 1 1 0%;
+}
+
+/* Mobile responsive mega menu fallback */
+@media (max-width: 768px) {
+  .mega-menu {
+    position: fixed !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    transform: none !important;
+    border-radius: 0 !important;
+    margin-top: 0 !important;
+  }
+}
