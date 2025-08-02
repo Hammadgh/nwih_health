@@ -31,7 +31,7 @@ const GetStartedNow = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <div className="bg-white/10 rounded-xl p-6 text-center backdrop-blur-sm">
             <MdLocalHospital className="w-12 h-12 text-[#16A53F] mx-auto mb-4" />
-            <h4 className="text-xl font-bold mb-2">Multiple OTP Clinic Locations</h4>
+            <h4 className="text-xl font-bold mb-2">Multiple Clinic Locations</h4>
             <p className="text-gray-300">in Western Washington</p>
           </div>
           <div className="bg-white/10 rounded-xl p-6 text-center backdrop-blur-sm">

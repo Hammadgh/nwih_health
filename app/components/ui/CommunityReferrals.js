@@ -35,9 +35,9 @@ const CommunityReferrals = () => {
   ];
 
   const locations = [
-    "Western Washington",
-    "Multiple Locations", 
-    "Statewide Coverage"
+    "Tacoma",
+    "Puyallup", 
+    "Lakewood"
   ];
 
   return (
@@ -66,7 +66,7 @@ const CommunityReferrals = () => {
                   We're the first choice for care navigators, jails, drug courts, and local hospitals
                 </h3>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Throughout <span className="font-semibold text-[#0077C8]">Western Washington</span>, they rely on us to deliver safe, structured, and reliable care for individuals with opioid and fentanyl addiction.
+                  Throughout <span className="font-semibold text-[#0077C8]">Tacoma, Puyallup, and Lakewood</span>, they rely on us to deliver safe, structured, and reliable care for individuals with opioid and fentanyl addiction.
                 </p>
               </div>
             </div>
