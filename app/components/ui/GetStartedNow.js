@@ -11,9 +11,9 @@ const GetStartedNow = () => {
   ];
 
   return (
-    <section className="py-20  text-white">
+    <section className="py-20 bg-gradient-to-br from-gray-900 to-blue-900 text-white">
       <div className="container mx-auto px-4">
-        {/* Main Heading
+        {/* Main Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Get Started <span className="text-[#16A53F]">Now</span>
@@ -25,7 +25,7 @@ const GetStartedNow = () => {
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             You don't need to wait to get better. We make it easy to start methadone or Suboxone treatment in a supportive, respectful environment.
           </p>
-        </div> */}
+        </div>
 
         {/* Key Information
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
@@ -35,7 +35,7 @@ const GetStartedNow = () => {
             <p className="text-gray-300">in Western Washington</p>
           </div>
           <div className="bg-white/10 rounded-xl p-6 text-center backdrop-blur-sm">
-            <FaPhone className="w-12 h-12 text-[#16A53F] mx-auto mb-4" />
+            <FaPhone className="w-12 h-12 text-[#16A53F] mx-auto mb-4 " />
             <h4 className="text-xl font-bold mb-2">Call NWIH Now</h4>
             <p className="text-gray-300">253-200-0300</p>
           </div>
@@ -48,8 +48,8 @@ const GetStartedNow = () => {
 
 
 
-        {/* Insurance Information
-        <div className="bg-white/10 rounded-2xl p-8 md:p-12 backdrop-blur-sm border border-white/20 mb-16">
+        {/* Insurance Information */}
+        {/* <div className="bg-white/10 rounded-2xl p-8 md:p-12 backdrop-blur-sm border border-white/20 mb-16">
           <div className="text-center mb-8">
             <h3 className="text-2xl md:text-3xl font-bold mb-4">
               We accept the following insurances:
@@ -81,7 +81,6 @@ const GetStartedNow = () => {
               className="bg-white text-[#0077C8] hover:bg-gray-100 font-bold py-4 px-8 rounded-lg transition-colors duration-200 inline-flex items-center justify-center"
             >
               <FaPhone className="mr-2 rotate-90" />
-              
               Call Now: 253-200-0300
             </a>
             <a 

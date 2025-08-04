@@ -53,7 +53,7 @@ const WhyChooseNWIH = () => {
   return (
     <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="container mx-auto px-4">
-        Main Heading
+        {/* Main Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Why Patients <span className="text-[#0077C8]">Trust</span> NWIH
@@ -135,8 +135,8 @@ const WhyChooseNWIH = () => {
           </p>
         </div> */}
 
-        {/* Call to Action */}
-        {/* <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl border border-gray-100 text-center">
+        {/* Call to Action
+        <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl border border-gray-100 text-center">
           <div className="max-w-2xl mx-auto">
             <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
               📞 Ready to Start Your Recovery Journey?

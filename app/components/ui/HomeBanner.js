@@ -44,11 +44,11 @@ const HomeBanner = () => {
               Welcome to Northwest Integrated Health
             </h1>
             <h2 className="text-lg sm:text-xl lg:text-2xl font-medium mb-4 sm:mb-6 drop-shadow-lg text-white">
-            Struggling with Opioids or Fentanyl? We’re Here to Help.
+              Struggling with Opioids or Fentanyl? We're Here to Help.
             </h2>
             <p className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 max-w-2xl drop-shadow-md text-white">
-            Northwest Integrated Health offers same-day treatment with methadone or Suboxone.
-<br/>Compassionate, expert care—right in your neighborhood.
+              Northwest Integrated Health offers same-day treatment with methadone or Suboxone.
+              <br/>Compassionate, expert care—right in your neighborhood.
             </p>
             
             <div className="flex flex-wrap gap-4">
@@ -59,7 +59,7 @@ const HomeBanner = () => {
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-               Call Now to Start
+                Call Now to Start
               </a>
               <a 
                 href="/find-clinic" 
