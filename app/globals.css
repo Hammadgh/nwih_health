@@ -38,6 +38,31 @@ body {
   line-height: 1.6;
 }
 
+/* Sliding Text Animation for Sticky Top Bar */
+@keyframes slideText {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  10% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  90% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.animate-slide-text {
+  animation: slideText 8s ease-in-out infinite;
+  white-space: nowrap;
+}
+
 /* Professional header typography */
 .header-brand {
   font-family: 'Poppins', sans-serif;
@@ -87,23 +112,47 @@ body {
   box-shadow: 0 2px 8px rgba(248, 151, 29, 0.2);
 }
 
-.nav-link::after {
+/* Header nav underline matches text width exactly */
+.nav-link-text {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-link-text::after {
   content: '';
   display: block;
   position: absolute;
-  left: 50%;
-  right: 50%;
-  bottom: 0.3rem;
+  left: 0;
+  right: 0;
+  bottom: -0.2em;
   height: 2px;
-  background: linear-gradient(90deg, var(--primary-blue), var(--primary-green));
+  background: linear-gradient(90deg, #ffffff, #f0f0f0);
   border-radius: 1px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 1;
+  width: 100%;
+  transform: scaleX(0);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
 }
 
-.nav-link:hover::after, .nav-link:focus::after {
-  left: 20%;
-  right: 20%;
+/* Special styling for white text links (top header) */
+.nav-link.text-white .nav-link-text::after {
+  background: linear-gradient(90deg, #ffffff, #e0e0e0);
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
+}
+
+/* Blue text links (main header) */
+.nav-link:not(.text-white) .nav-link-text::after {
+  background: linear-gradient(90deg, var(--primary-blue), var(--primary-green));
+}
+
+.nav-link:hover .nav-link-text::after,
+.nav-link:focus .nav-link-text::after {
+  transform: scaleX(1);
+}
+
+/* Remove old .nav-link::after underline styles if present */
+.nav-link::after {
+  display: none !important;
 }
 
 /* Enhanced CTA button */

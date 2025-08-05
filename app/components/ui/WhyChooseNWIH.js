@@ -130,7 +130,8 @@ const WhyChooseNWIH = () => {
           <h3 className="text-2xl md:text-3xl font-bold mb-4">
             Recovery isn't just medication — we treat the whole person.
           </h3>
-          <p className="text-lg opacity-90">
+          <p className="text-lg opacity
+          -90">
             Our comprehensive approach addresses the root causes and provides ongoing support for lasting recovery.
           </p>
         </div> */}

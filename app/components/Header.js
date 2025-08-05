@@ -8,18 +8,35 @@ export default function Header() {
   
   return (
     <header className="w-full header-shadow sticky top-0 z-50 bg-white/95 backdrop-blur-sm">
-      {/* Sticky Top Bar */}
-      <div className="bg-[#16A53F] text-white py-2 px-4 text-center text-sm font-medium">
-        <div className="container mx-auto flex items-center justify-center">
-          <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-          </svg>
-          <span className="hidden sm:inline"> 24/7 Help Available: Call </span>
-          <a href="tel:1-877-522-1275" className="font-bold hover:text-gray-200 transition-colors">
-            1-877-522-1275
-          </a>
-          <span className="hidden sm:inline"> — Walk-ins Welcome!</span>
-          {/* <span className="sm:hidden" > 24/7 Help: </span> */}
+      {/* Sticky Top Bar with Sliding Animation */}
+      <div className="bg-[#16A53F] text-white py-2 px-4 text-center text-sm font-medium overflow-hidden">
+        <div className="container mx-auto">
+          {/* Sliding Text Animation */}
+          <div className="flex items-center justify-center">
+            {/* Desktop Text */}
+            <div className="hidden sm:flex items-center space-x-2 animate-slide-text">
+              <svg className="w-4 h-4 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+              </svg>
+              <span>24/7 Help Available: Call</span>
+              <a href="tel:1-877-522-1275" className="font-bold hover:text-gray-200 transition-colors">
+                1-877-522-1275
+              </a>
+              <span>— Walk-ins Welcome!</span>
+            </div>
+            
+            {/* Mobile Text */}
+            <div className="sm:hidden flex items-center space-x-2 animate-slide-text">
+              <svg className="w-4 h-4 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+              </svg>
+              <span>24/7 Help: Call</span>
+              <a href="tel:1-877-522-1275" className="font-bold hover:text-gray-200 transition-colors">
+                1-877-522-1275
+              </a>
+              <span>— Walk-ins Welcome!</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -40,16 +57,16 @@ export default function Header() {
           {/* Top Navigation Links */}
           <div className="hidden lg:flex items-center space-x-4 xl:space-x-6 ml-auto header-nav">
             <Link href="/about" className="nav-link text-white hover:text-white text-sm">
-            Get to Know Us
+              <span className="nav-link-text">Get to Know Us</span>
             </Link>
             <Link href="/find-clinic" className="nav-link text-white hover:text-white text-sm">
-              Find a Clinic
+              <span className="nav-link-text">Find The Nearest Clinic</span>
             </Link>
             <Link href="/careers" className="nav-link text-white hover:text-white text-sm">
-              Careers
+              <span className="nav-link-text">Careers</span>
             </Link>
             <Link href="/contact" className="nav-link text-white hover:text-white text-sm">
-              Contact
+              <span className="nav-link-text">Contact</span>
             </Link>
           </div>
         </div>
@@ -73,24 +90,24 @@ export default function Header() {
             
             {/* Main Navigation - Centered - Better responsive breakpoints */}
             <nav className="hidden xl:flex items-center justify-center flex-1 space-x-6 2xl:space-x-8 header-nav ml-4 xl:ml-8">
-              <Link href="/" className="nav-link text-[#0077C8] text-sm 2xl:text-base">
-                Home
-              </Link>
+              {/* <Link href="/" className="nav-link text-[#0077C8] text-sm 2xl:text-base">
+                <span className="nav-link-text">Home</span>
+              </Link> */}
               
               <Link href="/start-treatment" className="nav-link text-[#0077C8] text-sm 2xl:text-base">
-                Start Treatment
+                <span className="nav-link-text">Start Treatment</span>
               </Link>
               
               <Link href="/what-to-expect" className="nav-link text-[#0077C8] text-sm 2xl:text-base">
-                What to Expect
+                <span className="nav-link-text">What to Expect</span>
               </Link>
               
               <Link href="/understanding-treatment" className="nav-link text-[#0077C8] text-sm 2xl:text-base">
-                Understanding Treatment
+                <span className="nav-link-text">Understanding Treatment</span>
               </Link>
               
               <Link href="/patient-resources" className="nav-link text-[#0077C8] text-sm 2xl:text-base">
-                Patient Resources
+                <span className="nav-link-text">Patient Resources</span>
               </Link>
             </nav>
 
