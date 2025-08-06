@@ -1,177 +1,88 @@
 'use client';
 
-import { FaShieldAlt, FaUsers, FaHeart, FaClipboardCheck, FaPhone, FaMapMarkerAlt, FaPills, FaBrain, FaClock, FaUserMd } from 'react-icons/fa';
-import { MdHealthAndSafety, MdLocalPharmacy, MdPsychology } from 'react-icons/md';
+import { FaBrain, FaComments, FaUserMd, FaPills, FaMapMarkerAlt, FaUsers } from 'react-icons/fa';
+import { MdLocalPharmacy, MdHealthAndSafety } from 'react-icons/md';
 
 const WhyChooseNWIH = () => {
-  const highlights = [
+  const services = [
     {
-      icon: <FaPills className="w-8 h-8" />,
-      title: "MAT Expertise",
-      description: "Methadone, Suboxone, and naltrexone"
+      icon: <FaBrain className="w-6 h-6" />,
+      title: "Licensed mental health counseling",
+      description: "Professional therapy and mental health support integrated into your treatment plan."
     },
     {
-      icon: <MdPsychology className="w-8 h-8" />,
-      title: "Integrated Mental Health Support",
-      description: "Professional counseling and therapy"
-    },
-    {
-      icon: <MdLocalPharmacy className="w-8 h-8" />,
-      title: "On-Site Medication Pickup",
-      description: "Convenient pharmacy services"
-    },
-    {
-      icon: <FaClock className="w-8 h-8" />,
-      title: "Same-Day Starts Available",
-      description: "No waiting, start treatment immediately"
-    }
-  ];
-
-  const trustFactors = [
-    {
-      icon: <FaUserMd className="w-6 h-6" />,
-      title: "Expert Care Teams",
-      description: "Experienced medical professionals dedicated to your recovery"
-    },
-    {
-      icon: <FaHeart className="w-6 h-6" />,
-      title: "Whole-Person Approach",
-      description: "We treat the complete individual, not just symptoms"
+      icon: <FaComments className="w-6 h-6" />,
+      title: "Chemical dependency support",
+      description: "Specialized counseling and support groups for substance use recovery."
     },
     {
       icon: <FaUsers className="w-6 h-6" />,
-      title: "Peer Support Network",
-      description: "Connect with others who understand your journey"
+      title: "Peer recovery coaching",
+      description: "Connect with experienced peers who understand your recovery journey."
     },
     {
-      icon: <FaShieldAlt className="w-6 h-6" />,
-      title: "Trusted by Community",
-      description: "Proven track record of successful recovery outcomes"
+      icon: <MdHealthAndSafety className="w-6 h-6" />,
+      title: "Hepatitis C care",
+      description: "Comprehensive care and treatment for hepatitis C and related health concerns."
+    },
+    {
+      icon: <MdLocalPharmacy className="w-6 h-6" />,
+      title: "In-house pharmacy for medication pickup",
+      description: "Convenient on-site pharmacy services for all your medication needs."
+    },
+    {
+      icon: <FaUserMd className="w-6 h-6" />,
+      title: "Same-day addiction treatment starts",
+      description: "Immediate access to opioid treatment programs with no waiting lists for urgent care needs."
     }
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section className="py-16 md:py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         {/* Main Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Why Patients <span className="text-[#0077C8]">Trust</span> NWIH
+        <div className="text-center mb-12 md:mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
+            Why Choose <span className="text-[#0077C8]">NWIH</span>
           </h2>
-          <div className="w-24 h-1 bg-[#16A53F] mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            Recovery isn't just medication. We treat the whole person—with therapy, peer support, and trusted care teams.
+          <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            We specialize in Medication-Assisted Treatment (MAT) using methadone, buprenorphine (Suboxone), and naltrexone to stabilize opioid and fentanyl use. Every treatment plan includes access to:
           </p>
         </div>
 
-        {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 mb-16">
-          {/* Left Side - Highlights */}
-          <div className="space-y-6">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">
-              Our <span className="text-[#0077C8]">Core</span> Services
-            </h3>
-            <div className="space-y-6">
-              {highlights.map((highlight, index) => (
-                <div 
-                  key={index}
-                  className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100"
-                >
-                  <div className="flex items-start space-x-4">
-                    <div className="text-[#0077C8] mt-1 flex-shrink-0">
-                      {highlight.icon}
-                    </div>
-                    <div>
-                      <h4 className="text-xl font-bold text-gray-900 mb-2">
-                        {highlight.title}
-                      </h4>
-                      <p className="text-gray-600 leading-relaxed">
-                        {highlight.description}
-                      </p>
-                    </div>
-                  </div>
+        {/* Services Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16">
+          {services.map((service, index) => (
+            <div 
+              key={index}
+              className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100"
+            >
+              <div className="text-center mb-4">
+                <div className="inline-flex items-center justify-center w-12 h-12 bg-[#0077C8] rounded-lg text-white mb-3">
+                  {service.icon}
                 </div>
-              ))}
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  {service.title}
+                </h3>
+              </div>
+              <p className="text-gray-600 text-sm leading-relaxed text-center">
+                {service.description}
+              </p>
             </div>
-          </div>
-
-          {/* Right Side - Trust Factors */}
-          <div className="space-y-6">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">
-              Why <span className="text-[#16A53F]">Choose</span> Us
-            </h3>
-            <div className="space-y-6">
-              {trustFactors.map((factor, index) => (
-                <div 
-                  key={index}
-                  className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-l-4 border-[#16A53F]"
-                >
-                  <div className="flex items-start space-x-4">
-                    <div className="text-[#16A53F] mt-1 flex-shrink-0">
-                      {factor.icon}
-                    </div>
-                    <div>
-                      <h4 className="text-lg font-bold text-gray-900 mb-2">
-                        {factor.title}
-                      </h4>
-                      <p className="text-gray-600 leading-relaxed">
-                        {factor.description}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
 
-        {/* Recovery Statement
-        <div className="bg-gradient-to-r from-[#0077C8] to-[#16A53F] rounded-2xl p-8 md:p-12 text-white text-center mb-16 shadow-xl">
-          <h3 className="text-2xl md:text-3xl font-bold mb-4">
-            Recovery isn't just medication — we treat the whole person.
-          </h3>
-          <p className="text-lg opacity
-          -90">
-            Our comprehensive approach addresses the root causes and provides ongoing support for lasting recovery.
-          </p>
-        </div> */}
-
-        {/* Call to Action
-        <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl border border-gray-100 text-center">
-          <div className="max-w-2xl mx-auto">
-            <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
-              📞 Ready to Start Your Recovery Journey?
+        {/* Recovery Statement */}
+        <div className="text-center">
+          <div className="bg-white rounded-lg p-8 md:p-10 shadow-sm border border-gray-100 max-w-3xl mx-auto">
+            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
+              We don't just manage symptoms — we support your full recovery.
             </h3>
-            <div className="bg-gradient-to-r from-[#0077C8] to-[#16A53F] rounded-xl p-6 mb-6">
-              <a 
-                href="tel:253-200-0300" 
-                className="text-3xl md:text-4xl font-bold text-white hover:text-gray-100 transition-colors duration-200 inline-flex items-center"
-              >
-                <FaPhone className="mr-3" />
-                253-200-0300
-              </a>
-            </div>
-            <p className="text-lg text-gray-600 mb-6">
-              Take the first step towards recovery. Our compassionate team is here to help 24/7.
+            <p className="text-gray-600 leading-relaxed">
+              Our comprehensive approach addresses the root causes of addiction and provides ongoing support for lasting recovery and wellness.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="tel:253-200-0300" 
-                className="bg-[#16A53F] hover:bg-[#138a34] text-white font-bold py-4 px-8 rounded-lg transition-colors duration-200 inline-flex items-center justify-center"
-              >
-                <FaPhone className="mr-2" />
-                Call Now
-              </a>
-              <a 
-                href="/find-clinic" 
-                className="bg-[#0077C8] hover:bg-[#005a9e] text-white font-bold py-4 px-8 rounded-lg transition-colors duration-200 inline-flex items-center justify-center"
-              >
-                <FaMapMarkerAlt className="mr-2" />
-                Find a Clinic
-              </a>
-            </div>
           </div>
-        </div> */}
+        </div>
       </div>
     </section>
   );

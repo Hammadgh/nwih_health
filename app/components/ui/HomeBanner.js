@@ -2,20 +2,19 @@
 
 import Image from 'next/image';
 import { useState } from 'react';
-import QuickContactForm from './QuickContactForm';
 
 const HomeBanner = () => {
   const [imageError, setImageError] = useState(false);
   
   return (
     <section className="relative bg-gray-50 overflow-hidden">
-      {/* Darker gradient overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0077C8]/95 to-[#16A53F]/90 mix-blend-multiply z-10"></div>
+      {/* Enhanced gradient overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0077C8]/90 to-[#16A53F]/85 mix-blend-multiply z-10"></div>
       
-      {/* Additional stronger darkening overlay */}
-      <div className="absolute inset-0 bg-black/60 z-5"></div>
+      {/* Refined darkening overlay for optimal contrast */}
+      <div className="absolute inset-0 bg-black/50 z-5"></div>
       
-      {/* Background image - positioned lower to show faces better */}
+      {/* Background image - positioned to show faces properly on all screens */}
       <div className="absolute inset-0">
         {!imageError ? (
           <div className="relative w-full h-full">
@@ -23,12 +22,12 @@ const HomeBanner = () => {
               src="/images/homepagebanner.jpg" 
               alt="NWIH Healthcare Professionals"
               fill
-              className="object-cover object-top md:object-[50%_25%]" 
+              className="object-cover object-[50%_30%] md:object-[50%_25%] lg:object-[50%_20%] xl:object-[50%_15%]" 
               priority
               onError={() => setImageError(true)}
               sizes="100vw"
               quality={90}
-              style={{ objectPosition: '50% 25%' }} 
+              style={{ objectPosition: '50% 25%' }}
             />
           </div>
         ) : (
@@ -36,47 +35,55 @@ const HomeBanner = () => {
         )}
       </div>
       
-      <div className="container mx-auto px-4 py-14 md:py-20 lg:py-24 relative z-20">
-        <div className="flex flex-col lg:flex-row items-center gap-8">
-          {/* Left content area - enhanced text visibility with stronger shadows */}
-          <div className="w-full lg:w-3/5 text-white mb-10 lg:mb-0">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 drop-shadow-lg text-white">
-              Welcome to Northwest Integrated Health
-            </h1>
-            <h2 className="text-lg sm:text-xl lg:text-2xl font-medium mb-4 sm:mb-6 drop-shadow-lg text-white">
-              Struggling with Opioids or Fentanyl? We're Here to Help.
-            </h2>
-            <p className="text-base sm:text-lg lg:text-xl mb-6 sm:mb-8 max-w-2xl drop-shadow-md text-white">
-              Northwest Integrated Health offers same-day treatment with methadone or Suboxone.
-              <br/>Compassionate, expert care—right in your neighborhood.
-            </p>
-            
-            <div className="flex flex-wrap gap-4">
-              <a 
-                href="tel:253-200-0300" 
-                className="px-4 sm:px-6 py-2 sm:py-3 bg-[#16A53F] hover:bg-[#138a34] text-white font-medium rounded-md shadow-md transition-colors duration-200 inline-flex items-center text-sm sm:text-base"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                Call Now to Start
-              </a>
-              <a 
-                href="/find-clinic" 
-                className="px-4 sm:px-6 py-2 sm:py-3 bg-white hover:bg-gray-100 text-[#0077C8] font-medium rounded-md shadow-md transition-colors duration-200 inline-flex items-center text-sm sm:text-base"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 sm:h-5 sm:w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
-                Find a Methadone Clinic Near You
-              </a>
-            </div>
-          </div>
+      {/* Centered content container with improved spacing */}
+      <div className="container mx-auto px-4 py-16 md:py-24 lg:py-32 relative z-20">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Main heading with enhanced typography */}
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 drop-shadow-2xl text-white leading-tight">
+            Recovery Starts Here
+          </h1>
           
-          {/* Right form area */}
-          <div className="w-full lg:w-2/5 lg:pl-6">
-            <QuickContactForm className="max-w-md mx-auto shadow-xl" />
+          {/* Subheading with improved contrast */}
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-6 sm:mb-8 drop-shadow-xl text-white max-w-3xl mx-auto leading-relaxed">
+            Evidence-Based Treatment for Fentanyl & Opioid Use Disorder
+          </h2>
+          
+          {/* Description with better readability */}
+          <p className="text-lg sm:text-xl lg:text-2xl mb-6 sm:mb-8 max-w-3xl mx-auto drop-shadow-lg text-white leading-relaxed">
+            Northwest Integrated Health (NWIH) is a licensed methadone clinic and Opioid Treatment Program (OTP) offering fast, compassionate, and confidential help for opioid and fentanyl addiction.
+          </p>
+          
+          {/* Location and contact info
+          <div className="text-base sm:text-lg lg:text-xl mb-8 sm:mb-12 max-w-3xl mx-auto drop-shadow-lg text-white leading-relaxed">
+            <p className="mb-2">
+              📍 Clinics in Tacoma, Puyallup, Lakewood & Lacey
+            </p>
+            <p className="font-semibold">
+              📞 Call Now for Same-Day Help: 253-200-0300
+            </p>
+          </div> */}
+          
+          {/* Enhanced CTA buttons with better spacing and styling */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+            <a 
+              href="tel:253-200-0300" 
+              className="group px-8 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-[#16A53F] to-[#138a34] hover:from-[#138a34] hover:to-[#0f7a2e] text-white font-semibold rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 inline-flex items-center text-lg sm:text-xl transform hover:scale-105"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-6 sm:w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              Call Now for Same-Day Help
+            </a>
+            <a 
+              href="/find-clinic" 
+              className="group px-8 sm:px-10 py-4 sm:py-5 bg-white/95 hover:bg-white text-[#0077C8] font-semibold rounded-lg shadow-xl hover:shadow-2xl transition-all duration-300 inline-flex items-center text-lg sm:text-xl transform hover:scale-105"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 sm:h-6 sm:w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              Find a Clinic Near You
+            </a>
           </div>
         </div>
       </div>

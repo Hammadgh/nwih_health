@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
@@ -94,12 +95,17 @@ export default function Footer() {
         <div className="border-t border-white/20 mt-8 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <Link href="/" className="text-2xl font-bold text-white mb-2 inline-block">
-                NWIH
+              <Link href="/" className="inline-block">
+                <Image 
+                  src="/Nwih-logo-vector (1) (1).png" 
+                  alt="NWIH Logo" 
+                  width={120}
+                  height={40}
+                  className="h-8 md:h-10 w-auto" 
+                  priority
+                />
               </Link>
-              <p className="text-gray-300 text-sm">
-                Integrated Health
-              </p>
+             
             </div>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-300 hover:text-white transition-colors duration-200">
