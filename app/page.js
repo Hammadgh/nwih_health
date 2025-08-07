@@ -5,9 +5,9 @@ import Footer from './components/Footer';
 import HomeBanner from './components/ui/HomeBanner';
 import WhyChooseNWIH from './components/ui/WhyChooseNWIH';
 import WhatToExpect from './components/ui/WhatToExpect';
-import CommunityReferrals from './components/ui/CommunityReferrals';
+import InsuranceProviders from './components/ui/InsuranceProviders';
 import ClinicLocations from './components/ui/ClinicLocations';
-import GetStartedNow from './components/ui/GetStartedNow';
+
 import InsurancePopup from './components/ui/InsurancePopup';
 
 export default function Home() {
@@ -24,14 +24,13 @@ export default function Home() {
         {/* What to Expect Section */}
         <WhatToExpect />
 
-        {/* Community Referrals Section */}
-        <CommunityReferrals />
+        {/* Insurance Providers Section */}
+        <InsuranceProviders />
 
         {/* Clinic Locations Section */}
         <ClinicLocations />
 
-        {/* Get Started Now Section */}
-        <GetStartedNow />
+        
       </main>
       <Footer />
       

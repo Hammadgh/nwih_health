@@ -14,7 +14,7 @@ const GetStartedNow = () => {
     <section className="py-20 bg-gradient-to-br from-gray-900 to-blue-900 text-white">
       <div className="container mx-auto px-4">
         {/* Main Heading */}
-        <div className="text-center mb-16">
+        {/* <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Get Started <span className="text-[#16A53F]">Now</span>
           </h2>
@@ -25,7 +25,7 @@ const GetStartedNow = () => {
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             You don't need to wait to get better. We make it easy to start methadone or Suboxone treatment in a supportive, respectful environment.
           </p>
-        </div>
+        </div> */}
 
         {/* Key Information
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">

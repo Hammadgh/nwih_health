@@ -1,99 +1,59 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
-
-// Workaround for Leaflet marker icon issue in Next.js
-const useFixLeafletIcons = () => {
-  useEffect(() => {
-    delete L.Icon.Default.prototype._getIconUrl;
-    
-    L.Icon.Default.mergeOptions({
-      iconRetinaUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png',
-      iconUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png',
-      shadowUrl: 'https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png',
-    });
-  }, []);
-};
+import { FaMapMarkerAlt } from 'react-icons/fa';
 
 export default function ClinicsMap({ clinics }) {
-  const mapRef = useRef(null);
   const mapContainerRef = useRef(null);
   
-  useFixLeafletIcons();
-
-  useEffect(() => {
-    if (!clinics || !clinics.length) return;
-
-    // Calculate center point based on all clinics
-    const calcCenter = () => {
-      if (clinics.length === 1) {
-        return [clinics[0].lat, clinics[0].lng];
-      }
-
-      let sumLat = 0, sumLng = 0;
-      clinics.forEach(clinic => {
-        sumLat += clinic.lat;
-        sumLng += clinic.lng;
-      });
-
-      return [sumLat / clinics.length, sumLng / clinics.length];
-    };
-    
-    // Initialize map only if it doesn't exist
-    if (!mapRef.current) {
-      const center = calcCenter();
-      // Create map instance
-      mapRef.current = L.map(mapContainerRef.current).setView(center, 10);
-      
-      // Add OpenStreetMap tile layer (free)
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        maxZoom: 19,
-      }).addTo(mapRef.current);
-      
-      // Create bounds to fit all markers
-      const bounds = L.latLngBounds();
-      
-      // Add markers for all clinics
-      clinics.forEach(clinic => {
-        if (clinic.lat && clinic.lng) {
-          const marker = L.marker([clinic.lat, clinic.lng]).addTo(mapRef.current);
-          
-          // Add popup with clinic info
-          marker.bindPopup(`
-            <strong>${clinic.name}</strong><br>
-            ${clinic.address}<br>
-            ${clinic.city}, ${clinic.state} ${clinic.zip}<br>
-            <a href="tel:${clinic.phone}">${clinic.phone}</a><br>
-            <a href="/find-clinic/Washington/${clinic.id}" target="_blank">See Details</a>
-          `);
-          
-          // Extend bounds to include this marker
-          bounds.extend([clinic.lat, clinic.lng]);
-        }
-      });
-      
-      // Fit map to bounds with some padding if we have multiple clinics
-      if (clinics.length > 1) {
-        mapRef.current.fitBounds(bounds, {
-          padding: [50, 50],
-          maxZoom: 12
-        });
-      }
+  // Get unique cities and count clinics per city
+  const cityStats = clinics.reduce((acc, clinic) => {
+    if (!acc[clinic.city]) {
+      acc[clinic.city] = { count: 0, clinics: [] };
     }
-    
-    return () => {
-      // Clean up map on component unmount
-      if (mapRef.current) {
-        mapRef.current.remove();
-        mapRef.current = null;
-      }
-    };
-  }, [clinics]);
+    acc[clinic.city].count++;
+    acc[clinic.city].clinics.push(clinic);
+    return acc;
+  }, {});
+
+  const mainCities = Object.keys(cityStats).slice(0, 6); // Top 6 cities
 
   return (
-    <div ref={mapContainerRef} className="h-full w-full" style={{ minHeight: '400px' }}></div>
+    <div className="relative h-full w-full" style={{ minHeight: '400px' }}>
+      {/* Static Map Background */}
+      <div 
+        className="w-full h-full bg-cover bg-center bg-no-repeat rounded-lg overflow-hidden"
+        style={{ 
+          backgroundImage: 'url(/mapback.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
+      />
+      
+      {/* Semi-transparent overlay for better marker visibility */}
+      <div className="absolute inset-0 bg-white/10"></div>
+      
+      {/* Compass Rose */}
+      <div className="absolute top-3 left-3 sm:top-6 sm:left-6">
+        <div className="bg-white rounded-lg p-2 sm:p-3 shadow-lg border border-gray-200">
+          <div className="text-center">
+            <div className="text-xs sm:text-sm font-bold text-gray-800">N</div>
+            <div className="text-sm sm:text-lg text-[#0077C8]">↑</div>
+          </div>
+        </div>
+      </div>
+
+      {/* Legend */}
+      <div className="absolute bottom-3 left-3 sm:bottom-6 sm:left-6">
+        <div className="bg-white rounded-lg p-2 sm:p-3 shadow-lg border border-gray-200">
+          <div className="flex flex-col sm:flex-row items-center space-y-1 sm:space-y-0 sm:space-x-4 text-xs sm:text-sm text-gray-600">
+            <div className="flex items-center">
+              <div className="w-3 h-3 bg-[#0077C8] rounded-full mr-2"></div>
+              <span>NWIH Clinics</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 } 

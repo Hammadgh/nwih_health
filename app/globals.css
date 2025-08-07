@@ -475,6 +475,114 @@ h1, h2, h3, h4, h5, h6 {
   100% { transform: translateX(0); opacity: 1; }
 }
 
+/* Insurance logos sliding animation */
+@keyframes slideLogos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-slide-logos {
+  animation: slideLogos 30s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+/* Enhanced slide animations for What to Expect */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUpDelay {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUpDelay2 {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  60% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUpDelay3 {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  70% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.animate-fade-in-delay {
+  animation: fadeIn 0.8s ease-out 0.2s both;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease-out;
+}
+
+.animate-slide-up-delay {
+  animation: slideUpDelay 0.8s ease-out 0.1s both;
+}
+
+.animate-slide-up-delay-2 {
+  animation: slideUpDelay2 0.8s ease-out 0.2s both;
+}
+
+.animate-slide-up-delay-3 {
+  animation: slideUpDelay3 0.8s ease-out 0.3s both;
+}
+
 /* Improved navigation spacing and centering */
 .header-nav {
   font-family: 'Inter', sans-serif;
