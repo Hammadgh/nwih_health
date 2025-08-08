@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
+import { FaMapMarkerAlt, FaPhone, FaDirections } from 'react-icons/fa';
 
 export default function Footer() {
   return (
@@ -73,21 +74,44 @@ export default function Footer() {
             </ul>
           </div>
           
-          {/* Find a Clinic Column with Map */}
+          {/* Enhanced Find a Clinic Column with Map */}
           <div>
-            <div className="mb-4">
-              <h3 className="text-xl font-bold mb-2 text-white">Find a clinic near you</h3>
-              <div className="bg-white/10 rounded-lg p-2 relative h-40 overflow-hidden backdrop-blur-sm border border-white/20">
-                {/* Map pin overlay */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <svg className="w-12 h-12 text-[#16A53F]" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                    <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"></path>
-                  </svg>
+            <h3 className="text-xl font-bold mb-4 text-white">Find a Clinic</h3>
+            <div className="bg-white/10 rounded-lg p-3 sm:p-4 relative overflow-hidden backdrop-blur-sm border border-white/20 hover:bg-white/15 transition-all duration-300">
+              {/* Map Background */}
+              <div 
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
+                style={{ 
+                  backgroundImage: 'url(/mapback.png)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }}
+              />
+              
+              {/* Content Overlay */}
+              <div className="relative z-10">
+                {/* Map Icon and Title */}
+                <div className="flex items-center mb-3">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-[#0077C8] to-[#16A53F] rounded-lg flex items-center justify-center mr-3">
+                    <FaMapMarkerAlt className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm sm:text-base font-semibold text-white">Locations Near You</h4>
+                    <p className="text-xs sm:text-sm text-gray-300">Multiple clinics across Washington</p>
+                  </div>
                 </div>
+                
+                
+                
+                {/* Call to Action Button */}
+                <Link 
+                  href="/find-clinic" 
+                  className="inline-flex items-center justify-center w-full bg-gradient-to-r from-[#0077C8] to-[#16A53F] text-white py-2 sm:py-3 px-3 sm:px-4 rounded-lg hover:from-[#005a9e] hover:to-[#128a35] transition-all duration-300 text-xs sm:text-sm font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                >
+                  <FaMapMarkerAlt className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
+                  Find Your Clinic
+                </Link>
               </div>
-              <Link href="/find-clinic" className="mt-3 bg-gradient-to-r from-[#0077C8] to-[#16A53F] text-white py-2 px-4 rounded-lg hover:from-[#005a9e] hover:to-[#128a35] transition-all duration-300 inline-block w-full text-center font-semibold">
-                Find a clinic
-              </Link>
             </div>
           </div>
         </div>

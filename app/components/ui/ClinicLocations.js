@@ -2,6 +2,7 @@
 
 import { FaMapMarkerAlt, FaPhone, FaCar, FaBus, FaTrain, FaDirections, FaHome, FaClock, FaParking, FaUsers } from 'react-icons/fa';
 import { clinics } from '../../data/clinicData';
+import Link from 'next/link';
 
 const ClinicLocations = () => {
   // Get unique cities and count clinics per city
@@ -48,32 +49,39 @@ const ClinicLocations = () => {
               </div>
               
               {/* Map Display Area with actual map image */}
-              <div className="relative h-64 sm:h-80 lg:h-96 xl:h-[450px] rounded-lg sm:rounded-xl overflow-hidden border-2 border-gray-200">
-                {/* Actual Map Background */}
-                <div 
-                  className="w-full h-full bg-cover bg-center bg-no-repeat"
-                  style={{ 
-                    backgroundImage: 'url(/mapback.png)',
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center'
-                  }}
-                />
-                
-                {/* Semi-transparent overlay for better marker visibility */}
-                <div className="absolute inset-0 bg-white/10"></div>
-                
-                {/* Compass Rose */}
-                <div className="absolute top-3 left-3 sm:top-6 sm:left-6">
-                  <div className="bg-white rounded-lg p-2 sm:p-3 shadow-lg border border-gray-200">
-                    <div className="text-center">
-                      <div className="text-xs sm:text-sm font-bold text-gray-800">N</div>
-                      <div className="text-sm sm:text-lg text-[#0077C8]">↑</div>
+              <Link href="/find-clinic" className="block group">
+                <div className="relative h-64 sm:h-80 lg:h-96 xl:h-[450px] rounded-lg sm:rounded-xl overflow-hidden border-2 border-gray-200 cursor-pointer">
+                  {/* Actual Map Background */}
+                  <div 
+                    className="w-full h-full bg-cover bg-center bg-no-repeat transition-transform duration-500 group-hover:scale-105"
+                    style={{ 
+                      backgroundImage: 'url(/mapback.png)',
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center'
+                    }}
+                  />
+                  
+                  {/* Semi-transparent overlay for better marker visibility */}
+                  <div className="absolute inset-0 bg-white/10 group-hover:bg-white/5 transition-colors duration-300"></div>
+                  
+                  {/* Compass Rose */}
+                  <div className="absolute top-3 left-3 sm:top-6 sm:left-6">
+                    <div className="bg-white rounded-lg p-2 sm:p-3 shadow-lg border border-gray-200">
+                      <div className="text-center">
+                        <div className="text-xs sm:text-sm font-bold text-gray-800">N</div>
+                        <div className="text-sm sm:text-lg text-[#0077C8]">↑</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Click indicator overlay */}
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="bg-black/50 text-white px-4 py-2 rounded-lg font-semibold text-sm sm:text-base backdrop-blur-sm">
+                      Click to Find Your Clinic
                     </div>
                   </div>
                 </div>
-                
-
-              </div>
+              </Link>
               
               {/* Legend */}
               <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6 text-xs sm:text-sm text-gray-600">
