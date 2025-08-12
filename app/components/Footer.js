@@ -13,6 +13,11 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-4 text-white">About Us</h3>
             <ul className="space-y-2">
               <li>
+                <Link href="/get-to-know-us" className="text-gray-300 hover:text-white transition-colors duration-200">
+                  Get to Know Us
+                </Link>
+              </li>
+              <li>
                 <Link href="/our-providers" className="text-gray-300 hover:text-white transition-colors duration-200">
                   Our Providers
                 </Link>
@@ -34,6 +39,11 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4 text-white">For Patients</h3>
             <ul className="space-y-2">
+              <li>
+                <Link href="/start-treatment" className="text-gray-300 hover:text-white transition-colors duration-200">
+                  Begin Your Recovery
+                </Link>
+              </li>
               <li>
                 <Link href="/remote-check-in" className="text-gray-300 hover:text-white transition-colors duration-200">
                   Remote Check In

@@ -56,7 +56,8 @@ export default function Header() {
           
           {/* Top Navigation Links */}
           <div className="hidden lg:flex items-center space-x-4 xl:space-x-6 ml-auto header-nav">
-            <Link href="/about" className="nav-link text-white hover:text-white text-sm">
+            
+            <Link href="/get-to-know-us" className="nav-link text-white hover:text-white text-sm">
               <span className="nav-link-text">Get to Know Us</span>
             </Link>
             <Link href="/find-clinic" className="nav-link text-white hover:text-white text-sm">
@@ -98,7 +99,7 @@ export default function Header() {
                 <span className="nav-link-text">Begin Your Recovery</span>
               </Link>
               
-              <Link href="/what-to-expect" className="nav-link text-[#0077C8] text-sm 2xl:text-base">
+              <Link href="/your-first-visit" className="nav-link text-[#0077C8] text-sm 2xl:text-base">
                 <span className="nav-link-text">Your First Visit</span>
               </Link>
               
@@ -152,7 +153,7 @@ export default function Header() {
                 <Link href="/start-treatment" className="nav-link py-3 border-b border-gray-50 text-[#0077C8] text-base" onClick={() => setIsMenuOpen(false)}>
                 Begin Your Recovery
                 </Link>
-                <Link href="/what-to-expect" className="nav-link py-3 border-b border-gray-50 text-[#0077C8] text-base" onClick={() => setIsMenuOpen(false)}>
+                <Link href="/your-first-visit" className="nav-link py-3 border-b border-gray-50 text-[#0077C8] text-base" onClick={() => setIsMenuOpen(false)}>
                 Your First Visit
                 </Link>
                 <Link href="/understanding-treatment" className="nav-link py-3 border-b border-gray-50 text-[#0077C8] text-base" onClick={() => setIsMenuOpen(false)}>
@@ -168,10 +169,13 @@ export default function Header() {
                 {/* Secondary navigation for mobile */}
                 <h3 className="header-nav font-semibold text-sm text-gray-500 pt-4 pb-2 uppercase tracking-wider">More</h3>
                 
+                <Link href="/start-treatment" className="nav-link py-3 border-b border-gray-50 text-[#0077C8] text-base" onClick={() => setIsMenuOpen(false)}>
+                  Begin Your Recovery
+                </Link>
                 <Link href="/contact" className="nav-link py-3 border-b border-gray-50 text-[#0077C8] text-base" onClick={() => setIsMenuOpen(false)}>
                   Contact
                 </Link>
-                <Link href="/about" className="nav-link py-3 border-b border-gray-50 text-[#0077C8] text-base" onClick={() => setIsMenuOpen(false)}>
+                <Link href="/get-to-know-us" className="nav-link py-3 border-b border-gray-50 text-[#0077C8] text-base" onClick={() => setIsMenuOpen(false)}>
                 Get to Know Us
                 </Link>
                 <Link href="/careers" className="nav-link py-3 border-b border-gray-50 text-[#0077C8] text-base" onClick={() => setIsMenuOpen(false)}>

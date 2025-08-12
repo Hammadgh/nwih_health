@@ -44,7 +44,7 @@ const HomeBanner = () => {
           </h1>
           
           {/* Subheading with improved contrast */}
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-6 sm:mb-8 drop-shadow-xl text-white max-w-3xl mx-auto leading-relaxed">
+          <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-6 sm:mb-8 drop-shadow-xl text-white max-w-3xl mx-auto leading-relaxed md:whitespace-nowrap">
             Evidence-Based Treatment for Fentanyl & Opioid Use Disorder
           </h2>
           
