@@ -40,12 +40,13 @@ const HomeBanner = () => {
         <div className="max-w-4xl mx-auto text-center">
           {/* Main heading with enhanced typography */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 drop-shadow-2xl text-white leading-tight">
-            Recovery Starts Here
+          Where Recovery Meets Compassion
           </h1>
           
           {/* Subheading with improved contrast */}
-          <h2 className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-6 sm:mb-8 drop-shadow-xl text-white max-w-3xl mx-auto leading-relaxed md:whitespace-nowrap">
-            Evidence-Based Treatment for Fentanyl & Opioid Use Disorder
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-6 sm:mb-8 drop-shadow-xl text-white max-w-5xl mx-auto leading-tight sm:leading-relaxed text-center px-2 sm:px-0">
+            <span className="block sm:inline">Evidence-Based Treatment for</span>
+            <span className="block sm:inline">Fentanyl & Opioid Use Disorder</span>
           </h2>
           
           {/* Description with better readability */}
