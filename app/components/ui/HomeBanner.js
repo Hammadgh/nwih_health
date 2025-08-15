@@ -36,17 +36,18 @@ const HomeBanner = () => {
       </div>
       
       {/* Centered content container with improved spacing */}
-      <div className="container mx-auto px-4 py-16 md:py-24 lg:py-32 relative z-20">
-        <div className="max-w-4xl mx-auto text-center">
+      <div className="container mx-auto px-4 py-16 md:py-24 lg:py-32 relative z-20 flex items-center justify-center min-h-[80vh]">
+        <div className="max-w-6xl mx-auto text-center w-full">
           {/* Main heading with enhanced typography */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 drop-shadow-2xl text-white leading-tight">
-          Where Recovery Meets Compassion
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 sm:mb-8 drop-shadow-2xl text-white leading-tight tracking-tight text-center max-w-6xl mx-auto px-4">
+            <span className="block sm:inline">There is help </span>
+            {/* <span className="block sm:inline">Compassion</span> */}
           </h1>
           
           {/* Subheading with improved contrast */}
           <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-6 sm:mb-8 drop-shadow-xl text-white max-w-5xl mx-auto leading-tight sm:leading-relaxed text-center px-2 sm:px-0">
-            <span className="block sm:inline">Evidence-Based Treatment for</span>
-            <span className="block sm:inline">Fentanyl & Opioid Use Disorder</span>
+            <span className="block sm:inline">Opioid & Fentanyl Addiction</span>
+            {/* <span className="block sm:inline">Fentanyl & Opioid Use Disorder</span> */}
           </h2>
           
           {/* Description with better readability */}

@@ -104,7 +104,7 @@ const InsurancePopup = () => {
                 closePopup();
                 window.location.href = 'tel:253-200-0300';
               }}
-              className="w-full bg-gradient-to-r from-[#0077C8] to-[#16A53F] text-white font-bold py-2.5 sm:py-3 lg:py-2.5 xl:py-3 px-4 sm:px-6 lg:px-4 xl:px-6 rounded-lg text-xs sm:text-sm lg:text-xs xl:text-sm hover:from-[#005a9e] hover:to-[#128a35] transition-all duration-200 shadow-md transform hover:scale-105 flex items-center justify-center space-x-1.5 sm:space-x-2 lg:space-x-1.5 xl:space-x-2"
+              className="w-full bg-[#16A53F] text-white font-bold py-2.5 sm:py-3 lg:py-2.5 xl:py-3 px-4 sm:px-6 lg:px-4 xl:px-6 rounded-lg text-xs sm:text-sm lg:text-xs xl:text-sm hover:from-[#005a9e] hover:to-[#128a35] transition-all duration-200 shadow-md transform hover:scale-105 flex items-center justify-center space-x-1.5 sm:space-x-2 lg:space-x-1.5 xl:space-x-2"
             >
               <FaPhone className="w-3 h-3 sm:w-4 sm:h-4 lg:w-3 lg:h-3 xl:w-4 xl:h-4 rotate-90" />
               <span>Verify Now</span>

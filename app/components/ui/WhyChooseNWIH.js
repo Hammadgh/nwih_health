@@ -72,17 +72,7 @@ const WhyChooseNWIH = () => {
           ))}
         </div>
 
-        {/* Recovery Statement */}
-        <div className="text-center">
-          <div className="bg-white rounded-lg p-8 md:p-10 shadow-sm border border-gray-100 max-w-3xl mx-auto">
-            <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-4">
-              We don't just manage symptoms — we support your full recovery.
-            </h3>
-            <p className="text-gray-600 leading-relaxed">
-              Our comprehensive approach addresses the root causes of addiction and provides ongoing support for lasting recovery and wellness.
-            </p>
-          </div>
-        </div>
+        
       </div>
     </section>
   );

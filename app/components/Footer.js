@@ -116,7 +116,7 @@ export default function Footer() {
                 {/* Call to Action Button */}
                 <Link 
                   href="/find-clinic" 
-                  className="inline-flex items-center justify-center w-full bg-gradient-to-r from-[#0077C8] to-[#16A53F] text-white py-2 sm:py-3 px-3 sm:px-4 rounded-lg hover:from-[#005a9e] hover:to-[#128a35] transition-all duration-300 text-xs sm:text-sm font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                  className="inline-flex items-center justify-center w-full bg-[#f8971d] text-white py-2 sm:py-3 px-3 sm:px-4 rounded-lg hover:from-[#005a9e] hover:to-[#128a35] transition-all duration-300 text-xs sm:text-sm font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
                 >
                   <FaMapMarkerAlt className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
                   Find Your Clinic

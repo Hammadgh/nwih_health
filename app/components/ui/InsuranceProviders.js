@@ -129,7 +129,7 @@ const InsuranceProviders = () => {
             <div className="mt-5 sm:mt-7 text-center">
               <a
                 href="tel:253-200-0300"
-                className="inline-flex items-center bg-gradient-to-r from-[#0077C8] to-[#16A53F] text-white font-bold py-2.5 sm:py-3 px-5 sm:px-7 rounded-xl text-sm sm:text-base hover:from-[#005a9e] hover:to-[#128a35] transition-all duration-200 shadow-lg transform hover:scale-105"
+                className="inline-flex items-center bg-[#16A53F] text-white font-bold py-2.5 sm:py-3 px-5 sm:px-7 rounded-xl text-sm sm:text-base hover:from-[#005a9e] hover:to-[#128a35] transition-all duration-200 shadow-lg transform hover:scale-105"
               >
                 <FaPhone className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 rotate-90" />
                 <span>Verify Your Coverage</span>
@@ -139,8 +139,8 @@ const InsuranceProviders = () => {
         </div>
 
         {/* Bottom Stats */}
-        <div className="mt-8 sm:mt-12 lg:mt-14">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-5 lg:gap-7">
+        <div className="mt-8 sm:mt-12 lg:mt-14 flex justify-center items-center">
+          <div className="flex flex-row justify-center items-center gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto px-4">
             <div className="text-center">
               <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#0077C8] mb-1 sm:mb-2">10+</div>
               <div className="text-gray-600 text-xs sm:text-sm">Major Providers</div>
@@ -148,10 +148,6 @@ const InsuranceProviders = () => {
             <div className="text-center">
               <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#16A53F] mb-1 sm:mb-2">95%</div>
               <div className="text-gray-600 text-xs sm:text-sm">Coverage Rate</div>
-            </div>
-            <div className="text-center">
-              <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#0077C8] mb-1 sm:mb-2">24/7</div>
-              <div className="text-gray-600 text-xs sm:text-sm">Verification</div>
             </div>
             <div className="text-center">
               <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#16A53F] mb-1 sm:mb-2">$0</div>

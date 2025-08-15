@@ -13,9 +13,10 @@ export default function ContactPage() {
         <div className="bg-[#0077C8] text-white py-12">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-3xl md:text-4xl font-bold mb-4">Contact Us</h1>
-            <p className="text-lg md:text-xl max-w-3xl mx-auto">
-              Have questions about our services or need help getting started? We're here for you.
-            </p>
+            <p className="text-lg md:text-xl max-w-3xl mx-auto md:whitespace-nowrap">
+  Have questions about our services or need help getting started? We're here for you.
+</p>
+
           </div>
         </div>
         

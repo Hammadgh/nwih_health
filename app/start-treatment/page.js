@@ -176,7 +176,7 @@ const StartTreatment = () => {
                   <div className="space-y-4 text-gray-700">
                     <div className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-[#0077C8] rounded-full mt-3 flex-shrink-0"></div>
-                      <p><strong>Immediate Access:</strong> Call 253-200-0300 or walk into any of our four clinics</p>
+                      <p><strong>Immediate Access:</strong> Call 253-200-0300 or walk into any of our clinics</p>
                     </div>
                     <div className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-[#0077C8] rounded-full mt-3 flex-shrink-0"></div>

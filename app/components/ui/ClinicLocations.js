@@ -18,8 +18,21 @@ const ClinicLocations = () => {
   const mainCities = Object.keys(cityStats).slice(0, 6); // Top 6 cities
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative py-12 sm:py-16 lg:py-20 overflow-hidden">
+      {/* Map Background with opacity */}
+      <div className="absolute inset-0 opacity-100">
+        <img 
+          src="/mapback.png" 
+          alt="Washington State Map with NWIH Clinic Locations" 
+          className="w-full h-full object-cover"
+          style={{ filter: 'grayscale(20%)' }}
+        />
+      </div>
+      
+      {/* Gradient overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-blue-50/70"></div>
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
@@ -32,69 +45,11 @@ const ClinicLocations = () => {
           </p>
         </div>
 
-        {/* Main Content - Responsive Layout */}
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start max-w-7xl mx-auto">
-          
-          {/* Left Side - Map Section */}
-          <div className="relative order-2 lg:order-1">
-            <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl border border-gray-100 p-4 sm:p-6 lg:p-8">
-              <div className="flex flex-col sm:flex-row sm:items-center mb-4 sm:mb-6">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#0077C8] to-[#16A53F] rounded-lg sm:rounded-xl flex items-center justify-center mr-3 sm:mr-4 mb-3 sm:mb-0">
-                  <FaMapMarkerAlt className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                </div>
-                <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900">Our Coverage Area</h3>
-                  <p className="text-gray-600 text-sm sm:text-base">{clinics.length} locations across Washington State</p>
-                </div>
-              </div>
-              
-              {/* Map Display Area with actual map image */}
-              <Link href="/find-clinic" className="block group">
-                <div className="relative h-64 sm:h-80 lg:h-96 xl:h-[450px] rounded-lg sm:rounded-xl overflow-hidden border-2 border-gray-200 cursor-pointer">
-                  {/* Actual Map Background */}
-                  <div 
-                    className="w-full h-full bg-cover bg-center bg-no-repeat transition-transform duration-500 group-hover:scale-105"
-                    style={{ 
-                      backgroundImage: 'url(/mapback.png)',
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center'
-                    }}
-                  />
-                  
-                  {/* Semi-transparent overlay for better marker visibility */}
-                  <div className="absolute inset-0 bg-white/10 group-hover:bg-white/5 transition-colors duration-300"></div>
-                  
-                  {/* Compass Rose */}
-                  <div className="absolute top-3 left-3 sm:top-6 sm:left-6">
-                    <div className="bg-white rounded-lg p-2 sm:p-3 shadow-lg border border-gray-200">
-                      <div className="text-center">
-                        <div className="text-xs sm:text-sm font-bold text-gray-800">N</div>
-                        <div className="text-sm sm:text-lg text-[#0077C8]">↑</div>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  {/* Click indicator overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="bg-black/50 text-white px-4 py-2 rounded-lg font-semibold text-sm sm:text-base backdrop-blur-sm">
-                      Click to Find Your Clinic
-                    </div>
-                  </div>
-                </div>
-              </Link>
-              
-              {/* Legend */}
-              <div className="mt-4 sm:mt-6 flex flex-col sm:flex-row items-center justify-center space-y-2 sm:space-y-0 sm:space-x-6 text-xs sm:text-sm text-gray-600">
-                <div className="flex items-center">
-                  <div className="w-3 h-3 bg-[#0077C8] rounded-full mr-2"></div>
-                  <span>NWIH Clinics</span>
-                </div>
-              </div>
-            </div>
-          </div>
+        {/* Main Content - Single Column Layout */}
+        <div className="max-w-4xl mx-auto">
 
-          {/* Right Side - Location Information */}
-          <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl border border-gray-100 p-4 sm:p-6 lg:p-8 order-1 lg:order-2">
+          {/* Location Information */}
+          <div className="bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl border border-gray-100 p-4 sm:p-6 lg:p-8">
             <div className="flex flex-col sm:flex-row sm:items-center mb-6 sm:mb-8">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#0077C8] to-[#16A53F] rounded-lg sm:rounded-xl flex items-center justify-center mr-3 sm:mr-4 mb-3 sm:mb-0">
                 <FaDirections className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
@@ -198,7 +153,7 @@ const ClinicLocations = () => {
               <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200">
                 <a
                   href="/find-clinic"
-                  className="inline-flex items-center w-full justify-center bg-gradient-to-r from-[#0077C8] to-[#16A53F] text-white font-bold py-3 sm:py-4 px-4 sm:px-6 rounded-lg sm:rounded-xl hover:from-[#005a9e] hover:to-[#128a35] transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm sm:text-base"
+                  className="inline-flex items-center w-full justify-center bg-[#16A53F] text-white font-bold py-3 sm:py-4 px-4 sm:px-6 rounded-lg sm:rounded-xl hover:from-[#005a9e] hover:to-[#128a35] transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-sm sm:text-base"
                 >
                   <FaMapMarkerAlt className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" />
                   Find Your Nearest Clinic
