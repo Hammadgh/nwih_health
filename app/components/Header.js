@@ -1,15 +1,64 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const lastScrollY = useRef(0);
+  const ticking = useRef(false);
+  
+  // Improved scroll handler with hysteresis to prevent flickering
+  const handleScroll = useCallback(() => {
+    const currentScrollY = window.scrollY;
+    const scrollThreshold = 100; // Higher threshold for more stability
+    const hysteresis = 20; // Buffer zone to prevent rapid toggling
+    
+    // Only update if we've scrolled enough to matter
+    if (Math.abs(currentScrollY - lastScrollY.current) < 5) {
+      return;
+    }
+    
+    // Use hysteresis to prevent rapid state changes
+    if (currentScrollY > scrollThreshold + hysteresis && !scrolled) {
+      setScrolled(true);
+    } else if (currentScrollY < scrollThreshold - hysteresis && scrolled) {
+      setScrolled(false);
+    }
+    
+    lastScrollY.current = currentScrollY;
+  }, [scrolled]);
+  
+  useEffect(() => {
+    // Improved throttling with better performance
+    const throttledHandleScroll = () => {
+      if (!ticking.current) {
+        requestAnimationFrame(() => {
+          handleScroll();
+          ticking.current = false;
+        });
+        ticking.current = true;
+      }
+    };
+    
+    // Add scroll listener with passive option for better performance
+    window.addEventListener('scroll', throttledHandleScroll, { passive: true });
+    
+    // Cleanup
+    return () => {
+      window.removeEventListener('scroll', throttledHandleScroll);
+    };
+  }, [handleScroll]);
   
   return (
-    <header className="w-full header-shadow sticky top-0 z-50 bg-white/95 backdrop-blur-sm">
-      {/* Sticky Top Bar with Sliding Animation */}
-      <div className="bg-[#16A53F] text-white py-2 px-4 text-center text-sm font-medium overflow-hidden">
+    <header className={`w-full header-shadow sticky top-0 z-50 bg-white/95 backdrop-blur-sm transition-all duration-300 ease-out ${scrolled ? 'scrolled' : ''}`}>
+      {/* Sticky Top Bar with Improved Animation */}
+      <div className={`bg-[#16A53F] text-white py-2 px-4 text-center text-sm font-medium transition-all duration-300 ease-out ${
+        scrolled 
+          ? 'max-h-0 py-0 opacity-0 overflow-hidden' 
+          : 'max-h-12 opacity-100'
+      }`}>
         <div className="container mx-auto">
           {/* Sliding Text Animation */}
           <div className="flex items-center justify-center">
@@ -40,20 +89,13 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Top header with primary navigation - Hidden on mobile */}
-      <div className="hidden lg:block bg-gradient-to-r from-[#0077C8] to-[#005a9e] text-white">
+      {/* Top header with primary navigation - Improved transition */}
+      <div className={`hidden lg:block bg-gradient-to-r from-[#0077C8] to-[#005a9e] text-white transition-all duration-300 ease-out ${
+        scrolled 
+          ? 'max-h-0 py-0 opacity-0 overflow-hidden' 
+          : 'max-h-12 opacity-100'
+      }`}>
         <div className="container mx-auto px-4 py-2 flex items-center justify-between">
-          {/* Phone Number */}
-          {/* <div className="header-phone">
-            <a href="tel:1-877-522-1275" className="phone-link flex items-center hover:text-[#16A53F] transition-all duration-300 text-sm sm:text-base">
-              <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
-              </svg>
-              <span className="hidden sm:inline">1-877-522-1275</span>
-              <span className="sm:hidden">1-877-522-1275</span>
-            </a>
-          </div> */}
-          
           {/* Top Navigation Links */}
           <div className="hidden lg:flex items-center space-x-4 xl:space-x-6 ml-auto header-nav">
             
@@ -73,27 +115,28 @@ export default function Header() {
         </div>
       </div>
       
-      {/* Main header with logo and secondary navigation */}
-      <div className="bg-white/95 backdrop-blur-sm border-b border-gray-100">
-        <div className="container mx-auto px-4 py-3 lg:py-4">
+      {/* Main header with logo and secondary navigation - Improved transitions */}
+      <div className="bg-white/95 backdrop-blur-sm border-b border-gray-100 transition-all duration-300 ease-out">
+        <div className={`container mx-auto px-4 transition-all duration-300 ease-out ${
+          scrolled ? 'py-2 lg:py-2' : 'py-3 lg:py-4'
+        }`}>
           <div className="flex items-center justify-between">
-            {/* Logo */}
+            {/* Logo with improved scaling */}
             <Link href="/" className="logo-container flex items-center">
               <Image 
                 src="/Nwih-logo-vector (1) (1).png" 
                 alt="NWIH Logo" 
                 width={200}
                 height={60}
-                className="h-12 sm:h-16 lg:h-18 w-auto" 
+                className={`transition-all duration-300 ease-out w-auto ${
+                  scrolled ? 'h-10 sm:h-12 lg:h-14' : 'h-12 sm:h-16 lg:h-18'
+                }`} 
                 priority
               />
             </Link>
             
             {/* Main Navigation - Centered - Better responsive breakpoints */}
             <nav className="hidden xl:flex items-center justify-center flex-1 space-x-6 2xl:space-x-8 header-nav ml-4 xl:ml-8">
-              {/* <Link href="/" className="nav-link text-[#0077C8] text-sm 2xl:text-base">
-                <span className="nav-link-text">Home</span>
-              </Link> */}
               
               <Link href="/start-treatment" className="nav-link text-[#0077C8] text-sm 2xl:text-base">
                 <span className="nav-link-text">Begin Your Recovery</span>
@@ -112,11 +155,11 @@ export default function Header() {
               </Link>
             </nav>
 
-            {/* Call Now Button - Right aligned */}
+            {/* Call Now Button - Right aligned with improved transitions */}
             <div className="hidden xl:block ml-auto">
               <a 
                 href="tel:1-877-522-1275" 
-                className="cta-button bg-gradient-to-r from-[#16A53F] to-[#128a35] hover:from-[#128a35] hover:to-[#0f7a2e] text-white font-semibold px-4 2xl:px-6 py-2 2xl:py-3 rounded-full transition-all duration-300 text-sm 2xl:text-base shadow-lg flex items-center"
+                className="cta-button bg-gradient-to-r from-[#16A53F] to-[#128a35] hover:from-[#128a35] hover:to-[#0f7a2e] text-white font-semibold px-4 2xl:px-6 py-2 2xl:py-3 rounded-full transition-all duration-300 ease-out text-sm 2xl:text-base shadow-lg flex items-center"
               >
                 <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
@@ -127,7 +170,7 @@ export default function Header() {
             
             {/* Mobile menu button - Shows on screens smaller than xl */}
             <button 
-              className="menu-button xl:hidden text-[#0077C8] hover:text-[#005a9e] ml-4" 
+              className="menu-button xl:hidden text-[#0077C8] hover:text-[#005a9e] ml-4 transition-all duration-300 ease-out" 
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -147,8 +190,6 @@ export default function Header() {
           <div className="mobile-menu xl:hidden bg-white/98 backdrop-blur-sm border-t border-gray-100 shadow-lg">
             <div className="container mx-auto px-4 py-4">
               <div className="flex flex-col space-y-1 text-[#0077C8]">
-                {/* Primary navigation for mobile */}
-                {/* <h3 className="header-nav font-semibold text-sm text-gray-500 pt-2 pb-2 uppercase tracking-wider">Main Menu</h3> */}
                 
                 <Link href="/start-treatment" className="nav-link py-3 border-b border-gray-50 text-[#0077C8] text-base" onClick={() => setIsMenuOpen(false)}>
                 Begin Your Recovery
@@ -190,4 +231,4 @@ export default function Header() {
       </div>
     </header>
   );
-} 
+}

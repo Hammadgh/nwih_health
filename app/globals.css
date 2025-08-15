@@ -109,6 +109,51 @@ body {
   }
 }
 
+/* Header scroll transition styles */
+.header-shadow {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Improved smooth height transitions for header elements */
+.max-h-0 {
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  border-width: 0;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.max-h-12 {
+  max-height: 3rem;
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Prevent layout shifts during transitions */
+.transition-all {
+  will-change: transform, opacity, height, padding, max-height;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Enhanced header transitions */
+header {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Smooth logo scaling */
+.logo-container img {
+  transform: translateZ(0);
+  will-change: transform, height;
+}
+
 .animate-slide-text {
   animation: slideText 8s ease-in-out infinite;
   white-space: nowrap;
@@ -262,6 +307,43 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
+}
+
+/* Professional header scroll behavior */
+.header-shadow.scrolled {
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+/* Improved transition timing for header elements */
+header * {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Prevent content jumping during header transitions */
+body {
+  scroll-behavior: smooth;
+}
+
+/* Optimize header performance */
+header {
+  contain: layout style paint;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Prevent flickering during scroll */
+header * {
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Smooth transition for all header elements */
+header > div {
+  transform: translateZ(0);
+  will-change: transform, opacity, max-height;
 }
 
 /* Mobile menu animations */
