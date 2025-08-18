@@ -6,6 +6,7 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [showButtonAnimation, setShowButtonAnimation] = useState(false);
   const lastScrollY = useRef(0);
   const ticking = useRef(false);
   
@@ -50,6 +51,16 @@ export default function Header() {
       window.removeEventListener('scroll', throttledHandleScroll);
     };
   }, [handleScroll]);
+
+  // Button animation effect - triggers after 1.5 seconds to grab attention
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      console.log('Button animation triggered!', new Date().toLocaleTimeString());
+      setShowButtonAnimation(true);
+    }, 1500);
+    
+    return () => clearTimeout(timer);
+  }, []);
   
   return (
     <header className={`w-full header-shadow sticky top-0 z-50 bg-white/95 backdrop-blur-sm transition-all duration-300 ease-out ${scrolled ? 'scrolled' : ''}`}>
@@ -102,9 +113,7 @@ export default function Header() {
             <Link href="/get-to-know-us" className="nav-link text-white hover:text-white text-sm">
               <span className="nav-link-text">Get to Know Us</span>
             </Link>
-            <Link href="/find-clinic" className="nav-link text-white hover:text-white text-sm">
-              <span className="nav-link-text">Find The Nearest Clinic</span>
-            </Link>
+            
             <Link href="/careers" className="nav-link text-white hover:text-white text-sm">
               <span className="nav-link-text">Careers</span>
             </Link>
@@ -136,35 +145,42 @@ export default function Header() {
             </Link>
             
             {/* Main Navigation - Centered - Better responsive breakpoints */}
-            <nav className="hidden xl:flex items-center justify-center flex-1 space-x-6 2xl:space-x-8 header-nav ml-4 xl:ml-8">
+            <nav className="hidden xl:flex items-center justify-center flex-1 space-x-6 2xl:space-x-8 header-nav ml-4 xl:ml-8 relative z-50">
               
-              <Link href="/start-treatment" className="nav-link text-[#0077C8] text-sm 2xl:text-base">
+              <Link href="/start-treatment" className="nav-link text-[#0077C8] text-sm 2xl:text-base relative z-50" style={{ pointerEvents: 'auto' }}>
                 <span className="nav-link-text">Begin Your Recovery</span>
               </Link>
               
-              <Link href="/your-first-visit" className="nav-link text-[#0077C8] text-sm 2xl:text-base">
+              <Link href="/your-first-visit" className="nav-link text-[#0077C8] text-sm 2xl:text-base relative z-50" style={{ pointerEvents: 'auto' }}>
                 <span className="nav-link-text">Your First Visit</span>
               </Link>
               
-              <Link href="/understanding-treatment" className="nav-link text-[#0077C8] text-sm 2xl:text-base">
-                <span className="nav-link-text">How Treatment Works</span>
+              <Link href="/find-clinic" className="nav-link text-[#0077C8] text-sm 2xl:text-base relative z-50" style={{ pointerEvents: 'auto' }}>
+                <span className="nav-link-text">Find The Nearest Clinic</span>
               </Link>
               
-              <Link href="/patient-resources" className="nav-link text-[#0077C8] text-sm 2xl:text-base">
+              <Link href="/patient-resources" className="nav-link text-[#0077C8] text-sm 2xl:text-base relative z-50" style={{ pointerEvents: 'auto' }}>
                 <span className="nav-link-text">Patient Support</span>
               </Link>
             </nav>
 
             {/* Call Now Button - Right aligned with improved transitions */}
-            <div className="hidden xl:block ml-auto">
+            <div className="hidden xl:block ml-auto relative z-50">
               <a 
                 href="tel:1-877-522-1275" 
-                className="cta-button bg-gradient-to-r from-[#16A53F] to-[#128a35] hover:from-[#128a35] hover:to-[#0f7a2e] text-white font-semibold px-4 2xl:px-6 py-2 2xl:py-3 rounded-full transition-all duration-300 ease-out text-sm 2xl:text-base shadow-lg flex items-center"
+                className={`cta-button bg-gradient-to-r from-[#16A53F] to-[#128a35] hover:from-[#128a35] hover:to-[#0f7a2e] text-white font-semibold px-4 2xl:px-6 py-2 2xl:py-3 rounded-full transition-all duration-300 ease-out text-sm 2xl:text-base shadow-lg flex items-center cursor-pointer ${
+                  showButtonAnimation ? 'animate-button-pop' : ''
+                }`}
+                style={{
+                  pointerEvents: 'auto',
+                  position: 'relative',
+                  zIndex: 999
+                }}
               >
                 <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                 </svg>
-                Start Recovery 
+                Get Help Now
               </a>
             </div>
             
@@ -191,9 +207,7 @@ export default function Header() {
             <div className="container mx-auto px-4 py-4">
               <div className="flex flex-col space-y-1 text-[#0077C8]">
                 
-                <Link href="/start-treatment" className="nav-link py-3 border-b border-gray-50 text-[#0077C8] text-base" onClick={() => setIsMenuOpen(false)}>
-                Begin Your Recovery
-                </Link>
+                
                 <Link href="/your-first-visit" className="nav-link py-3 border-b border-gray-50 text-[#0077C8] text-base" onClick={() => setIsMenuOpen(false)}>
                 Your First Visit
                 </Link>

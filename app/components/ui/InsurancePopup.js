@@ -87,13 +87,10 @@ const InsurancePopup = () => {
           <div className="mb-3 sm:mb-4 lg:mb-4 xl:mb-4 2xl:mb-6 p-2 sm:p-3 lg:p-3 xl:p-3 2xl:p-4 bg-gradient-to-r from-blue-50 to-green-50 rounded-lg border border-blue-100">
             <div className="flex justify-between text-xs sm:text-sm lg:text-sm xl:text-sm 2xl:text-lg text-gray-700">
               <div className="flex items-center space-x-1 sm:space-x-2 lg:space-x-2 xl:space-x-2 2xl:space-x-3">
-                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 lg:w-2 lg:h-2 xl:w-2 xl:h-2 2xl:w-3 2xl:h-3 bg-[#16A53F] rounded-full"></div>
+                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 lg:w-2 lg:h-2 xl:w-2 xl:h-2 2xl:w-3 2xl:h-3 bg-[#16A53F] rounded-full ali"></div>
                 <span>Same-day starts</span>
               </div>
-              <div className="flex items-center space-x-1 sm:space-x-2 lg:space-x-2 xl:space-x-2 2xl:space-x-3">
-                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 lg:w-2 lg:h-2 xl:w-2 xl:h-2 2xl:w-3 2xl:h-3 bg-[#16A53F] rounded-full"></div>
-                <span>24/7 support</span>
-              </div>
+              
             </div>
           </div>
 

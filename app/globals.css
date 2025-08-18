@@ -690,3 +690,55 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 0 !important;
   }
 }
+
+/* Custom button animation for Get Help Now button */
+@keyframes buttonPop {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 15px 30px -8px rgba(0, 0, 0, 0.15);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+}
+
+.animate-button-pop {
+  animation: buttonPop 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform, box-shadow;
+  transform-origin: center;
+}
+
+/* Ensure button is clickable and above insurance popup */
+.cta-button {
+  position: relative;
+  z-index: 9999 !important;
+  pointer-events: auto !important;
+  cursor: pointer;
+}
+
+.cta-button:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-out;
+}
+
+/* Fix header layout to prevent collisions */
+.logo-container {
+  flex-shrink: 0;
+}
+
+.header-nav {
+  flex-shrink: 0;
+}
+
+/* Ensure proper spacing and prevent overlaps */
+@media (min-width: 768px) {
+  .header-nav {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
