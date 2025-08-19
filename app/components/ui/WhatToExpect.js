@@ -5,44 +5,29 @@ import { MdLocalHospital, MdPsychology, MdSupport } from 'react-icons/md';
 
 const WhatToExpect = () => {
   const steps = [
-    {
-      step: "Step 1",
-      title: "Intake & Assessment",
-      description: "Call or walk in. We offer same-day appointments when available. You'll meet with a provider in person or via telehealth.",
-      icon: <FaUserMd className="w-8 h-8" />,
-      details: [
-        "Same-day appointments available",
-        "In-person or telehealth options",
-        "Comprehensive initial assessment"
-      ]
-    },
-    {
-      step: "Step 2", 
-      title: "Stabilization Begins",
-      description: "After a medical exam and drug screen, we begin methadone or Suboxone treatment based on your needs. Medication is picked up daily at our in-house pharmacy.",
-      icon: <FaPills className="w-8 h-8" />,
-      details: [
-        "Medical exam and drug screen",
-        "Methadone or Suboxone treatment",
-        "Daily medication pickup at in-house pharmacy"
-      ]
-    },
-    {
-      step: "Step 3",
-      title: "Ongoing Support", 
-      description: "We create a tailored plan using your ASAM evaluation, connecting you to therapy, counseling, and recovery coaching.",
-      icon: <MdSupport className="w-8 h-8" />,
-      details: [
-        "ASAM evaluation-based planning",
-        "Therapy and counseling services",
-        "Recovery coaching support"
-      ]
-    }
-  ];
+  {
+    step: "01",
+    title: "Initiation",
+    description: "Walk-in or scheduled appointments. Complete medical assessment and treatment planning.",
+    icon: <FaUserMd className="w-6 h-6" />
+  },
+  {
+    step: "02", 
+    title: "Stabilization",
+    description: "Begin medication-assisted treatment with daily monitoring and dose adjustments.",
+    icon: <FaPills className="w-6 h-6" />
+  },
+  {
+    step: "03",
+    title: "Maintenance", 
+    description: "Long-term recovery support with counseling, therapy, and relapse prevention.",
+    icon: <MdSupport className="w-6 h-6" />
+  }
+];
 
   return (
     <section className="py-20 bg-white">
-      <div className="container mx-auto px-4">
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         {/* Main Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -55,52 +40,135 @@ const WhatToExpect = () => {
         </div>
 
         {/* Process Steps */}
-        <div className="max-w-6xl mx-auto">
-          {steps.map((step, index) => (
-            <div key={index} className="mb-12">
-              <div className="flex flex-col lg:flex-row items-start gap-8">
-                {/* Step Number and Icon */}
-                <div className="flex-shrink-0">
-                  <div className="bg-gradient-to-r from-[#0077C8] to-[#16A53F] rounded-full w-20 h-20 flex items-center justify-center text-white font-bold text-xl shadow-lg">
-                    {index + 1}
+        <div className="w-full">
+          {/* Desktop Layout - 3 columns with horizontal arrows */}
+          <div className="hidden lg:grid lg:grid-cols-3 lg:gap-6 xl:gap-8 2xl:gap-10">
+            {steps.map((step, index) => (
+              <div key={index} className="relative">
+                {/* Step Card */}
+                <div className="relative bg-white rounded-2xl p-6 xl:p-8 shadow-xl border-0 h-full overflow-hidden hover:shadow-2xl hover:scale-[1.01] hover:border-[#0077C8]/30 transition-all duration-300">
+                  {/* Background Pattern */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-white to-green-50/20 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  {/* Top Accent Line */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0077C8] via-[#16A53F] to-[#0077C8] hover:from-[#16A53F] hover:via-[#0077C8] hover:to-[#16A53F] transition-all duration-500"></div>
+                  
+                  {/* Step Number and Icon Container */}
+                  <div className="relative z-10 flex items-center justify-between mb-5">
+                    <div className="flex items-center">
+                      <div className="relative">
+                        <span className="text-4xl xl:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#0077C8] to-[#16A53F] hover:from-[#16A53F] hover:to-[#0077C8] transition-all duration-500">
+                          {step.step}
+                        </span>
+                        <div className="absolute -inset-2 bg-gradient-to-r from-blue-100/40 to-green-100/40 rounded-full blur-lg opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-gradient-to-br from-blue-100 to-green-100 rounded-xl p-4 shadow-md hover:shadow-lg hover:scale-105 hover:from-green-100 hover:to-blue-100 transition-all duration-300">
+                      <div className="text-[#0077C8] hover:text-[#16A53F] transition-colors duration-300">
+                        {step.icon}
+                      </div>
+                    </div>
                   </div>
-                </div>
 
-                {/* Content */}
-                <div className="flex-1 bg-gray-50 rounded-2xl p-8 shadow-lg border border-gray-100">
-                  <div className="flex items-center mb-4">
-                    <div className="text-[#0077C8] mr-4">
-                      {step.icon}
-                    </div>
-                    <div>
-                      <span className="text-sm font-semibold text-[#16A53F] uppercase tracking-wide">
-                        {step.step}
-                      </span>
-                      <h3 className="text-2xl font-bold text-gray-900">
-                        {step.title}
-                      </h3>
-                    </div>
+                  {/* Title */}
+                  <div className="relative z-10 mb-3">
+                    <h3 className="text-2xl xl:text-3xl font-bold text-gray-900 leading-tight hover:text-[#0077C8] transition-colors duration-300">
+                      {step.title}
+                    </h3>
+                    <div className="w-16 h-0.5 bg-gradient-to-r from-[#0077C8] to-[#16A53F] mt-2 rounded-full hover:w-20 hover:from-[#16A53F] hover:to-[#0077C8] transition-all duration-500"></div>
                   </div>
                   
-                  <p className="text-lg text-gray-700 leading-relaxed">
-                    {step.description}
-                  </p>
-                </div>
-              </div>
-
-              {/* Arrow between steps */}
-              {index < steps.length - 1 && (
-                <div className="flex justify-center my-8">
-                  <div className="bg-[#0077C8] rounded-full w-12 h-12 flex items-center justify-center text-white shadow-lg">
-                    <FaArrowDown className="w-5 h-5" />
+                  {/* Description */}
+                  <div className="relative z-10">
+                    <p className="text-base xl:text-lg text-gray-700 leading-relaxed hover:text-gray-800 transition-colors duration-300">
+                      {step.description}
+                    </p>
                   </div>
+                  
+                  {/* Bottom Corner Accent */}
+                  <div className="absolute bottom-4 right-4 w-8 h-8 border-r-2 border-b-2 border-[#0077C8]/20 rounded-br-xl opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  {/* Additional Hover Effects */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#0077C8]/3 via-transparent to-[#16A53F]/3 opacity-0 hover:opacity-100 transition-opacity duration-700 rounded-2xl"></div>
                 </div>
-              )}
-            </div>
-          ))}
+
+                {/* Right Arrow - only show between cards */}
+                {index < steps.length - 1 && (
+                  <div className="absolute top-1/2 -right-6 transform -translate-y-1/2">
+                    <div className="bg-gradient-to-r from-[#0077C8] to-[#16A53F] rounded-full w-10 h-10 flex items-center justify-center text-white shadow-lg">
+                      <FaArrowRight className="w-4 h-4" />
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Mobile Layout - Single column with down arrows */}
+          <div className="lg:hidden space-y-6">
+            {steps.map((step, index) => (
+              <div key={index}>
+                {/* Step Card */}
+                <div className="relative bg-white rounded-2xl p-5 sm:p-6 shadow-xl border-0 overflow-hidden hover:shadow-2xl hover:scale-[1.01] hover:border-[#0077C8]/30 transition-all duration-300">
+                  {/* Background Pattern */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-white to-green-50/20 opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  {/* Top Accent Line */}
+                  <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0077C8] via-[#16A53F] to-[#0077C8] hover:from-[#16A53F] hover:via-[#0077C8] hover:to-[#16A53F] transition-all duration-500"></div>
+                  
+                  {/* Step Number and Icon Container */}
+                  <div className="relative z-10 flex items-center justify-between mb-4">
+                    <div className="flex items-center">
+                      <div className="relative">
+                        <span className="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#0077C8] to-[#16A53F] hover:from-[#16A53F] hover:to-[#0077C8] transition-all duration-500">
+                          {step.step}
+                        </span>
+                        <div className="absolute -inset-2 bg-gradient-to-r from-blue-100/40 to-green-100/40 rounded-full blur-lg opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-gradient-to-br from-blue-100 to-green-100 rounded-xl p-3 shadow-md hover:shadow-lg hover:scale-105 hover:from-green-100 hover:to-blue-100 transition-all duration-300">
+                      <div className="text-[#0077C8] hover:text-[#16A53F] transition-colors duration-300">
+                        {step.icon}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Title */}
+                  <div className="relative z-10 mb-3">
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 leading-tight hover:text-[#0077C8] transition-colors duration-300">
+                      {step.title}
+                    </h3>
+                    <div className="w-16 h-0.5 bg-gradient-to-r from-[#0077C8] to-[#16A53F] mt-2 rounded-full hover:w-20 hover:from-[#16A53F] hover:to-[#0077C8] transition-all duration-500"></div>
+                  </div>
+                  
+                  {/* Description */}
+                  <div className="relative z-10">
+                    <p className="text-sm sm:text-base text-gray-700 leading-relaxed hover:text-gray-800 transition-colors duration-300">
+                      {step.description}
+                    </p>
+                  </div>
+                  
+                  {/* Bottom Corner Accent */}
+                  <div className="absolute bottom-3 right-3 w-6 h-6 border-r-2 border-b-2 border-[#0077C8]/20 rounded-br-lg opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
+                  
+                  {/* Additional Hover Effects */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#0077C8]/3 via-transparent to-[#16A53F]/3 opacity-0 hover:opacity-100 transition-opacity duration-700 rounded-2xl"></div>
+                </div>
+
+                {/* Down Arrow - only show between cards */}
+                {index < steps.length - 1 && (
+                  <div className="flex justify-center mt-6">
+                    <div className="bg-gradient-to-r from-[#0077C8] to-[#16A53F] rounded-full w-8 h-8 flex items-center justify-center text-white shadow-lg">
+                      <FaArrowDown className="w-3 h-3" />
+                    </div>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
-
-
       </div>
     </section>
   );

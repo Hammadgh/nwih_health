@@ -9,13 +9,13 @@ const HomeBanner = () => {
   return (
     <section className="relative bg-gray-50 overflow-hidden">
       {/* Enhanced gradient overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0077C8]/90 to-[#16A53F]/85 mix-blend-multiply z-10"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0077C8]/90 to-[#16A53F]/85 mix-blend-multiply z-10 pointer-events-none"></div>
       
       {/* Refined darkening overlay for optimal contrast */}
-      <div className="absolute inset-0 bg-black/50 z-5"></div>
+      <div className="absolute inset-0 bg-black/50 z-5 pointer-events-none"></div>
       
       {/* Background image - positioned to show faces properly on all screens */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none">
         {!imageError ? (
           <div className="relative w-full h-full">
             <Image 

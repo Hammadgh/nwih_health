@@ -48,7 +48,7 @@ const InsuranceProviders = () => {
 
   return (
     <section className="py-10 sm:py-14 lg:py-16 bg-gradient-to-br from-gray-50 to-blue-50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         {/* Section Header */}
         <div className="text-center mb-8 sm:mb-10 lg:mb-12">
           <div className="flex items-center justify-center mb-3 sm:mb-4">
@@ -66,8 +66,8 @@ const InsuranceProviders = () => {
         </div>
 
         {/* Insurance Logos Section */}
-        <div className="max-w-5xl mx-auto">
-          <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-4 sm:p-6 lg:p-8">
+        <div className="w-full">
+          <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-4 sm:p-6 lg:p-8 xl:p-12 2xl:p-16">
             {/* Sliding Insurance Logos */}
             <div className="relative overflow-hidden">
               <div className="flex animate-slide-logos">
@@ -140,7 +140,7 @@ const InsuranceProviders = () => {
 
         {/* Bottom Stats */}
         <div className="mt-8 sm:mt-12 lg:mt-14 flex justify-center items-center">
-          <div className="flex flex-row justify-center items-center gap-4 sm:gap-6 lg:gap-8 max-w-4xl mx-auto px-4">
+          <div className="flex flex-row justify-center items-center gap-4 sm:gap-6 lg:gap-8 w-full px-4">
             <div className="text-center">
               <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#0077C8] mb-1 sm:mb-2">10+</div>
               <div className="text-gray-600 text-xs sm:text-sm">Major Providers</div>

@@ -105,10 +105,10 @@ const StartTreatment = () => {
                   <div className="text-3xl font-bold text-[#0077C8] mb-1">8+</div>
                   <div className="text-sm text-gray-600">Clinic Locations</div>
                 </div>
-                <div className="text-center">
+                {/* <div className="text-center">
                   <div className="text-3xl font-bold text-[#16A53F] mb-1">24/7</div>
                   <div className="text-sm text-gray-600">Support Available</div>
-                </div>
+                </div> */}
                 <div className="text-center">
                   <div className="text-3xl font-bold text-[#0077C8] mb-1">Same-Day</div>
                   <div className="text-sm text-gray-600">Appointments</div>
@@ -123,21 +123,24 @@ const StartTreatment = () => {
                 <div className="flex items-center justify-center space-x-2 mb-3">
                   <div className="flex -space-x-1">
                     <div className="w-8 h-8 bg-[#0077C8] rounded-full flex items-center justify-center">
-                      <span className="text-white text-sm font-semibold">T</span>
+                      <span className="text-white text-sm font-semibold">L</span>
+                    </div>
+                    <div className="w-8 h-8 bg-[#16A53F] rounded-full flex items-center justify-center">
+                      <span className="text-white text-sm font-semibold">S</span>
+                    </div>
+                    <div className="w-8 h-8 bg-[#0077C8] rounded-full flex items-center justify-center">
+                      <span className="text-white text-sm font-semibold">W</span>
                     </div>
                     <div className="w-8 h-8 bg-[#16A53F] rounded-full flex items-center justify-center">
                       <span className="text-white text-sm font-semibold">P</span>
                     </div>
-                    <div className="w-8 h-8 bg-[#0077C8] rounded-full flex items-center justify-center">
-                      <span className="text-white text-sm font-semibold">L</span>
-                    </div>
                     <div className="w-8 h-8 bg-[#16A53F] rounded-full flex items-center justify-center">
-                      <span className="text-white text-sm font-semibold">O</span>
+                      <span className="text-white text-sm font-semibold">P</span>
                     </div>
                   </div>
                 </div>
                 <p className="text-center text-gray-700 font-medium">
-                  <span className="text-[#0077C8] font-semibold">Tacoma • Puyallup • Lakewood • OTP</span>
+                  <span className="text-[#0077C8] font-semibold">Lakewood • SwTacoma • Westgate • Parkland • PCA </span>
                 </p>
               </div>
             </div>

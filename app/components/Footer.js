@@ -131,11 +131,11 @@ export default function Footer() {
             <div className="mb-4 md:mb-0">
               <Link href="/" className="inline-block">
                 <Image 
-                  src="/Nwih-logo-vector (1) (1).png" 
+                  src="/footer-logo1.png" 
                   alt="NWIH Logo" 
                   width={120}
                   height={40}
-                  className="h-8 md:h-10 w-auto" 
+                  className="h-13 md:h-16 w-auto" 
                   priority
                 />
               </Link>

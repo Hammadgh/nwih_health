@@ -146,7 +146,7 @@ const YourFirstVisit = () => {
             </p>
             
             {/* Quick Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8 m-auto " >
               <div className="text-center">
                 <div className="text-3xl font-bold text-[#0077C8] mb-1">2-3</div>
                 <div className="text-sm text-gray-600">Hours Total</div>
@@ -156,13 +156,10 @@ const YourFirstVisit = () => {
                 <div className="text-sm text-gray-600">Day Start</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-[#0077C8] mb-1">4</div>
+                <div className="text-3xl font-bold text-[#0077C8] mb-1">8+</div>
                 <div className="text-sm text-gray-600">Clinic Options</div>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-[#16A53F] mb-1">24/7</div>
-                <div className="text-sm text-gray-600">Support</div>
-              </div>
+              
             </div>
           </div>
         </div>

@@ -170,6 +170,9 @@ header {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   letter-spacing: -0.01em;
+  position: relative;
+  z-index: 100001;
+  pointer-events: auto !important;
 }
 
 .header-phone {
@@ -332,6 +335,7 @@ header {
   transform: translateZ(0);
   backface-visibility: hidden;
   perspective: 1000px;
+  pointer-events: auto;
 }
 
 /* Prevent flickering during scroll */

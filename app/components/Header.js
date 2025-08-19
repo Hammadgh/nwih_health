@@ -63,9 +63,9 @@ export default function Header() {
   }, []);
   
   return (
-    <header className={`w-full header-shadow sticky top-0 z-50 bg-white/95 backdrop-blur-sm transition-all duration-300 ease-out ${scrolled ? 'scrolled' : ''}`}>
+    <header className={`w-full header-shadow sticky top-0 z-[2147483647] isolate bg-white/95 backdrop-blur-sm transition-all duration-300 ease-out ${scrolled ? 'scrolled' : ''}`}>
       {/* Sticky Top Bar with Improved Animation */}
-      <div className={`bg-[#16A53F] text-white py-2 px-4 text-center text-sm font-medium transition-all duration-300 ease-out ${
+      <div className={`bg-[#16A53F] text-white py-2 px-4 text-center text-sm font-medium transition-all duration-300 ease-out pointer-events-none ${
         scrolled 
           ? 'max-h-0 py-0 opacity-0 overflow-hidden' 
           : 'max-h-12 opacity-100'
@@ -74,13 +74,13 @@ export default function Header() {
           {/* Sliding Text Animation */}
           <div className="flex items-center justify-center">
             {/* Desktop Text - Original sliding animation */}
-            <div className="hidden sm:flex items-center space-x-2 animate-slide-text">
+            <div className="hidden sm:flex items-center space-x-2" style={{ animation: 'pulse 0.5s ease-in-out infinite' }}>
               <svg className="w-4 h-4 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
               </svg>
-              <span>24/7 Help Available: Call</span>
-              <a href="tel:1-877-522-1275" className="font-bold hover:text-gray-200 transition-colors">
-                1-877-522-1275
+              <span>Help Available: Call</span>
+              <a href="tel:1-877-522-1275" className="font-bold hover:text-gray-200 transition-colors pointer-events-auto">
+                253-200-0300
               </a>
               <span>— Walk-ins Welcome!</span>
             </div>
@@ -91,7 +91,7 @@ export default function Header() {
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
               </svg>
               <span className="animate-text-pulse">24/7 Help: Call</span>
-              <a href="tel:1-877-522-1275" className="font-bold hover:text-gray-200 transition-colors animate-text-pulse">
+              <a href="tel:1-877-522-1275" className="font-bold hover:text-gray-200 transition-colors animate-text-pulse pointer-events-auto">
                 1-877-522-1275
               </a>
               <span className="animate-text-pulse">— Walk-ins Welcome!</span>
@@ -101,23 +101,23 @@ export default function Header() {
       </div>
 
       {/* Top header with primary navigation - Improved transition */}
-      <div className={`hidden lg:block bg-gradient-to-r from-[#0077C8] to-[#005a9e] text-white transition-all duration-300 ease-out ${
+      <div className={`hidden lg:block bg-gradient-to-r from-[#0077C8] to-[#005a9e] text-white transition-all duration-300 ease-out pointer-events-none ${
         scrolled 
           ? 'max-h-0 py-0 opacity-0 overflow-hidden' 
           : 'max-h-12 opacity-100'
       }`}>
-        <div className="container mx-auto px-4 py-2 flex items-center justify-between">
+        <div className="container mx-auto px-4 py-2 flex items-center justify-start">
           {/* Top Navigation Links */}
-          <div className="hidden lg:flex items-center space-x-4 xl:space-x-6 ml-auto header-nav">
+          <div className="hidden lg:flex items-center justify-end w-full ml-0 space-x-4 xl:space-x-6 header-nav text-left">
             
-            <Link href="/get-to-know-us" className="nav-link text-white hover:text-white text-sm">
+            <Link href="/get-to-know-us" className="nav-link text-white hover:text-white text-sm pointer-events-auto">
               <span className="nav-link-text">Get to Know Us</span>
             </Link>
             
-            <Link href="/careers" className="nav-link text-white hover:text-white text-sm">
+            <Link href="/careers" className="nav-link text-white hover:text-white text-sm pointer-events-auto">
               <span className="nav-link-text">Careers</span>
             </Link>
-            <Link href="/contact" className="nav-link text-white hover:text-white text-sm">
+            <Link href="/contact" className="nav-link text-white hover:text-white text-sm pointer-events-auto">
               <span className="nav-link-text">Contact</span>
             </Link>
           </div>
@@ -145,7 +145,7 @@ export default function Header() {
             </Link>
             
             {/* Main Navigation - Centered - Better responsive breakpoints */}
-            <nav className="hidden xl:flex items-center justify-center flex-1 space-x-6 2xl:space-x-8 header-nav ml-4 xl:ml-8 relative z-50">
+            <nav className="hidden xl:flex items-center justify-center flex-1 space-x-6 2xl:space-x-8 header-nav ml-4 xl:ml-8 relative z-[2147483647]">
               
               <Link href="/start-treatment" className="nav-link text-[#0077C8] text-sm 2xl:text-base relative z-50" style={{ pointerEvents: 'auto' }}>
                 <span className="nav-link-text">Begin Your Recovery</span>
@@ -164,13 +164,11 @@ export default function Header() {
               </Link>
             </nav>
 
-            {/* Call Now Button - Right aligned with improved transitions */}
-            <div className="hidden xl:block ml-auto relative z-50">
+            {/* Call Now Button - Right aligned */}
+            <div className="hidden xl:block ml-auto relative z-[2147483647]">
               <a 
                 href="tel:1-877-522-1275" 
-                className={`cta-button bg-gradient-to-r from-[#16A53F] to-[#128a35] hover:from-[#128a35] hover:to-[#0f7a2e] text-white font-semibold px-4 2xl:px-6 py-2 2xl:py-3 rounded-full transition-all duration-300 ease-out text-sm 2xl:text-base shadow-lg flex items-center cursor-pointer ${
-                  showButtonAnimation ? 'animate-button-pop' : ''
-                }`}
+                className="cta-button animate-pulse bg-gradient-to-r from-[#16A53F] to-[#128a35] hover:from-[#128a35] hover:to-[#0f7a2e] text-white font-semibold px-4 2xl:px-6 py-2 2xl:py-3 rounded-full text-sm 2xl:text-base shadow-lg flex items-center cursor-pointer"
                 style={{
                   pointerEvents: 'auto',
                   position: 'relative',

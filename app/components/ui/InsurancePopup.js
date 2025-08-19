@@ -1,10 +1,12 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { FaTimes, FaCheck, FaPhone, FaUserMd } from 'react-icons/fa';
 
 const InsurancePopup = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
     // Show popup after 2 seconds on every reload
@@ -15,6 +17,20 @@ const InsurancePopup = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  // Close on ESC for accessibility
+  useEffect(() => {
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') closePopup();
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, []);
+
+  // Ensure portal rendering only on client
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const closePopup = () => {
     setIsOpen(false);
   };
@@ -23,19 +39,13 @@ const InsurancePopup = () => {
     "Medicaid", "Medicare", "Aetna", "Cigna", "Blue Cross", "Kaiser", "UnitedHealth", "And More!"
   ];
 
-  return (
+  if (!isMounted) return null;
+
+  return createPortal(
     <>
-      {/* Backdrop */}
-      {isOpen && (
-        <div 
-          className="fixed inset-0 bg-black/20 z-[60]"
-          onClick={closePopup}
-        />
-      )}
-      
       {/* Responsive Attractive Popup - Slightly larger for laptops, much larger for 2xl */}
       <div 
-        className={`fixed bottom-4 right-4 w-[300px] sm:w-[320px] md:w-[340px] lg:w-[320px] xl:w-[320px] 2xl:w-[450px] bg-white shadow-2xl z-[60] transform transition-all duration-300 ease-in-out rounded-xl overflow-hidden border border-gray-100 ${
+        className={`fixed bottom-4 right-4 w-[300px] sm:w-[320px] md:w-[340px] lg:w-[320px] xl:w-[320px] 2xl:w-[450px] bg-white shadow-2xl z-[2147483647] pointer-events-auto transform transition-all duration-300 ease-in-out rounded-xl overflow-hidden border border-gray-100 ${
           isOpen ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
         }`}
       >
@@ -116,7 +126,8 @@ const InsurancePopup = () => {
           </div>
         </div>
       </div>
-    </>
+    </>,
+    document.body
   );
 };
 

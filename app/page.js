@@ -24,13 +24,13 @@ export default function Home() {
         {/* What to Expect Section */}
         <WhatToExpect />
 
-        {/* Insurance Providers Section */}
-        <InsuranceProviders />
+        
 
         {/* Clinic Locations Section */}
         <ClinicLocations />
 
-        
+        {/* Insurance Providers Section */}
+        <InsuranceProviders />
       </main>
       <Footer />
       

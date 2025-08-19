@@ -46,7 +46,7 @@ const ClinicLocations = () => {
         </div>
 
         {/* Main Content - Single Column Layout */}
-        <div className="max-w-4xl mx-auto">
+        <div className="w-full">
 
           {/* Location Information */}
           <div className="bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl border border-gray-100 p-4 sm:p-6 lg:p-8">
@@ -63,7 +63,7 @@ const ClinicLocations = () => {
             <div className="space-y-4 sm:space-y-6">
               {/* Clinic Statistics */}
               <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-lg sm:rounded-xl p-4 sm:p-6">
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div className="grid grid-cols-3 gap-8 sm:gap-12 lg:gap-16 justify-items-center max-w-3xl mx-auto">
                   <div className="text-center">
                     <div className="text-2xl sm:text-3xl font-bold text-[#0077C8]">{clinics.length}</div>
                     <div className="text-xs sm:text-sm text-gray-600">Total Locations</div>
@@ -76,10 +76,7 @@ const ClinicLocations = () => {
                     <div className="text-2xl sm:text-3xl font-bold text-[#0077C8]">6</div>
                     <div className="text-xs sm:text-sm text-gray-600">Regions</div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-[#16A53F]">24/7</div>
-                    <div className="text-xs sm:text-sm text-gray-600">Support</div>
-                  </div>
+                  
                 </div>
               </div>
 
