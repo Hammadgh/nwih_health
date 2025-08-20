@@ -19,7 +19,7 @@ const HomeBanner = () => {
         {!imageError ? (
           <div className="relative w-full h-full">
             <Image 
-              src="/images/homepagebanner.jpg" 
+              src="/images/homepagebannernew.jpg" 
               alt="NWIH Healthcare Professionals"
               fill
               className="object-cover object-[50%_30%] md:object-[50%_25%] lg:object-[40%_20%] xl:object-[50%_15%]" 
@@ -27,7 +27,7 @@ const HomeBanner = () => {
               onError={() => setImageError(true)}
               sizes="100vw"
               quality={90}
-              style={{ objectPosition: '50% 25%' }}
+              style={{ objectPosition: '50%_25%' }}
             />
           </div>
         ) : (
@@ -39,20 +39,20 @@ const HomeBanner = () => {
       <div className="container mx-auto px-4 py-16 md:py-24 lg:py-32 relative z-20 flex items-center justify-center min-h-[80vh]">
         <div className="max-w-6xl mx-auto text-center w-full">
            {/* Subheading with improved contrast */}
-           <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-6 sm:mb-8 drop-shadow-xl text-white max-w-5xl mx-auto leading-tight sm:leading-relaxed text-center px-2 sm:px-0">
+           <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold sm:font-semibold mb-6 sm:mb-8 drop-shadow-xl text-white max-w-5xl mx-auto leading-tight sm:leading-relaxed text-center px-2 sm:px-0 ">
             <span className="block sm:inline">Opioid & Fentanyl Addiction</span>
             {/* <span className="block sm:inline">Fentanyl & Opioid Use Disorder</span> */}
           </h2>
           {/* Main heading with enhanced typography */}
-          <h1 className=" italic text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 sm:mb-8 drop-shadow-2xl text-white leading-tight tracking-tight text-center max-w-6xl mx-auto px-4">
-            <span className="block sm:inline" style={{ fontStyle: 'italic', fontWeight: 600 }}>THERE IS HELP </span>
+          <h1 className=" italic text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-7xl font-bold mb-6 sm:mb-8 drop-shadow-2xl text-white leading-tight tracking-tight text-center max-w-6xl mx-auto px-4">
+            <span className="block sm:inline" style={{ fontStyle: 'italic', fontWeight: 900 }}>THERE IS HELP </span>
             {/* <span className="block sm:inline">Compassion</span> */}
           </h1>
           
          
           
           {/* Description with better readability */}
-          <p className="text-lg sm:text-xl lg:text-2xl mb-6 sm:mb-8 max-w-3xl mx-auto drop-shadow-lg text-white leading-relaxed">
+          <p className="text-xl sm:text-2xl lg:text-3xl mb-6 sm:mb-8 drop-shadow-lg text-white leading-relaxed">
             Northwest Integrated Health (NWIH) is a licensed methadone clinic and Opioid Treatment Program (OTP) offering fast, compassionate, and confidential help for opioid and fentanyl addiction.
           </p>
           
