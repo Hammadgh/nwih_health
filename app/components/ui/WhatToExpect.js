@@ -172,7 +172,7 @@ const WhatToExpect = () => {
 
         {/* Call to Action - Ready to Start Your Recovery Journey */}
         <div className="text-center mt-16 md:mt-20">
-          <div className="bg-gradient-to-r from-[#0077C8] to-[#16A53F] rounded-2xl p-6 md:p-8 text-white max-w-3xl mx-auto">
+          <div className="bg-gradient-to-r from-[#0077C8] to-[#16A53F] rounded-2xl p-6 md:p-8 text-white">
             <h3 className="text-xl md:text-2xl font-bold mb-3">
               Ready to Start Your Recovery Journey?
             </h3>
