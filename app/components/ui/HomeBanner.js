@@ -44,8 +44,8 @@ const HomeBanner = () => {
             {/* <span className="block sm:inline">Fentanyl & Opioid Use Disorder</span> */}
           </h2>
           {/* Main heading with enhanced typography */}
-          <h1 className=" italic text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-7xl font-bold mb-6 sm:mb-8 drop-shadow-2xl text-white leading-tight tracking-tight text-center max-w-6xl mx-auto px-4">
-            <span className="block sm:inline" style={{ fontStyle: 'italic', fontWeight: 900 }}>THERE IS HELP </span>
+          <h1 className=" italic text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-6xl font-bold mb-6 sm:mb-8 drop-shadow-2xl text-white leading-tight tracking-tight text-center max-w-6xl mx-auto px-4">
+            <span className="block sm:inline" style={{ fontStyle: 'italic', fontWeight: 500 }}>THERE IS HELP. </span>
             {/* <span className="block sm:inline">Compassion</span> */}
           </h1>
           

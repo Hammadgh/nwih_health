@@ -170,63 +170,22 @@ const WhatToExpect = () => {
           </div>
         </div>
 
-        {/* Call to Action - Compelling Recovery Start */}
+        {/* Call to Action - Ready to Start Your Recovery Journey */}
         <div className="text-center mt-16 md:mt-20">
-          <div className="bg-gradient-to-r from-[#0077C8] to-[#16A53F] rounded-2xl p-4 md:p-6 text-white max-w-full mx-auto relative overflow-hidden">
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute inset-0" style={{
-                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-              }}></div>
-            </div>
-            
-            <div className="relative z-10">
-              {/* Urgency Badge */}
-              <div className="inline-flex items-center px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 mb-3">
-                <div className="w-2 h-2 bg-red-400 rounded-full mr-2 animate-pulse"></div>
-                <span className="text-white font-semibold text-xs">Same-Day Treatment Available</span>
-              </div>
-              
-              <h3 className="text-xl md:text-2xl font-bold mb-3">
-                Your Recovery Can't Wait Another Day
-              </h3>
-              
-              <p className="text-sm md:text-base mb-4 opacity-95 max-w-5xl mx-auto leading-relaxed">
-                <strong>Every moment matters</strong> in recovery. Our proven 3-phase process has helped thousands break free from addiction. 
-                <span className="block mt-1 text-yellow-200 font-semibold">Start your transformation today.</span>
-              </p>
-              
-              {/* Social Proof */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-2 mb-4 max-w-2xl mx-auto border border-white/20">
-                <p className="text-xs opacity-90">
-                  <span className="font-semibold">"NWIH gave me my life back. I'm now 2 years sober and helping others."</span>
-                  <span className="block mt-1 text-xs">— Sarah M., Former Patient</span>
-                </p>
-              </div>
-              
-              {/* Single CTA Button - Start Recovery NOW */}
-              <div className="flex justify-center mb-3">
-                <a 
-                  href="tel:253-200-0300" 
-                  className="group bg-white text-[#0077C8] px-8 py-4 rounded-xl font-bold text-base hover:bg-gray-50 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl relative overflow-hidden"
-                >
-                  <span className="relative z-10 flex items-center">
-                    <svg className="w-5 h-5 mr-3 group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.435a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    Start Recovery NOW
-                  </span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-50 to-green-50 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-                </a>
-              </div>
-              
-              {/* Urgency Message */}
-              <div className="text-center">
-                <p className="text-xs opacity-80">
-                  <span className="font-semibold">⏰ Don't wait for tomorrow.</span> 
-                  <span className="inline ml-2">Recovery starts with one call.</span>
-                </p>
-              </div>
+          <div className="bg-gradient-to-r from-[#0077C8] to-[#16A53F] rounded-2xl p-6 md:p-8 text-white max-w-3xl mx-auto">
+            <h3 className="text-xl md:text-2xl font-bold mb-3">
+              Ready to Start Your Recovery Journey?
+            </h3>
+            <p className="text-base md:text-lg mb-4 opacity-90">
+              Join thousands of patients who have found lasting recovery with NWIH
+            </p>
+            <div className="flex justify-center">
+              <a 
+                href="tel:253-200-0300" 
+                className="bg-white text-[#0077C8] px-6 py-3 rounded-xl font-semibold text-base hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
+                Start Recovery Now
+              </a>
             </div>
           </div>
         </div>
