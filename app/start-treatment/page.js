@@ -493,12 +493,7 @@ const StartTreatment = () => {
             </Link>
           </div>
           
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 max-w-2xl mx-auto">
-            <p className="text-lg font-medium">
-              <strong>24/7 Support Available</strong> - Recovery doesn't wait for business hours. 
-              Our team is here to help you take the first step toward a better life.
-            </p>
-          </div>
+          
         </div>
       </section>
       

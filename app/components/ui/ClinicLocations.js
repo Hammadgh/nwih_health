@@ -22,15 +22,15 @@ const ClinicLocations = () => {
       {/* Map Background with opacity */}
       <div className="absolute inset-0 opacity-100">
         <img 
-          src="/mapback.png" 
-          alt="Washington State Map with NWIH Clinic Locations" 
-          className="w-full h-full object-cover"
-          style={{ filter: 'grayscale(20%)' }}
+          src="/high_quality_map.png" 
+          alt="High Quality Washington State Map with NWIH Clinic Locations" 
+          className="w-full h-full object-cover object-center scale-105 transition-transform duration-1000"
+          style={{ filter: 'grayscale(5%) brightness(1.05)' }}
         />
       </div>
       
-      {/* Gradient overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-blue-50/70"></div>
+      {/* Gradient overlay for better text readability - reduced opacity to show more map */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white/60 to-blue-50/50"></div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
@@ -49,7 +49,7 @@ const ClinicLocations = () => {
         <div className="w-full">
 
           {/* Location Information */}
-          <div className="bg-white/95 backdrop-blur-sm rounded-xl sm:rounded-2xl shadow-xl border border-gray-100 p-4 sm:p-6 lg:p-8">
+          <div className="bg-white/80 backdrop-blur-md rounded-xl sm:rounded-2xl shadow-2xl border border-gray-200/50 p-4 sm:p-6 lg:p-8">
             <div className="flex flex-col sm:flex-row sm:items-center mb-6 sm:mb-8">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#0077C8] to-[#16A53F] rounded-lg sm:rounded-xl flex items-center justify-center mr-3 sm:mr-4 mb-3 sm:mb-0">
                 <FaDirections className="w-5 h-5 sm:w-6 sm:h-6 text-white" />

@@ -33,7 +33,7 @@ const WhyChooseNWIH = () => {
     {
       icon: <MdStar className="w-6 h-6" />,
       title: "Proven Results",
-      description: "Thousands of patients have achieved lasting recovery."
+      description: "Thousands of customers have achieved lasting recovery."
     }
   ];
 

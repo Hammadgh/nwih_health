@@ -8,19 +8,19 @@ const WhatToExpect = () => {
   {
     step: "01",
     title: "Initiation",
-    description: "Walk-in or scheduled appointments. Complete medical assessment and treatment planning.",
+    description: "Your recovery starts here. Whether you walk in or schedule an appointment, our team will provide a complete medical assessment and create a personalized treatment plan designed for your needs.",
     icon: <FaUserMd className="w-6 h-6" />
   },
   {
     step: "02", 
     title: "Stabilization",
-    description: "Begin medication-assisted treatment with daily monitoring and dose adjustments.",
+    description: "Begin medication-assisted treatment in a safe and supportive environment. We closely monitor your progress, adjust doses as needed, and help you gain stability and confidence on your recovery path.",
     icon: <FaPills className="w-6 h-6" />
   },
   {
     step: "03",
     title: "Maintenance", 
-    description: "Long-term recovery support with counseling, therapy, and relapse prevention.",
+    description: "Stay on track with long-term support. Through counseling, therapy, relapse prevention, and continued medical care, we’ll help you build the tools and resilience for lasting recovery.",
     icon: <MdSupport className="w-6 h-6" />
   }
 ];
@@ -177,7 +177,7 @@ const WhatToExpect = () => {
               Ready to Start Your Recovery Journey?
             </h3>
             <p className="text-base md:text-lg mb-4 opacity-90">
-              Join thousands of patients who have found lasting recovery with NWIH
+              Join thousands of customers who have found lasting recovery with NWIH
             </p>
             <div className="flex justify-center">
               <a 
