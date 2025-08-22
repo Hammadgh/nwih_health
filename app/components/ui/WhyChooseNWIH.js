@@ -7,68 +7,74 @@ const WhyChooseNWIH = () => {
   const services = [
     {
       icon: <FaClock className="w-6 h-6" />,
-      title: "Immediate Access",
-      description: "Same-day appointments and walk-in availability when possible."
+      title: "Same-Day Recovery Start",
+      description: "Walk-in MAT treatment with immediate access to addiction medicine specialists. No waiting, start your recovery journey today."
     },
     {
       icon: <FaShieldAlt className="w-6 h-6" />,
-      title: "Evidence-Based Treatment",
-      description: "Proven MAT protocols with comprehensive support services."
+      title: "Proven MAT Treatment",
+      description: "Evidence-based medication-assisted treatment for opioid addiction recovery. Clinically proven to reduce cravings and prevent relapse."
     },
     {
       icon: <FaHeart className="w-6 h-6" />,
-      title: "Integrated Care",
-      description: "Medical, counseling, and support services all in one place."
+      title: "Compassionate Addiction Care",
+      description: "Non-judgmental treatment from experienced recovery professionals who understand the challenges of addiction and recovery."
     },
     {
       icon: <FaUsers className="w-6 h-6" />,
-      title: "Compassionate Care",
-      description: "Understanding staff who have walked the recovery path."
+      title: "Complete Recovery Services",
+      description: "Medical treatment, counseling, and support all in one location. Comprehensive care designed for lasting recovery success."
     },
     {
       icon: <FaMapMarkerAlt className="w-6 h-6" />,
-      title: "Convenient Locations",
-      description: "Four clinics across Washington with in-house pharmacy."
+      title: "Washington MAT Clinics",
+      description: "Multiple addiction treatment centers across Washington with on-site pharmacies for convenient, accessible care."
     },
     {
       icon: <MdStar className="w-6 h-6" />,
-      title: "Proven Results",
-      description: "Thousands of customers have achieved lasting recovery."
+      title: "Trusted Recovery Results",
+      description: "Thousands of patients successfully treated for opioid addiction with proven long-term recovery outcomes and ongoing support."
     }
   ];
 
   return (
     <section className="py-16 md:py-20 bg-gradient-to-br from-gray-50 to-white">
-      <div className="container mx-auto px-4">
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16">
         {/* Main Heading */}
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
             Why Choose <span className="text-[#0077C8]">NWIH</span>
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-600 max-w-5xl mx-auto leading-relaxed">
             We specialize in Medication-Assisted Treatment (MAT) using proven protocols to stabilize opioid and fentanyl use. 
             Every treatment plan includes comprehensive support for lasting recovery.
           </p>
         </div>
 
-        {/* Services Grid - Compact */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
+        {/* Services Grid - Enhanced Design */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 gap-6 md:gap-8 lg:gap-10 xl:gap-12 mb-12">
           {services.map((service, index) => (
             <div 
               key={index}
-              className="group bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-[#0077C8]/20"
+              className="group bg-white rounded-2xl p-6 md:p-6 lg:p-7 xl:p-8 2xl:p-10 shadow-lg hover:shadow-xl transition-all duration-300 border-0 hover:border-[#0077C8]/20 overflow-hidden relative"
             >
-              <div className="text-center mb-4">
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-[#0077C8] to-[#16A53F] rounded-xl text-white mb-3 group-hover:scale-105 transition-transform duration-300">
+              {/* Top accent line */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0077C8] to-[#16A53F] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              
+              <div className="text-center mb-6">
+                <div className="inline-flex items-center justify-center w-16 h-16 md:w-16 lg:w-18 bg-gradient-to-br from-[#0077C8] to-[#16A53F] rounded-2xl md:rounded-xl text-white mb-5 md:mb-4 shadow-lg group-hover:scale-105 transition-transform duration-300">
                   {service.icon}
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                <h3 className="text-2xl md:text-xl lg:text-2xl font-bold text-gray-900 mb-4 md:mb-3 leading-tight">
                   {service.title}
                 </h3>
               </div>
-              <p className="text-gray-600 text-sm leading-relaxed text-center">
+              <p className="text-lg md:text-base lg:text-lg text-gray-600 leading-relaxed text-center px-2">
                 {service.description}
               </p>
+              
+              {/* Bottom accent line */}
+              <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-[#16A53F] to-[#0077C8] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </div>
           ))}
         </div>
