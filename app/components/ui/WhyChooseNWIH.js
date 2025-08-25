@@ -8,7 +8,7 @@ const WhyChooseNWIH = () => {
     {
       icon: <FaClock className="w-6 h-6" />,
       title: "Same-Day Recovery Start",
-      description: "Walk-in MAT treatment with immediate access to addiction medicine specialists. No waiting, start your recovery journey today."
+      description: "Walk-in MAT treatment with immediate access to addiction medicine specialists. No waiting, start your recovery journey asap."
     },
     {
       icon: <FaShieldAlt className="w-6 h-6" />,

@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import HomeBanner from './components/ui/HomeBanner';
 import WhyChooseNWIH from './components/ui/WhyChooseNWIH';
+import CertificationCTA from './components/ui/CertificationCTA';
 import WhatToExpect from './components/ui/WhatToExpect';
 import InsuranceProviders from './components/ui/InsuranceProviders';
 import ClinicLocations from './components/ui/ClinicLocations';
@@ -21,6 +22,9 @@ export default function Home() {
         {/* Why Choose NWIH Section */}
         <WhyChooseNWIH />
 
+        {/* Certification CTA Section */}
+        <CertificationCTA />
+
         {/* What to Expect Section */}
         <WhatToExpect />
 
@@ -34,8 +38,8 @@ export default function Home() {
       </main>
       <Footer />
       
-      {/* Insurance Verification Popup */}
-      <InsurancePopup />
+      {/* Insurance Verification Popup
+      <InsurancePopup /> */}
     </>
   );
 }

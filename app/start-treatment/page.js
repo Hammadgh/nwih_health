@@ -2,10 +2,65 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const StartTreatment = () => {
+  const [openFAQ, setOpenFAQ] = useState(null);
+
+  // FAQ data
+  const faqs = [
+    {
+      id: 1,
+      question: "Why should I choose NWIH for treatment?",
+      answer: "We believe SUD is a chronic disease and use a holistic approach to treat Substance Use Disorder by attending to all aspects of our patient's life. Our differentiator is the evidence-based, integrated treatment program to heal your body, your emotions, and your outlook on life, leading you to recovery."
+    },
+    {
+      id: 2,
+      question: "How do you treat SUD at NWIH?",
+      answer: "We employ an integrated treatment plan that attends to SUD patients' chemical, biological, psychological, and social states by providing medications, talk therapy, peer counseling, primary care, wound care, and Hepatitis C treatment. Effective treatment attends to multiple needs of the individual—physical, mental and social health."
+    },
+    {
+      id: 3,
+      question: "What is MAT (Medication Assisted Treatment)?",
+      answer: "Medication assisted treatment (MAT) is an evidence-based approach that combines medication with counseling and behavioral therapies, counseling, and regular drug screens for the treatment of Substance Use Disorder. This comprehensive approach addresses both the physical and psychological aspects of addiction."
+    },
+    {
+      id: 4,
+      question: "What medications do you prescribe for SUD?",
+      answer: "We prescribe Methadone, Naltrexone and Buprenorphine products. These FDA-approved medications are proven to be effective in treating opioid use disorder and are prescribed based on your individual needs and medical history."
+    },
+    {
+      id: 5,
+      question: "How can I get my prescription?",
+      answer: "To get your prescription, you will need to call any one of our clinics and schedule an appointment to see one of our providers. We also offer Virtual visits. Call 253-503-0226 to schedule your appointment."
+    },
+    {
+      id: 6,
+      question: "How long does it take to treat SUD?",
+      answer: "SUD is a chronic brain disease. Utilizing a holistic approach to address the root cause of the problem, significant complications and progression of the disease can be controlled and halted. Treatment duration varies by individual, but we provide ongoing support throughout your recovery journey."
+    },
+    {
+      id: 7,
+      question: "What other services does NWIH offer?",
+      answer: "We offer many services related to the integrated treatment plan for SUD patients such as psychiatric and mental health counseling, peer counseling and recovery coaching, as well as wound and Hepatitis C care. Our comprehensive approach addresses all aspects of recovery."
+    },
+    {
+      id: 8,
+      question: "How can I refer a loved one to NWIH?",
+      answer: "Call our referrals line at 253-200-0300. We accept referrals from local jails, drug courts, needle exchange programs and other community organizations. And of course, from friends and family. We're here to help guide you through the referral process."
+    },
+    {
+      id: 9,
+      question: "What does Integrated Treatment mean?",
+      answer: "NWIH believes in treating SUD patients with an integrated health plan that combines Medication Assisted Treatment with counseling services to heal patients' chemical, biological, psychological, and social states by providing medications, talk therapy, peer counseling, primary care, wound care, and Hepatitis C treatment."
+    }
+  ];
+
+  const toggleFAQ = (id) => {
+    setOpenFAQ(openFAQ === id ? null : id);
+  };
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       <Header />
@@ -448,6 +503,59 @@ const StartTreatment = () => {
                   Multiple clinics across Washington with in-house pharmacy
                 </p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-12 md:py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-4 md:mb-6">
+                Frequently Asked Questions About Treatment
+              </h2>
+              <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
+                Get answers to common questions about our treatment approach and recovery process
+              </p>
+              <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-[#0077C8] to-[#16A53F] mx-auto mt-4 md:mt-6"></div>
+            </div>
+            
+            <div className="space-y-3 md:space-y-4">
+              {faqs.map((faq) => (
+                <div key={faq.id} className="bg-white rounded-lg md:rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300">
+                  <button
+                    onClick={() => toggleFAQ(faq.id)}
+                    className="w-full px-4 md:px-6 py-4 md:py-5 text-left focus:outline-none focus:ring-2 focus:ring-[#0077C8] focus:ring-opacity-50 rounded-lg md:rounded-xl"
+                  >
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-base md:text-lg lg:text-xl font-semibold text-gray-800 pr-4">
+                        {faq.question}
+                      </h3>
+                      <div className={`flex-shrink-0 w-6 h-6 md:w-7 md:h-7 transition-transform duration-300 ${
+                        openFAQ === faq.id ? 'rotate-180' : ''
+                      }`}>
+                        <svg className="w-full h-full text-[#0077C8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+                  
+                  <div className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    openFAQ === faq.id ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  }`}>
+                    <div className="px-4 md:px-6 pb-4 md:pb-5">
+                      <div className="border-t border-gray-100 pt-4 md:pt-5">
+                        <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>

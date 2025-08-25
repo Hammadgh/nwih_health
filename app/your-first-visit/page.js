@@ -9,6 +9,7 @@ import Footer from '../components/Footer';
 const YourFirstVisit = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [openFAQ, setOpenFAQ] = useState(null);
   const sliderRef = useRef(null);
 
   const visitSteps = [
@@ -112,6 +113,44 @@ const YourFirstVisit = () => {
 
     return () => clearInterval(interval);
   }, [isAnimating]);
+
+  // FAQ data
+  const faqs = [
+    {
+      id: 1,
+      question: "How do I recognize if I have a Substance Use Disorder?",
+      answer: "Substance use disorders can present in many different ways. If you feel you must use a substance to function, manage stress in relationships, or are struggling to fulfill major life obligations, there may be a problem. Our providers use evidence-based techniques to properly diagnose and treat substance use disorders."
+    },
+    {
+      id: 2,
+      question: "What should I bring to my first visit?",
+      answer: "Bring a valid photo ID, insurance card (if you have coverage), list of current medications, payment method for any applicable fees, and plan for 2-3 hours for your complete initial assessment. You can also bring a trusted friend or family member for support."
+    },
+    {
+      id: 3,
+      question: "How long does my first visit take?",
+      answer: "Your first visit typically takes 2-3 hours total. This includes check-in and paperwork (15-20 minutes), initial assessment (45-60 minutes), treatment plan development (30-45 minutes), and treatment initiation (30-45 minutes). We ensure you leave with a clear plan and begin treatment the same day."
+    },
+    {
+      id: 4,
+      question: "Can I start treatment on my first visit?",
+      answer: "Yes! We offer same-day treatment initiation. After your assessment and treatment plan development, you'll receive your first dose of medication and schedule your next appointment. You'll return the next day for medication pickup and begin your daily routine."
+    },
+    {
+      id: 5,
+      question: "What happens after my first visit?",
+      answer: "After your first visit, you'll return the next day for medication pickup and begin your daily medication routine. During your first week, you'll have regular check-ins with our medical team, potential medication adjustments, and begin counseling sessions and recovery coaching programs."
+    },
+    {
+      id: 6,
+      question: "How can I get a copy of my medical records?",
+      answer: "You can contact our clinics for more information on obtaining secure medical records. Call us at 253-200-0300 and our team will guide you through the process of requesting your medical records securely and efficiently."
+    }
+  ];
+
+  const toggleFAQ = (id) => {
+    setOpenFAQ(openFAQ === id ? null : id);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
@@ -504,6 +543,59 @@ const YourFirstVisit = () => {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-12 md:py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12 md:mb-16">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-4 md:mb-6">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
+                Get answers to common questions about your first visit and treatment process
+              </p>
+              <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-[#0077C8] to-[#16A53F] mx-auto mt-4 md:mt-6"></div>
+            </div>
+            
+            <div className="space-y-3 md:space-y-4">
+              {faqs.map((faq) => (
+                <div key={faq.id} className="bg-white rounded-lg md:rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300">
+                  <button
+                    onClick={() => toggleFAQ(faq.id)}
+                    className="w-full px-4 md:px-6 py-4 md:py-5 text-left focus:outline-none focus:ring-2 focus:ring-[#0077C8] focus:ring-opacity-50 rounded-lg md:rounded-xl"
+                  >
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-base md:text-lg lg:text-xl font-semibold text-gray-800 pr-4">
+                        {faq.question}
+                      </h3>
+                      <div className={`flex-shrink-0 w-6 h-6 md:w-7 md:h-7 transition-transform duration-300 ${
+                        openFAQ === faq.id ? 'rotate-180' : ''
+                      }`}>
+                        <svg className="w-full h-full text-[#0077C8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </div>
+                  </button>
+                  
+                  <div className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    openFAQ === faq.id ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                  }`}>
+                    <div className="px-4 md:px-6 pb-4 md:pb-5">
+                      <div className="border-t border-gray-100 pt-4 md:pt-5">
+                        <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                          {faq.answer}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
