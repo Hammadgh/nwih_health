@@ -9,54 +9,58 @@ import Footer from '../components/Footer';
 const StartTreatment = () => {
   const [openFAQ, setOpenFAQ] = useState(null);
 
-  // FAQ data
+  // FAQ data (SEO-focused for treatment page)
   const faqs = [
     {
       id: 1,
-      question: "Why should I choose NWIH for treatment?",
-      answer: "We believe SUD is a chronic disease and use a holistic approach to treat Substance Use Disorder by attending to all aspects of our patient's life. Our differentiator is the evidence-based, integrated treatment program to heal your body, your emotions, and your outlook on life, leading you to recovery."
+      question: "What is Medication‑Assisted Treatment (MAT) for opioid addiction?",
+      answer: "MAT uses FDA‑approved medications—methadone, buprenorphine, or naltrexone—plus counseling to reduce cravings, prevent withdrawal, and stabilize long‑term recovery."
     },
     {
       id: 2,
-      question: "How do you treat SUD at NWIH?",
-      answer: "We employ an integrated treatment plan that attends to SUD patients' chemical, biological, psychological, and social states by providing medications, talk therapy, peer counseling, primary care, wound care, and Hepatitis C treatment. Effective treatment attends to multiple needs of the individual—physical, mental and social health."
+      question: "Do you offer same‑day opioid treatment in Washington?",
+      answer: "Yes. We provide same‑day appointments and MAT initiation when clinically appropriate. Call 253‑200‑0300 to start today."
     },
     {
       id: 3,
-      question: "What is MAT (Medication Assisted Treatment)?",
-      answer: "Medication assisted treatment (MAT) is an evidence-based approach that combines medication with counseling and behavioral therapies, counseling, and regular drug screens for the treatment of Substance Use Disorder. This comprehensive approach addresses both the physical and psychological aspects of addiction."
+      question: "Can I receive Hepatitis C testing and treatment during addiction care?",
+      answer: "Yes. We offer on‑site Hepatitis C screening and treatment alongside MAT to protect liver health and prevent complications."
     },
     {
       id: 4,
-      question: "What medications do you prescribe for SUD?",
-      answer: "We prescribe Methadone, Naltrexone and Buprenorphine products. These FDA-approved medications are proven to be effective in treating opioid use disorder and are prescribed based on your individual needs and medical history."
+      question: "What counseling is included with MAT at NWIH?",
+      answer: "Integrated chemical dependency counseling, mental health counseling, peer support, and recovery coaching tailored to your goals."
     },
     {
       id: 5,
-      question: "How can I get my prescription?",
-      answer: "To get your prescription, you will need to call any one of our clinics and schedule an appointment to see one of our providers. We also offer Virtual visits. Call 253-503-0226 to schedule your appointment."
+      question: "Methadone vs. buprenorphine vs. naltrexone—what’s the difference?",
+      answer: "All are evidence‑based for OUD. Methadone and buprenorphine reduce withdrawal/cravings; naltrexone blocks opioid effects. Your provider selects what fits your needs."
     },
     {
       id: 6,
-      question: "How long does it take to treat SUD?",
-      answer: "SUD is a chronic brain disease. Utilizing a holistic approach to address the root cause of the problem, significant complications and progression of the disease can be controlled and halted. Treatment duration varies by individual, but we provide ongoing support throughout your recovery journey."
+      question: "Do you accept Medicaid, Medicare, and major insurers?",
+      answer: "Yes. We accept many plans including Medicaid and Medicare. Coverage varies—call to verify your benefits."
     },
     {
       id: 7,
-      question: "What other services does NWIH offer?",
-      answer: "We offer many services related to the integrated treatment plan for SUD patients such as psychiatric and mental health counseling, peer counseling and recovery coaching, as well as wound and Hepatitis C care. Our comprehensive approach addresses all aspects of recovery."
-    },
-    {
-      id: 8,
-      question: "How can I refer a loved one to NWIH?",
-      answer: "Call our referrals line at 253-200-0300. We accept referrals from local jails, drug courts, needle exchange programs and other community organizations. And of course, from friends and family. We're here to help guide you through the referral process."
-    },
-    {
-      id: 9,
-      question: "What does Integrated Treatment mean?",
-      answer: "NWIH believes in treating SUD patients with an integrated health plan that combines Medication Assisted Treatment with counseling services to heal patients' chemical, biological, psychological, and social states by providing medications, talk therapy, peer counseling, primary care, wound care, and Hepatitis C treatment."
+      question: "What ongoing supports help me stay in recovery?",
+      answer: "Recovery coaching, peer counseling, mental health therapy, and convenient telehealth options to maintain progress."
     }
   ];
+
+  // Structured data for search engines (FAQPage)
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: f.answer,
+      },
+    })),
+  };
 
   const toggleFAQ = (id) => {
     setOpenFAQ(openFAQ === id ? null : id);
@@ -157,7 +161,7 @@ const StartTreatment = () => {
               
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-[#0077C8] mb-1">8+</div>
+                  <div className="text-3xl font-bold text-[#0077C8] mb-1">Multiple</div>
                   <div className="text-sm text-gray-600">Clinic Locations</div>
                 </div>
                 {/* <div className="text-center">
@@ -175,28 +179,32 @@ const StartTreatment = () => {
               </div>
               
               <div className="bg-white p-6 rounded-xl border border-gray-200/50">
-                <div className="flex items-center justify-center space-x-2 mb-3">
-                  <div className="flex -space-x-1">
-                    <div className="w-8 h-8 bg-[#0077C8] rounded-full flex items-center justify-center">
-                      <span className="text-white text-sm font-semibold">L</span>
+                <div className="text-center">
+                  <h4 className="text-lg font-semibold text-gray-800 mb-3">Convenient Locations Across Washington</h4>
+                  <div className="grid grid-cols-2 gap-3 text-sm">
+                    <div className="flex items-center justify-center space-x-2">
+                      <div className="w-2 h-2 bg-[#0077C8] rounded-full"></div>
+                      <span className="text-gray-700">Lakewood</span>
                     </div>
-                    <div className="w-8 h-8 bg-[#16A53F] rounded-full flex items-center justify-center">
-                      <span className="text-white text-sm font-semibold">S</span>
+                    <div className="flex items-center justify-center space-x-2">
+                      <div className="w-2 h-2 bg-[#16A53F] rounded-full"></div>
+                      <span className="text-gray-700">South Tacoma</span>
                     </div>
-                    <div className="w-8 h-8 bg-[#0077C8] rounded-full flex items-center justify-center">
-                      <span className="text-white text-sm font-semibold">W</span>
+                    <div className="flex items-center justify-center space-x-2">
+                      <div className="w-2 h-2 bg-[#0077C8] rounded-full"></div>
+                      <span className="text-gray-700">Westgate</span>
                     </div>
-                    <div className="w-8 h-8 bg-[#16A53F] rounded-full flex items-center justify-center">
-                      <span className="text-white text-sm font-semibold">P</span>
-                    </div>
-                    <div className="w-8 h-8 bg-[#16A53F] rounded-full flex items-center justify-center">
-                      <span className="text-white text-sm font-semibold">P</span>
+                    <div className="flex items-center justify-center space-x-2">
+                      <div className="w-2 h-2 bg-[#16A53F] rounded-full"></div>
+                      <span className="text-gray-700">Parkland</span>
                     </div>
                   </div>
+                  <div className="mt-3 pt-3 border-t border-gray-100">
+                    <p className="text-xs text-gray-600">
+                      <strong>Same-day appointments available</strong> at all locations
+                    </p>
+                  </div>
                 </div>
-                <p className="text-center text-gray-700 font-medium">
-                  <span className="text-[#0077C8] font-semibold">Lakewood • SwTacoma • Westgate • Parkland • PCA </span>
-                </p>
               </div>
             </div>
           </div>
@@ -605,6 +613,12 @@ const StartTreatment = () => {
         </div>
       </section>
       
+      {/* SEO: FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       <Footer />
     </div>
   );

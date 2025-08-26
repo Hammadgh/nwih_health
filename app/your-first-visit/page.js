@@ -114,39 +114,58 @@ const YourFirstVisit = () => {
     return () => clearInterval(interval);
   }, [isAnimating]);
 
-  // FAQ data
+  // FAQ data (SEO-focused for first visit page)
   const faqs = [
     {
       id: 1,
-      question: "How do I recognize if I have a Substance Use Disorder?",
-      answer: "Substance use disorders can present in many different ways. If you feel you must use a substance to function, manage stress in relationships, or are struggling to fulfill major life obligations, there may be a problem. Our providers use evidence-based techniques to properly diagnose and treat substance use disorders."
+      question: "What should I bring to my first visit?",
+      answer: "Photo ID, insurance card (if any), list of medications, payment method, and plan for a 2–3 hour visit."
     },
     {
       id: 2,
-      question: "What should I bring to my first visit?",
-      answer: "Bring a valid photo ID, insurance card (if you have coverage), list of current medications, payment method for any applicable fees, and plan for 2-3 hours for your complete initial assessment. You can also bring a trusted friend or family member for support."
+      question: "How long does the first appointment take?",
+      answer: "Typically 2–3 hours: check‑in, comprehensive assessment, treatment planning, and—when appropriate—same‑day MAT start."
     },
     {
       id: 3,
-      question: "How long does my first visit take?",
-      answer: "Your first visit typically takes 2-3 hours total. This includes check-in and paperwork (15-20 minutes), initial assessment (45-60 minutes), treatment plan development (30-45 minutes), and treatment initiation (30-45 minutes). We ensure you leave with a clear plan and begin treatment the same day."
+      question: "Can I start treatment on my first day?",
+      answer: "Yes. If clinically appropriate after assessment, we initiate MAT the same day and schedule medication pickup."
     },
     {
       id: 4,
-      question: "Can I start treatment on my first visit?",
-      answer: "Yes! We offer same-day treatment initiation. After your assessment and treatment plan development, you'll receive your first dose of medication and schedule your next appointment. You'll return the next day for medication pickup and begin your daily routine."
+      question: "Do you offer telehealth for follow‑ups?",
+      answer: "Yes. We offer virtual visits when appropriate to keep care convenient and consistent."
     },
     {
       id: 5,
-      question: "What happens after my first visit?",
-      answer: "After your first visit, you'll return the next day for medication pickup and begin your daily medication routine. During your first week, you'll have regular check-ins with our medical team, potential medication adjustments, and begin counseling sessions and recovery coaching programs."
+      question: "What happens after the first visit?",
+      answer: "You return for medication pickup, begin your routine, and start counseling and coaching with regular check‑ins."
     },
     {
       id: 6,
-      question: "How can I get a copy of my medical records?",
-      answer: "You can contact our clinics for more information on obtaining secure medical records. Call us at 253-200-0300 and our team will guide you through the process of requesting your medical records securely and efficiently."
+      question: "Is my information confidential?",
+      answer: "Yes. We follow HIPAA and 42 CFR Part 2 to protect your privacy and treatment records."
+    },
+    {
+      id: 7,
+      question: "Do you accept Medicaid, Medicare, and major insurance?",
+      answer: "Yes. Coverage varies by plan; call 253‑200‑0300 for quick verification."
     }
   ];
+
+  // Structured data for search engines (FAQPage)
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: f.answer,
+      },
+    })),
+  };
 
   const toggleFAQ = (id) => {
     setOpenFAQ(openFAQ === id ? null : id);
@@ -650,6 +669,12 @@ const YourFirstVisit = () => {
         </div>
       </section>
       
+      {/* SEO: FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
       <Footer />
     </div>
   );

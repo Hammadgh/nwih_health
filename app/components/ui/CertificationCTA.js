@@ -7,7 +7,7 @@ const CertificationCTA = () => {
         {/* Main Heading */}
         <div className="text-center mb-10 md:mb-12">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            We are a <span className="text-[#0077C8]">certified and licensed</span> treatment center
+            State-Licensed & <span className="text-[#0077C8]">Federally Certified Addiction</span> Treatment center
           </h2>
         </div>
 

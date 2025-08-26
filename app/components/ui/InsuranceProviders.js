@@ -60,9 +60,14 @@ const InsuranceProviders = () => {
             </h2>
           </div>
           <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-[#0077C8] to-[#16A53F] mx-auto mb-3 sm:mb-4"></div>
-          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          {/* <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             NWIH is in-network with leading insurance providers to make your recovery accessible and affordable.
-          </p>
+          </p> */}
+          <div className="mt-4 p-4 bg-gradient-to-r from-[#0077C8]/10 to-[#16A53F]/10 rounded-xl border border-[#0077C8]/20">
+            <p className="text-sm sm:text-base text-gray-700 font-medium">
+              <span className="text-[#0077C8] font-semibold">No upfront cost</span> - Even if you don't have insurance, we help you get enrolled with insurance coverage.
+            </p>
+          </div>
         </div>
 
         {/* Insurance Logos Section */}
