@@ -97,7 +97,7 @@ export default function CareersPage() {
         {/* Hero Section */}
         <section className="bg-gradient-to-r from-[#0077C8] to-[#005a9e] text-white">
           <div className="container mx-auto px-4 py-16">
-            <h1 className="text-3xl sm:text-4xl font-bold mb-3">Careers at Northwest Integrated Health</h1>
+            <h1 className="text-3xl sm:text-4xl font-bold mb-3">Careers at NWIH</h1>
             <p className="text-white/90 max-w-3xl">
               Join our mission-driven team delivering compassionate, evidence-based care. We’re growing and
               regularly add new roles. See current openings below.

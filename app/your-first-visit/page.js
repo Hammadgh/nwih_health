@@ -175,49 +175,68 @@ const YourFirstVisit = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       <Header />
       
-      {/* Hero Section */}
-      <section className="relative bg-white overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-5">
+      {/* Hero Section - Enhanced Professional Design */}
+      <section className="relative bg-gradient-to-br from-white via-blue-50/30 to-white overflow-hidden">
+        {/* Enhanced Background Pattern */}
+        <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0" style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230077C8' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
           }}></div>
         </div>
         
-        <div className="container mx-auto px-4 py-16 md:py-24 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#0077C8]/10 to-[#16A53F]/10 rounded-full border border-[#0077C8]/20 mb-6">
-              <div className="w-2 h-2 bg-[#0077C8] rounded-full mr-3"></div>
-              <span className="text-[#0077C8] font-semibold text-sm">What to Expect</span>
+        {/* Decorative Elements */}
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-[#0077C8]/10 to-[#16A53F]/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-br from-[#16A53F]/10 to-[#0077C8]/10 rounded-full blur-3xl"></div>
+        
+        <div className="container mx-auto px-6 lg:px-8 py-20 md:py-28 relative z-10">
+          <div className="max-w-5xl mx-auto text-center">
+            
+            {/* Professional Badge */}
+            <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#0077C8]/10 to-[#16A53F]/10 rounded-full border border-[#0077C8]/20 mb-8">
+              <div className="w-3 h-3 bg-[#0077C8] rounded-full mr-3 animate-pulse"></div>
+              <span className="text-[#0077C8] font-semibold text-sm tracking-wide">STEP-BY-STEP GUIDANCE</span>
             </div>
             
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight">
               Your First Visit
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#0077C8] to-[#16A53F]">
+              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#0077C8] to-[#16A53F] mt-2">
                 Made Simple
               </span>
             </h1>
             
-            <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
-              We know that taking the first step can feel overwhelming. That's why we've made your first visit 
-              as smooth and comfortable as possible. Here's exactly what to expect.
+            <p className="text-xl md:text-2xl text-gray-600 mb-10 leading-relaxed max-w-4xl mx-auto font-medium">
+              Taking the first step toward recovery shouldn't be complicated. Our streamlined process 
+              <span className="font-semibold text-gray-800"> gets you from arrival to treatment in just 2-3 hours</span>, 
+              with compassionate care every step of the way.
             </p>
             
-            {/* Quick Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-8 m-auto " >
-              <div className="text-center">
-                <div className="text-3xl font-bold text-[#0077C8] mb-1">2-3</div>
-                <div className="text-sm text-gray-600">Hours Total</div>
+            {/* Key Benefits Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12 max-w-4xl mx-auto">
+              <div className="flex items-center justify-center space-x-3 bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-gray-200/50">
+                <div className="w-8 h-8 bg-[#0077C8] rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <span className="text-gray-700 font-medium">Same-Day Start</span>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-[#16A53F] mb-1">Same</div>
-                <div className="text-sm text-gray-600">Day Start</div>
+              <div className="flex items-center justify-center space-x-3 bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-gray-200/50">
+                <div className="w-8 h-8 bg-[#16A53F] rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </div>
+                <span className="text-gray-700 font-medium">No Judgment</span>
               </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-[#0077C8] mb-1">8+</div>
-                <div className="text-sm text-gray-600">Clinic Options</div>
+              <div className="flex items-center justify-center space-x-3 bg-white/60 backdrop-blur-sm rounded-xl p-4 border border-gray-200/50">
+                <div className="w-8 h-8 bg-[#0077C8] rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <span className="text-gray-700 font-medium">Multiple Locations</span>
               </div>
-              
             </div>
           </div>
         </div>
@@ -620,54 +639,7 @@ const YourFirstVisit = () => {
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-[#0077C8] to-[#16A53F] text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}></div>
-        </div>
-        
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Take the First Step?
-          </h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
-            Your recovery journey starts with a single phone call or visit. 
-            Our compassionate team is ready to welcome you and guide you through every step.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <a 
-              href="tel:253-200-0300" 
-              className="group bg-white text-[#0077C8] px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-all duration-300 inline-flex items-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-3 group-hover:scale-110 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              Call Now: 253-200-0300
-            </a>
-            
-            <Link 
-              href="/find-clinic" 
-              className="group border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-[#0077C8] transition-all duration-300 inline-flex items-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-3 group-hover:scale-110 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-              Find Your Clinic
-            </Link>
-          </div>
-          
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 max-w-2xl mx-auto mt-8">
-            <p className="text-lg font-medium">
-              <strong>No Judgment, Just Help</strong> - We understand that recovery is a journey, 
-              and we're here to support you every step of the way with compassion and expertise.
-            </p>
-          </div>
-        </div>
-      </section>
+     
       
       {/* SEO: FAQ Schema */}
       <script

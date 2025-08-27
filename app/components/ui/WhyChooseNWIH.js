@@ -43,11 +43,11 @@ const WhyChooseNWIH = () => {
         {/* Main Heading */}
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 md:mb-6">
-            Why Choose <span className="text-[#0077C8]">NWIH</span>
+            Medication‑Assisted Treatment in <span className="text-[#0077C8]">Washington</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-5xl mx-auto leading-relaxed">
-            We specialize in Medication-Assisted Treatment (MAT) using proven protocols to stabilize opioid and fentanyl use. 
-            Every treatment plan includes comprehensive support for lasting recovery.
+            Same‑day starts, evidence‑based addiction care, and whole‑person support designed for lasting recovery. 
+            Expert MAT for opioid and fentanyl use—delivered with compassion and clinical excellence.
           </p>
         </div>
 

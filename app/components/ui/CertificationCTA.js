@@ -2,55 +2,78 @@
 
 const CertificationCTA = () => {
   return (
-    <section className="py-12 md:py-16 bg-gradient-to-br from-gray-50 to-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-12 md:py-16 relative overflow-hidden">
+      {/* Professional Background Design */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0077C8]/5 via-[#16A53F]/3 to-[#0077C8]/5"></div>
+      
+      {/* Decorative Elements */}
+      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#0077C8] via-[#16A53F] to-[#0077C8]"></div>
+      <div className="absolute bottom-0 right-0 w-full h-1 bg-gradient-to-r from-[#16A53F] via-[#0077C8] to-[#16A53F]"></div>
+      
+      {/* Subtle Pattern Overlay */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230077C8' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }}></div>
+      </div>
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Heading */}
-        <div className="text-center mb-10 md:mb-12">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            State-Licensed & <span className="text-[#0077C8]">Federally Certified Addiction</span> Treatment center
+        <div className="text-center mb-8 md:mb-12">
+          
+          
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
+            NWIH is a <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0077C8] to-[#16A53F]">State-Licensed & Federally Certified</span> Addiction Treatment Center
           </h2>
+          
+          <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
+            Our certifications and licenses ensure the highest standards of care and compliance with federal and state regulations
+          </p>
         </div>
 
         {/* Certification Logos */}
         <div className="grid grid-cols-3 gap-3 md:gap-8 lg:gap-10 max-w-5xl mx-auto">
           
-          {/* Washington State Department of Health Logo */}
-          <div className="text-center">
-            <div className="bg-white p-3 md:p-6 rounded-lg md:rounded-xl shadow-lg border border-gray-200 h-32 md:h-40 flex flex-col justify-center">
+                     {/* Washington State Department of Health Logo */}
+           <div className="text-center group">
+             <div className="bg-white/90 backdrop-blur-sm p-4 md:p-6 rounded-2xl shadow-xl border border-gray-200/50 h-28 md:h-32 flex flex-col justify-center hover:shadow-2xl hover:scale-105 transition-all duration-300">
               <div className="flex items-center justify-center flex-1">
                 <img 
                   src="/images/certifications/wasgington_state_health.png" 
                   alt="Washington State Department of Health" 
-                  className="h-16 md:h-32 w-auto object-contain"
+                  className="h-16 md:h-32 w-auto object-contain group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
             </div>
+            <p className="text-sm text-gray-600 mt-3 font-medium">Washington State Health</p>
           </div>
 
-          {/* SAMHSA Logo - Middle Position */}
-          <div className="text-center">
-            <div className="bg-white p-3 md:p-6 rounded-lg md:rounded-xl shadow-lg border border-gray-200 h-32 md:h-40 flex flex-col justify-center">
+                     {/* SAMHSA Logo - Middle Position */}
+           <div className="text-center group">
+             <div className="bg-white/90 backdrop-blur-sm p-4 md:p-6 rounded-2xl shadow-xl border border-gray-200/50 h-28 md:h-32 flex flex-col justify-center hover:shadow-2xl hover:scale-105 transition-all duration-300">
               <div className="flex items-center justify-center flex-1">
                 <img 
                   src="/images/certifications/samsha.png" 
                   alt="SAMHSA - Substance Abuse and Mental Health Services Administration" 
-                  className="h-16 md:h-32 w-auto object-contain"
+                  className="h-16 md:h-32 w-auto object-contain group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
             </div>
+            <p className="text-sm text-gray-600 mt-3 font-medium">SAMHSA Certified</p>
           </div>
 
-          {/* DEA Logo */}
-          <div className="text-center">
-            <div className="bg-white p-3 md:p-6 rounded-lg md:rounded-xl shadow-lg border border-gray-200 h-32 md:h-40 flex flex-col justify-center">
+                     {/* DEA Logo */}
+           <div className="text-center group">
+             <div className="bg-white/90 backdrop-blur-sm p-4 md:p-6 rounded-2xl shadow-xl border border-gray-200/50 h-28 md:h-32 flex flex-col justify-center hover:shadow-2xl hover:scale-105 transition-all duration-300">
               <div className="flex items-center justify-center flex-1">
                 <img 
                   src="/images/certifications/dea.png" 
                   alt="DEA - Drug Enforcement Administration" 
-                  className="h-16 md:h-32 w-auto object-contain"
+                  className="h-16 md:h-32 w-auto object-contain group-hover:scale-110 transition-transform duration-300"
                 />
               </div>
             </div>
+            <p className="text-sm text-gray-600 mt-3 font-medium">DEA Licensed</p>
           </div>
 
         </div>

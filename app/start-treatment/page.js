@@ -78,15 +78,10 @@ const StartTreatment = () => {
           }}></div>
         </div>
         
-        <div className="container mx-auto px-4 py-16 md:py-24 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="container mx-auto px-6 lg:px-8 py-16 md:py-24 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
             {/* Left Content */}
             <div className="text-left">
-              <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-[#0077C8]/10 to-[#16A53F]/10 rounded-full border border-[#0077C8]/20 mb-6">
-                <div className="w-2 h-2 bg-[#0077C8] rounded-full mr-3"></div>
-                <span className="text-[#0077C8] font-semibold text-sm">Immediate Help Available</span>
-              </div>
-              
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                 Your Recovery
                 <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#0077C8] to-[#16A53F]">
@@ -139,72 +134,86 @@ const StartTreatment = () => {
                   Start Recovery Now
                 </a>
                 
-                <Link 
-                  href="/find-clinic" 
-                  className="group border-2 border-[#0077C8] text-[#0077C8] px-8 py-4 rounded-xl font-semibold text-lg hover:bg-[#0077C8] hover:text-white transition-all duration-300 inline-flex items-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-3 group-hover:scale-110 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  Find Your Clinic
-                </Link>
+                
               </div>
             </div>
             
-            {/* Right Content - Professional Stats & Trust */}
-            <div className="bg-gradient-to-br from-gray-50 to-blue-50 p-8 rounded-2xl border border-gray-200/50">
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-bold text-gray-800 mb-2">Why Choose NWIH?</h3>
-                <p className="text-gray-600">Proven results with thousands of successful recoveries</p>
+            {/* Right Content - Professional KPIs & Trust Signals (improved) */}
+            <div className="bg-white/80 backdrop-blur-sm p-6 lg:p-8 rounded-2xl border border-gray-200 shadow-sm">
+              <div className="text-left mb-6">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Services Provided by NWIH</h3>
+                <p className="text-gray-600">Comprehensive addiction treatment and recovery support</p>
               </div>
-              
-              <div className="grid grid-cols-2 gap-6 mb-8">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-[#0077C8] mb-1">Multiple</div>
-                  <div className="text-sm text-gray-600">Clinic Locations</div>
+
+              {/* Service Categories Grid */}
+              <div className="grid grid-cols-2 gap-4 mb-6">
+                <div className="rounded-xl border border-gray-200 p-4 bg-gradient-to-br from-blue-50 to-blue-100">
+                  <div className="text-2xl font-extrabold text-[#0077C8] leading-none">Same‑Day</div>
+                  <div className="text-sm text-gray-700">Appointments available</div>
                 </div>
-                {/* <div className="text-center">
-                  <div className="text-3xl font-bold text-[#16A53F] mb-1">24/7</div>
-                  <div className="text-sm text-gray-600">Support Available</div>
-                </div> */}
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-[#0077C8] mb-1">Same-Day</div>
-                  <div className="text-sm text-gray-600">Appointments</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-[#16A53F] mb-1">Virtual</div>
-                  <div className="text-sm text-gray-600">Visit Options</div>
+                <div className="rounded-xl border border-gray-200 p-4 bg-gradient-to-br from-green-50 to-green-100">
+                  <div className="text-2xl font-extrabold text-[#16A53F] leading-none">Multiple</div>
+                  <div className="text-sm text-gray-700">Clinics across Washington</div>
                 </div>
               </div>
-              
-              <div className="bg-white p-6 rounded-xl border border-gray-200/50">
-                <div className="text-center">
-                  <h4 className="text-lg font-semibold text-gray-800 mb-3">Convenient Locations Across Washington</h4>
-                  <div className="grid grid-cols-2 gap-3 text-sm">
-                    <div className="flex items-center justify-center space-x-2">
-                      <div className="w-2 h-2 bg-[#0077C8] rounded-full"></div>
-                      <span className="text-gray-700">Lakewood</span>
-                    </div>
-                    <div className="flex items-center justify-center space-x-2">
-                      <div className="w-2 h-2 bg-[#16A53F] rounded-full"></div>
-                      <span className="text-gray-700">South Tacoma</span>
-                    </div>
-                    <div className="flex items-center justify-center space-x-2">
-                      <div className="w-2 h-2 bg-[#0077C8] rounded-full"></div>
-                      <span className="text-gray-700">Westgate</span>
-                    </div>
-                    <div className="flex items-center justify-center space-x-2">
-                      <div className="w-2 h-2 bg-[#16A53F] rounded-full"></div>
-                      <span className="text-gray-700">Parkland</span>
-                    </div>
+
+              {/* Services List */}
+              <div className="bg-gray-50 rounded-xl border border-gray-200 p-5 mb-6">
+                <h4 className="text-lg font-semibold text-gray-800 mb-4">Our Treatment Services</h4>
+                <div className="grid grid-cols-1 gap-3">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-[#0077C8] rounded-full"></div>
+                    <span className="text-sm text-gray-700">Medication Assisted Treatment (MAT)</span>
                   </div>
-                  <div className="mt-3 pt-3 border-t border-gray-100">
-                    <p className="text-xs text-gray-600">
-                      <strong>Same-day appointments available</strong> at all locations
-                    </p>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-[#16A53F] rounded-full"></div>
+                    <span className="text-sm text-gray-700">Hepatitis C Treatment</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-[#0077C8] rounded-full"></div>
+                    <span className="text-sm text-gray-700">Chemical Dependency Counseling</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-[#16A53F] rounded-full"></div>
+                    <span className="text-sm text-gray-700">Mental Health Counseling</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-[#0077C8] rounded-full"></div>
+                    <span className="text-sm text-gray-700">Peer Counseling</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-2 h-2 bg-[#16A53F] rounded-full"></div>
+                    <span className="text-sm text-gray-700">Recovery Coaching</span>
                   </div>
                 </div>
+              </div>
+
+              {/* Accreditation + Insurance confidence */}
+              <div className="bg-gray-50 rounded-xl border border-gray-200 p-5">
+                <p className="text-sm text-gray-700 mb-4">
+                  Evidence‑based care by licensed providers. Accredited and widely accepted by major insurers.
+                </p>
+                <div className="flex items-center gap-4 flex-wrap">
+                  <div className="h-8 w-auto flex items-center">
+                    <Image src="/images/certifications/samsha.png" alt="SAMHSA" width={80} height={32} className="h-8 w-auto object-contain" />
+                  </div>
+                  <div className="h-8 w-auto flex items-center">
+                    <Image src="/images/certifications/dea.png" alt="DEA" width={70} height={32} className="h-8 w-auto object-contain" />
+                  </div>
+                  <div className="h-8 w-auto flex items-center">
+                    <Image src="/images/certifications/wasgington_state_health.png" alt="WA State Health" width={120} height={32} className="h-8 w-auto object-contain" />
+                  </div>
+                </div>
+              </div>
+
+              {/* Small CTA */}
+              <div className="mt-6">
+                <Link href="/find-clinic" className="inline-flex items-center text-[#0077C8] font-semibold group">
+                  Find your nearest clinic
+                  <svg className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
               </div>
             </div>
           </div>
@@ -569,49 +578,7 @@ const StartTreatment = () => {
         </div>
       </section>
 
-      {/* Final CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-[#0077C8] to-[#16A53F] text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}></div>
-        </div>
-        
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Begin Your Recovery Journey?
-          </h2>
-          <p className="text-xl mb-8 max-w-3xl mx-auto leading-relaxed">
-            Don't wait another day. Our compassionate team is ready to help you start your path to recovery. 
-            Call now or visit any of our four convenient locations.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
-            <a 
-              href="tel:253-200-0300" 
-              className="group bg-white text-[#0077C8] px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-50 transition-all duration-300 inline-flex items-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-3 group-hover:scale-110 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              Start Now: 253-200-0300
-            </a>
-            
-            <Link 
-              href="/find-clinic" 
-              className="group border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-[#0077C8] transition-all duration-300 inline-flex items-center shadow-lg hover:shadow-xl transform hover:-translate-y-1"
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-3 group-hover:scale-110 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-              </svg>
-              Find Your Nearest Clinic
-            </Link>
-          </div>
-          
-          
-        </div>
-      </section>
+    
       
       {/* SEO: FAQ Schema */}
       <script

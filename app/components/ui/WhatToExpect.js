@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { FaPhone, FaUserMd, FaPills, FaHandshake, FaArrowRight, FaCheckCircle, FaArrowDown } from 'react-icons/fa';
 import { MdLocalHospital, MdPsychology, MdSupport } from 'react-icons/md';
 
@@ -168,6 +169,20 @@ const WhatToExpect = () => {
               </div>
             ))}
           </div>
+        </div>
+
+        {/* Compact CTA Button - Below Process Steps */}
+        <div className="text-center mt-12 md:mt-16">
+          <p className="text-lg text-gray-600 mb-6 max-w-2xl mx-auto">
+            Ready to learn more about starting your recovery journey?
+          </p>
+          <Link 
+            href="/start-treatment" 
+            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#0077C8] to-[#16A53F] text-white rounded-xl font-semibold text-base hover:from-[#005a9e] hover:to-[#128a35] transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+          >
+            Begin Your Recovery
+            <FaArrowRight className="w-4 h-4 ml-2" />
+          </Link>
         </div>
 
         {/* Call to Action - Ready to Start Your Recovery Journey */}

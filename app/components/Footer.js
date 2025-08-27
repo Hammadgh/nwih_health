@@ -5,7 +5,7 @@ import { FaMapMarkerAlt, FaPhone, FaDirections } from 'react-icons/fa';
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-gray-900 to-blue-900 text-white pt-12 pb-6">
+    <footer className="bg-gradient-to-r from-[#005BA0] to-[#005a9e] text-white pt-12 pb-6">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* About Us Column */}
@@ -23,12 +23,12 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/join-our-team" className="text-gray-300 hover:text-white transition-colors duration-200">
+                <Link href="/careers" className="text-gray-300 hover:text-white transition-colors duration-200">
                   Join Our Team
                 </Link>
               </li>
               <li>
-                <Link href="/contact-us" className="text-gray-300 hover:text-white transition-colors duration-200">
+                <Link href="/contact" className="text-gray-300 hover:text-white transition-colors duration-200">
                   Contact Us
                 </Link>
               </li>
@@ -102,7 +102,7 @@ export default function Footer() {
               <div className="relative z-10">
                 {/* Map Icon and Title */}
                 <div className="flex items-center mb-3">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-[#0077C8] to-[#16A53F] rounded-lg flex items-center justify-center mr-3">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-[#16A53F] rounded-lg flex items-center justify-center mr-3">
                     <FaMapMarkerAlt className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                   </div>
                   <div>
