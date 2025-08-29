@@ -28,12 +28,12 @@ const CertificationCTA = () => {
           
                      {/* Washington State Department of Health Logo */}
            <div className="text-center group">
-             <div className="bg-white/90 backdrop-blur-sm p-4 md:p-6 rounded-2xl shadow-xl border border-gray-200/50 h-28 md:h-32 flex flex-col justify-center hover:shadow-2xl hover:scale-105 transition-all duration-300">
+             <div className="bg-white/90 backdrop-blur-sm p-4 md:p-6 rounded-2xl shadow-xl border border-gray-200/50 h-28 md:h-32 flex flex-col justify-center hover:shadow-2xl ">
               <div className="flex items-center justify-center flex-1">
                 <img 
                   src="/images/certifications/wasgington_state_health.png" 
                   alt="Washington State Department of Health" 
-                  className="h-16 md:h-32 w-auto object-contain group-hover:scale-110 transition-transform duration-300"
+                  className="h-16 md:h-32 w-auto object-contain "
                 />
               </div>
             </div>
@@ -42,12 +42,12 @@ const CertificationCTA = () => {
 
                      {/* SAMHSA Logo - Middle Position */}
            <div className="text-center group">
-             <div className="bg-white/90 backdrop-blur-sm p-4 md:p-6 rounded-2xl shadow-xl border border-gray-200/50 h-28 md:h-32 flex flex-col justify-center hover:shadow-2xl hover:scale-105 transition-all duration-300">
+             <div className="bg-white/90 backdrop-blur-sm p-4 md:p-6 rounded-2xl shadow-xl border border-gray-200/50 h-28 md:h-32 flex flex-col justify-center hover:shadow-2xl  ">
               <div className="flex items-center justify-center flex-1">
                 <img 
                   src="/images/certifications/samsha.png" 
                   alt="SAMHSA - Substance Abuse and Mental Health Services Administration" 
-                  className="h-16 md:h-32 w-auto object-contain group-hover:scale-110 transition-transform duration-300"
+                  className="h-16 md:h-32 w-auto object-contain "
                 />
               </div>
             </div>
@@ -56,12 +56,12 @@ const CertificationCTA = () => {
 
                      {/* DEA Logo */}
            <div className="text-center group">
-             <div className="bg-white/90 backdrop-blur-sm p-4 md:p-6 rounded-2xl shadow-xl border border-gray-200/50 h-28 md:h-32 flex flex-col justify-center hover:shadow-2xl hover:scale-105 transition-all duration-300">
+             <div className="bg-white/90 backdrop-blur-sm p-4 md:p-6 rounded-2xl shadow-xl border border-gray-200/50 h-28 md:h-32 flex flex-col justify-center hover:shadow-2xl ">
               <div className="flex items-center justify-center flex-1">
                 <img 
                   src="/images/certifications/dea.png" 
                   alt="DEA - Drug Enforcement Administration" 
-                  className="h-16 md:h-32 w-auto object-contain group-hover:scale-110 transition-transform duration-300"
+                  className="h-16 md:h-32 w-auto object-contain "
                 />
               </div>
             </div>
