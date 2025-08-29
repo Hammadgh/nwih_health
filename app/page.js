@@ -7,6 +7,7 @@ import WhyChooseNWIH from './components/ui/WhyChooseNWIH';
 import CertificationCTA from './components/ui/CertificationCTA';
 import WhatToExpect from './components/ui/WhatToExpect';
 import InsuranceProviders from './components/ui/InsuranceProviders';
+import FullWidthCTA from './components/ui/FullWidthCTA';
 import ClinicLocations from './components/ui/ClinicLocations';
 
 import InsurancePopup from './components/ui/InsurancePopup';
@@ -24,9 +25,12 @@ export default function Home() {
 
         {/* Certification CTA Section */}
         <CertificationCTA />
-
+        {/* Full-width CTA */}
+            <FullWidthCTA />
         {/* What to Expect Section */}
         <WhatToExpect />
+
+        
 
         
 

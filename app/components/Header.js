@@ -159,7 +159,7 @@ export default function Header() {
                 <span className="nav-link-text">Find The Nearest Clinic</span>
               </Link>
               
-              <Link href="/patient-resources" className="nav-link text-[#0077C8] text-sm 2xl:text-base relative z-50" style={{ pointerEvents: 'auto' }}>
+              <Link href="/patient-support" className="nav-link text-[#0077C8] text-sm 2xl:text-base relative z-50" style={{ pointerEvents: 'auto' }}>
                 <span className="nav-link-text">Patient Support</span>
               </Link>
             </nav>
@@ -214,7 +214,7 @@ export default function Header() {
                 <Link href="/find-clinic" className="nav-link py-3 border-b border-gray-50 text-[#0077C8] text-base" onClick={() => setIsMenuOpen(false)}>
                   Find The Nearest Clinic
                 </Link>
-                <Link href="/patient-resources" className="nav-link py-3 border-b border-gray-50 text-[#0077C8] text-base" onClick={() => setIsMenuOpen(false)}>
+                <Link href="/patient-support" className="nav-link py-3 border-b border-gray-50 text-[#0077C8] text-base" onClick={() => setIsMenuOpen(false)}>
                   Patient Support
                 </Link>
                 

@@ -6,16 +6,8 @@ const CertificationCTA = () => {
       {/* Professional Background Design */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#0077C8]/5 via-[#16A53F]/3 to-[#0077C8]/5"></div>
       
-      {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#0077C8] via-[#16A53F] to-[#0077C8]"></div>
-      <div className="absolute bottom-0 right-0 w-full h-1 bg-gradient-to-r from-[#16A53F] via-[#0077C8] to-[#16A53F]"></div>
+     
       
-      {/* Subtle Pattern Overlay */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230077C8' fill-opacity='0.4'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-        }}></div>
-      </div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Main Heading */}

@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="bg-gradient-to-r from-[#005BA0] to-[#005a9e] text-white pt-12 pb-6">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About Us Column */}
           <div>
             <h3 className="text-xl font-bold mb-4 text-white">About Us</h3>
@@ -17,11 +17,7 @@ export default function Footer() {
                   Get to Know Us
                 </Link>
               </li>
-              <li>
-                <Link href="/our-providers" className="text-gray-300 hover:text-white transition-colors duration-200">
-                  Our Providers
-                </Link>
-              </li>
+            
               <li>
                 <Link href="/careers" className="text-gray-300 hover:text-white transition-colors duration-200">
                   Join Our Team
@@ -44,41 +40,11 @@ export default function Footer() {
                   Begin Your Recovery
                 </Link>
               </li>
+             
+             
               <li>
-                <Link href="/remote-check-in" className="text-gray-300 hover:text-white transition-colors duration-200">
-                  Remote Check In
-                </Link>
-              </li>
-              <li>
-                <Link href="/patient-portal" className="text-gray-300 hover:text-white transition-colors duration-200">
-                  Patient Portal & Documents
-                </Link>
-              </li>
-              <li>
-                <Link href="/insurance" className="text-gray-300 hover:text-white transition-colors duration-200">
-                  Insurance We Accept
-                </Link>
-              </li>
-            </ul>
-          </div>
-          
-          {/* For Partners Column */}
-          <div>
-            <h3 className="text-xl font-bold mb-4 text-white">For Partners</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link href="/refer-patient" className="text-gray-300 hover:text-white transition-colors duration-200">
-                  Refer a Patient
-                </Link>
-              </li>
-              <li>
-                <Link href="/grants" className="text-gray-300 hover:text-white transition-colors duration-200">
-                  Grants and Research
-                </Link>
-              </li>
-              <li>
-                <Link href="/news" className="text-gray-300 hover:text-white transition-colors duration-200">
-                  In the News
+                <Link href="/your-first-visit" className="text-gray-300 hover:text-white transition-colors duration-200">
+                  Your First Visit
                 </Link>
               </li>
             </ul>
@@ -165,7 +131,7 @@ export default function Footer() {
           
           <div className="mt-6 text-center md:text-left">
             <div className="flex flex-col md:flex-row justify-between items-center">
-              <div className="flex space-x-4 mb-4 md:mb-0">
+              {/* <div className="flex space-x-4 mb-4 md:mb-0">
                 <Link href="/contact-us" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm">
                   Contact Us
                 </Link>
@@ -175,7 +141,7 @@ export default function Footer() {
                 <Link href="/privacy-practices" className="text-gray-300 hover:text-white transition-colors duration-200 text-sm">
                   Notice of Privacy Practices
                 </Link>
-              </div>
+              </div> */}
               <p className="text-gray-300 text-sm">
                 Copyright © {new Date().getFullYear()} NWIH. All Rights Reserved.
               </p>
