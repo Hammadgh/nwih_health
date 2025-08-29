@@ -160,7 +160,7 @@ export default function Header() {
               </Link>
               
               <Link href="/patient-support" className="nav-link text-[#0077C8] text-sm 2xl:text-base relative z-50" style={{ pointerEvents: 'auto' }}>
-                <span className="nav-link-text">Patient Support</span>
+                <span className="nav-link-text">Services and Resources</span>
               </Link>
             </nav>
 
