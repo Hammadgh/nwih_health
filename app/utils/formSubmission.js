@@ -77,7 +77,7 @@ export const validateFormData = (formData, formType = 'contact') => {
   
   return {
     isValid: Object.keys(errors).length === 0,
-    errors
+    errorsl
   };
 };
 
