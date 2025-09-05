@@ -125,7 +125,7 @@ export default function FindClinic() {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Find Your Local Clinic</h1>
             <p className="text-xl mb-10">
-              Northwest Integrated Health has convenient locations across Washington state. Each location provides outpatient medication-assisted treatment for addiction to opioids, alcohol, and other substances.
+              Northwest Integrated Health has 6 convenient locations across Pierce County. Each location provides outpatient medication-assisted treatment for addiction to opioids, alcohol, and other substances.
             </p>
         
             {/* Search Interface */}
@@ -288,6 +288,10 @@ export default function FindClinic() {
                                 <div className="font-bold text-lg text-[#14a1c5]">{clinic.name}</div>
                                 <div className="text-gray-700 mb-2">{clinic.address}, {clinic.city}, {clinic.state} {clinic.zip}</div>
                                 <div className="text-gray-600">Phone: <a href={`tel:${clinic.phone}`} className="text-[#14a1c5] hover:underline">{clinic.phone}</a></div>
+                                {clinic.openDate && (
+                                  <div className="text-gray-600 mt-1">Established: {clinic.openDate}</div>
+                                )}
+                                <div className="text-gray-600">Fax: {clinic.fax}</div>
                         </div>
                               <div className="mt-4 md:mt-0 flex gap-3">
                           <Link
@@ -335,4 +339,4 @@ export default function FindClinic() {
       <Footer />
     </>
   );
-} 
+}

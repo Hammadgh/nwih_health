@@ -215,7 +215,7 @@ export default function Header() {
                   Find The Nearest Clinic
                 </Link>
                 <Link href="/patient-support" className="nav-link py-3 border-b border-gray-50 text-[#0077C8] text-base" onClick={() => setIsMenuOpen(false)}>
-                  Patient Support
+                Services and Resources
                 </Link>
                 
                 {/* Secondary navigation for mobile */}

@@ -77,7 +77,7 @@ const ContactForm = ({ className = '' }) => {
   
   return (
     <div className={`bg-white rounded-lg shadow-md p-6 ${className}`}>
-      <h2 className="text-2xl font-bold mb-6 text-gray-800">We admit patients 7 days a week. Walk-ins welcome!</h2>
+      <h2 className="text-2xl font-bold mb-6 text-gray-800">Open Monday to Saturday — walk-ins always welcome!</h2>
       
       {submitSuccess && (
         <div className="mb-4 p-4 bg-green-50 border border-green-200 text-green-800 rounded">

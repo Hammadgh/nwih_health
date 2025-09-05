@@ -16,7 +16,7 @@ export default function StateClinics() {
   const [view, setView] = useState('list');
 
   useEffect(() => {
-    // All our clinics are in Washington state
+    // All our clinics are in Washington state, but we're focusing on Pierce County
     setClinics(getClinicsByState('Washington'));
   }, [state]);
 
@@ -28,10 +28,10 @@ export default function StateClinics() {
         <div className="bg-[#4a6c83] text-white py-12">
           <div className="container mx-auto px-4">
             <h1 className="text-3xl md:text-4xl font-bold mb-2">
-              Washington State Clinics
+              Pierce County Clinics
             </h1>
             <p className="text-xl">
-              Find NWIH clinics in Washington offering addiction treatment services.
+              Find NWIH clinics in Pierce County offering addiction treatment services.
             </p>
           </div>
         </div>
@@ -69,7 +69,7 @@ export default function StateClinics() {
           <div className="flex flex-wrap justify-between items-center mb-8">
             <div>
               <h2 className="text-xl font-bold text-gray-900">
-                All Washington Clinics
+                All Pierce County Clinics
               </h2>
               <p className="text-gray-600 mt-1">
                 Showing {clinics.length} results
@@ -112,7 +112,7 @@ export default function StateClinics() {
 
           {clinics.length === 0 ? (
             <div className="text-center py-8">
-              <p className="text-gray-600">No clinics found in Washington.</p>
+              <p className="text-gray-600">No clinics found in Pierce County.</p>
               <Link href="/find-clinic" className="mt-4 inline-block text-[#0090c6] hover:text-[#007ba8] hover:underline">
                 Return to clinic finder
               </Link>
@@ -135,8 +135,14 @@ export default function StateClinics() {
                           {clinic.address}, {clinic.city}, {clinic.state} {clinic.zip}
                         </p>
                         <p className="text-gray-600 mb-4">
-                          Phone: {clinic.phone}
+                          Phone: {clinic.phone}<br />
+                          Fax: {clinic.fax}
                         </p>
+                        {clinic.openDate && (
+                          <p className="text-gray-600 mb-4">
+                            Established: {clinic.openDate}
+                          </p>
+                        )}
                         <div className="flex flex-wrap gap-2 mb-4">
                           {clinic.services.map((service) => (
                             <span
@@ -225,4 +231,4 @@ export default function StateClinics() {
       <Footer />
     </>
   );
-} 
+}

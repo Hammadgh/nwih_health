@@ -201,7 +201,7 @@ const YourFirstVisit = () => {
            
             
             <p className="text-xl md:text-2xl text-gray-600 mb-10 leading-relaxed max-w-4xl mx-auto font-medium">
-              Taking the first step toward recovery shouldn't be complicated. Our streamlined process 
+              Taking the first step towards recovery shouldn't be complicated. Our streamlined process 
               <span className="font-semibold text-gray-800"> gets you from arrival to treatment in just 2-3 hours</span>, 
               with compassionate care every step of the way.
             </p>

@@ -1,25 +1,12 @@
 export const washingtonRegions = [
-  'Puget Sound',
-  'Olympic Peninsula',
-  'Southwest Washington',
-  'Central Washington',
-  'Eastern Washington',
-  'Northwest Washington'
+  'Puget Sound'
 ];
 
 export const washingtonCities = [
   'Tacoma',
   'Lakewood',
   'Puyallup',
-  'Parkland',
-  'Port Orchard',
-  'Bremerton', 
-  'Tumwater',
-  'Seattle',
-  'Bellevue',
-  'Olympia',
-  'Spokane',
-  'Vancouver'
+  'Parkland'
 ];
 
 // Map cities to regions
@@ -27,15 +14,7 @@ export const cityToRegionMap = {
   'Tacoma': 'Puget Sound',
   'Lakewood': 'Puget Sound',
   'Puyallup': 'Puget Sound',
-  'Parkland': 'Puget Sound',
-  'Port Orchard': 'Olympic Peninsula',
-  'Bremerton': 'Olympic Peninsula',
-  'Tumwater': 'Southwest Washington',
-  'Seattle': 'Puget Sound',
-  'Bellevue': 'Puget Sound',
-  'Olympia': 'Southwest Washington',
-  'Spokane': 'Eastern Washington',
-  'Vancouver': 'Southwest Washington'
+  'Parkland': 'Puget Sound'
 };
 
 // For backward compatibility
@@ -47,132 +26,92 @@ export const clinics = [
   {
     id: 1,
     name: 'Lakewood',
-    address: '9720 S Tacoma Way',
+    address: '9720 South Tacoma Way',
     city: 'Lakewood',
     state: 'Washington',
-    zip: '98499',
+    zip: '98499-4456',
     phone: '253-503-3666',
+    fax: '253-503-1633',
     lat: 47.1549,
     lng: -122.4746,
     services: ['MAT', 'Methadone', 'Buprenorphine', 'Naltrexone'],
-    region: 'Puget Sound'
+    region: 'Puget Sound',
+    openDate: '4/19/2017'
   },
   {
     id: 2,
-    name: 'Tacoma - South',
-    address: '3727 South Tacoma Way',
+    name: 'Tacoma - 38th Street',
+    address: '3727 S Tacoma Way',
     city: 'Tacoma',
     state: 'Washington',
-    zip: '98409',
+    zip: '98409-3134',
     phone: '253-300-7474',
+    fax: '253-442-6122',
     lat: 47.2195,
     lng: -122.4842,
     services: ['MAT', 'Methadone', 'Buprenorphine', 'Naltrexone'],
-    region: 'Puget Sound'
+    region: 'Puget Sound',
+    openDate: '5/25/2019'
   },
   {
     id: 3,
     name: 'Puyallup',
-    address: '3800 3rd St. SE',
+    address: '3800 3rd ST SE',
     city: 'Puyallup',
     state: 'Washington',
-    zip: '98374',
-    phone: '253-904-7867',
+    zip: '98374-1109',
+    phone: '253-604-7422',
+    fax: '253-302-8493',
     lat: 47.1892,
     lng: -122.2843,
     services: ['MAT', 'Buprenorphine', 'Naltrexone'],
-    region: 'Puget Sound'
+    region: 'Puget Sound',
+    openDate: '8/20/2009'
   },
   {
     id: 4,
-    name: 'Tacoma - Westgate',
-    address: '5929 Westgate Blvd',
+    name: 'NWIH Tacoma',
+    address: '5929 Westgate Blvd. STE A',
     city: 'Tacoma',
     state: 'Washington',
-    zip: '98406',
+    zip: '98406-2567',
     phone: '253-503-0226',
+    fax: '253-625-7912',
     lat: 47.2567,
     lng: -122.5127,
     services: ['MAT', 'Buprenorphine', 'Naltrexone'],
-    region: 'Puget Sound'
+    region: 'Puget Sound',
+    openDate: '11/7/2022'
   },
   {
     id: 5,
-    name: 'Tacoma - PCA',
+    name: 'PCA Location',
     address: '510 Tacoma Ave S',
     city: 'Tacoma',
     state: 'Washington',
-    zip: '98402',
-    phone: '253-200-0300',
+    zip: '98402-5416',
+    phone: '253-502-5490',
+    fax: '253-328-9027',
     lat: 47.2529,
     lng: -122.4443,
     services: ['MAT', 'Buprenorphine', 'Naltrexone'],
-    region: 'Puget Sound'
+    region: 'Puget Sound',
+    openDate: '3/5/2025'
   },
   {
     id: 6,
-    name: 'Tacoma - Portland Ave',
-    address: '1415 E 72nd St, Suite B',
-    city: 'Tacoma',
-    state: 'Washington',
-    zip: '98404',
-    phone: '253-200-0300',
-    lat: 47.1932,
-    lng: -122.4082,
-    services: ['MAT', 'Buprenorphine', 'Naltrexone'],
-    region: 'Puget Sound'
-  },
-  {
-    id: 7,
-    name: 'Parkland',
+    name: 'Parkland Location',
     address: '123 132nd St S',
     city: 'Parkland',
     state: 'Washington',
-    zip: '98444',
-    phone: '253-200-0300',
+    zip: '98444-4807',
+    phone: '253-317-4185',
+    fax: '253-444-0545',
     lat: 47.1257,
     lng: -122.4338,
     services: ['MAT', 'Buprenorphine', 'Naltrexone'],
-    region: 'Puget Sound'
-  },
-  {
-    id: 8,
-    name: 'Port Orchard',
-    address: '2475 Bethel Rd SE',
-    city: 'Port Orchard',
-    state: 'Washington',
-    zip: '98366',
-    phone: '253-200-0300',
-    lat: 47.5226,
-    lng: -122.6131,
-    services: ['MAT', 'Buprenorphine', 'Naltrexone'],
-    region: 'Olympic Peninsula'
-  },
-  {
-    id: 9,
-    name: 'Tumwater',
-    address: '6977 Littlerock Rd SW',
-    city: 'Tumwater',
-    state: 'Washington',
-    zip: '98512',
-    phone: '253-200-0300',
-    lat: 46.9971,
-    lng: -122.9118,
-    services: ['MAT', 'Buprenorphine', 'Naltrexone'],
-    region: 'Southwest Washington'
-  },
-  {
-    id: 10,
-    name: 'Bremerton',
-    address: '3309 Perry Ave NE',
-    city: 'Bremerton',
-    state: 'Washington',
-    zip: '98310',
-    phone: '253-200-0300',
-    lat: 47.6093,
-    lng: -122.6269,
-    services: ['MAT', 'Buprenorphine', 'Naltrexone'],
-    region: 'Olympic Peninsula'
+    region: 'Puget Sound',
+    openDate: '3/5/2025'
   }
 ];
 
@@ -244,4 +183,4 @@ export const calculateDistance = (lat1, lon1, lat2, lon2) => {
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
   const distance = R * c;
   return distance;
-}; 
+};

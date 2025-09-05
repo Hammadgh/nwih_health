@@ -3,7 +3,7 @@
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Link from 'next/link';
-import { FaPills, FaShieldAlt, FaPhone, FaMapMarkerAlt, FaFileAlt, FaDownload, FaExclamationTriangle, FaInfoCircle } from 'react-icons/fa';
+import { FaPills, FaShieldAlt, FaPhone, FaMapMarkerAlt, FaFileAlt, FaDownload, FaExclamationTriangle, FaInfoCircle, FaClock } from 'react-icons/fa';
 
 export default function MATPage() {
   const medications = [
@@ -238,6 +238,13 @@ export default function MATPage() {
                         {clinic.phone}
                       </a>
                     </div>
+                    
+                    {clinic.openDate && (
+                      <div className="flex items-center text-gray-600">
+                        <FaClock className="w-4 h-4 sm:w-5 sm:h-5 mr-3 text-[#16A53F] flex-shrink-0" />
+                        <p className="text-sm sm:text-base">Established: {clinic.openDate}</p>
+                      </div>
+                    )}
                   </div>
                   
                   <div className="border-t border-gray-100 pt-3 sm:pt-4">

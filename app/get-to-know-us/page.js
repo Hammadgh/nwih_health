@@ -11,25 +11,51 @@ const GetToKnowUs = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       <Header />
       
-      {/* Hero Section with Mission */}
-      <section className="relative bg-gradient-to-r from-[#0077C8] to-[#16A53F] text-white py-12 md:py-16 overflow-hidden">
-        <div className="absolute inset-0 bg-black/20"></div>
+             {/* Hero Section with Mission & Vision */}
+       <section className="relative bg-gradient-to-r from-[#0077C8] to-[#16A53F] text-white py-12 md:py-16 overflow-hidden">
+         <div className="absolute inset-0 bg-black/20"></div>
+         <div className="container mx-auto px-4 relative z-10">
+           <div className="text-center max-w-6xl mx-auto">
+             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
+               Get to Know <span className="text-white">Northwest Integrated Health</span>
+             </h1>
+             
+             {/* Mission Statement */}
+             <div className="bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-8 max-w-5xl mx-auto">
+               <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 drop-shadow-lg">
+                 Our Mission
+               </h2>
+               <p className="text-white text-base sm:text-lg md:text-xl leading-relaxed mb-4">
+                 At Northwest Integrated Health, our mission is to provide compassionate, evidence-based care for individuals and families impacted by substance use disorders.
+               </p>
+               <p className="text-white text-base sm:text-lg md:text-xl leading-relaxed">
+                 We take an interdisciplinary approach that integrates counseling, education, medical treatment, and ongoing support to create a comprehensive model of recovery.
+               </p>
+             </div>
+           </div>
+         </div>
+       </section>
+
+      {/* Our Vision */}
+      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0077C8]/5 to-[#16A53F]/5"></div>
         <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-5xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight">
-              Get to Know <span className="text-white">Northwest Integrated Health</span>
-            </h1>
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
+              Our <span className="text-[#0077C8]">Vision</span>
+            </h2>
             
-            {/* Mission Statement */}
-           
-            
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 max-w-3xl mx-auto mb-8">
-              <p className="text-white text-base sm:text-lg leading-relaxed">
-                Discover how our evidence-based, patient-centered approach has helped thousands find hope, healing, and lasting recovery.
+            <div className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-xl max-w-5xl mx-auto mb-12 border border-gray-100">
+              <p className="text-gray-700 text-lg sm:text-xl leading-relaxed mb-6">
+                We believe addiction is a chronic medical condition—similar to diabetes or hypertension—that cannot always be cured but can be successfully managed. With the right combination of lifestyle changes, behavioral therapy, medication, and strong support networks, long-term recovery is possible.
+              </p>
+              <p className="text-gray-700 text-lg sm:text-xl leading-relaxed mb-6">
+                While medications cannot "cure" addiction, they play an important role in stabilizing health, reducing harm, and giving patients the foundation they need to rebuild their lives.
+              </p>
+              <p className="text-gray-700 text-lg sm:text-xl leading-relaxed">
+                Our dedicated team is here to walk alongside you, offering patient-centered treatment that respects your dignity, values, and goals. With care rooted in science and compassion, we are committed to helping our community heal and thrive across the Pacific Northwest.
               </p>
             </div>
-            
-           
           </div>
         </div>
       </section>
@@ -105,73 +131,6 @@ const GetToKnowUs = () => {
               <p className="text-gray-700 text-sm sm:text-base">
                 Encouragement toward healthy habits, routines, and long-term wellness.
                 </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Our Philosophy */}
-      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0077C8]/5 to-[#16A53F]/5"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-12 sm:mb-16">
-            
-            
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-              Our <span className="text-[#0077C8]">Philosophy</span>
-            </h2>
-            
-            <div className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-xl max-w-4xl mx-auto mb-12 border border-gray-100">
-              <p className="text-gray-700 text-lg sm:text-xl leading-relaxed font-medium">
-                Addiction is a chronic condition, much like diabetes or hypertension. While it cannot always be cured, it can be effectively managed.
-                </p>
-              </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            <div className="group bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-xl border border-gray-100 text-center hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#0077C8]/5 to-[#16A53F]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
-              <div className="relative z-10">
-                <div className="w-20 h-20 bg-gradient-to-br from-[#0077C8] to-[#16A53F] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <FaHeart className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">Medications Support Stability</h3>
-                <div className="w-16 h-1 bg-gradient-to-r from-[#0077C8] to-[#16A53F] rounded-full mx-auto mb-4"></div>
-                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-                  Medications support stability and harm reduction, helping you focus on recovery.
-                </p>
-              </div>
-            </div>
-            
-            <div className="group bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-xl border border-gray-100 text-center hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#16A53F]/5 to-[#0077C8]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
-              <div className="relative z-10">
-                <div className="w-20 h-20 bg-gradient-to-br from-[#16A53F] to-[#0077C8] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <FaHandsHelping className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">Behavioral Therapy & Support</h3>
-                <div className="w-16 h-1 bg-gradient-to-r from-[#16A53F] to-[#0077C8] rounded-full mx-auto mb-4"></div>
-                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-                  Behavioral therapy and family support provide the foundation for lasting change.
-                </p>
-              </div>
-            </div>
-            
-            <div className="group bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-xl border border-gray-100 text-center hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#0077C8]/5 to-[#16A53F]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
-              <div className="relative z-10">
-                <div className="w-20 h-20 bg-gradient-to-br from-[#0077C8] to-[#16A53F] rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <FaUsers className="w-10 h-10 text-white" />
-                </div>
-                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-4">Community Care</h3>
-                <div className="w-16 h-1 bg-gradient-to-r from-[#0077C8] to-[#16A53F] rounded-full mx-auto mb-4"></div>
-                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-                  Community care ensures that recovery is not a solitary journey, but a shared path.
-                </p>
-              </div>
             </div>
           </div>
         </div>

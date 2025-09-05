@@ -45,7 +45,9 @@ export default function ClinicMap({ clinic }) {
         <strong>${clinic.name}</strong><br>
         ${clinic.address}<br>
         ${clinic.city}, ${clinic.state} ${clinic.zip}<br>
-        <a href="tel:${clinic.phone}">${clinic.phone}</a>
+        <a href="tel:${clinic.phone}">${clinic.phone}</a><br>
+        Fax: ${clinic.fax}
+        ${clinic.openDate ? `<br>Established: ${clinic.openDate}` : ''}
       `).openPopup();
     }
     
@@ -61,4 +63,4 @@ export default function ClinicMap({ clinic }) {
   return (
     <div ref={mapContainerRef} className="h-full w-full" style={{ minHeight: '400px' }}></div>
   );
-} 
+}

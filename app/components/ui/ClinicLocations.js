@@ -23,7 +23,7 @@ const ClinicLocations = () => {
       <div className="absolute inset-0 opacity-100">
         <img 
           src="/high_quality_map.png" 
-          alt="High Quality Washington State Map with NWIH Clinic Locations" 
+          alt="High Quality Pierce County Map with NWIH Clinic Locations" 
           className="w-full h-full object-cover object-center scale-105 transition-transform duration-1000"
           style={{ filter: 'grayscale(5%) brightness(1.05)' }}
         />
@@ -47,7 +47,7 @@ const ClinicLocations = () => {
           {/* Location Information */}
           <div className="bg-white/80 backdrop-blur-md rounded-xl sm:rounded-2xl shadow-2xl border border-gray-200/50 p-4 sm:p-6 lg:p-8">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#16A53F] mb-6 text-center">
-              7 Convenient Locations Across Pierce County
+              {Object.keys(cityStats).length} Convenient Locations Across Pierce County
             </h3>
             <div className="flex flex-col sm:flex-row sm:items-center mb-6 sm:mb-8">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#0077C8] to-[#16A53F] rounded-lg sm:rounded-xl flex items-center justify-center mr-3 sm:mr-4 mb-3 sm:mb-0">
@@ -64,11 +64,11 @@ const ClinicLocations = () => {
               <div className="bg-gradient-to-r from-blue-50 to-green-50 rounded-lg sm:rounded-xl p-4 sm:p-6">
                 <div className="grid grid-cols-3 gap-8 sm:gap-12 lg:gap-16 justify-items-center max-w-3xl mx-auto">
                   <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-[#0077C8]">7</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-[#0077C8]">{clinics.length}</div>
                     <div className="text-xs sm:text-sm text-gray-600">Total Locations</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-[#16A53F]">5</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-[#16A53F]">{Object.keys(cityStats).length}</div>
                     <div className="text-xs sm:text-sm text-gray-600">Cities Served</div>
                   </div>
                   <div className="text-center">
@@ -163,4 +163,4 @@ const ClinicLocations = () => {
   );
 };
 
-export default ClinicLocations; 
+export default ClinicLocations;

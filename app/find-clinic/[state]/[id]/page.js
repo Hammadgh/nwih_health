@@ -115,9 +115,19 @@ export default function ClinicDetail() {
                 <div className="mb-6">
                   <h3 className="text-lg font-semibold text-gray-800 mb-2">Contact</h3>
                   <p className="text-gray-700">
-                    Phone: <a href={`tel:${clinic.phone}`} className="text-[#0090c6]">{clinic.phone}</a>
+                    Phone: <a href={`tel:${clinic.phone}`} className="text-[#0090c6]">{clinic.phone}</a><br />
+                    Fax: {clinic.fax}
                   </p>
                 </div>
+                
+                {clinic.openDate && (
+                  <div className="mb-6">
+                    <h3 className="text-lg font-semibold text-gray-800 mb-2">Established</h3>
+                    <p className="text-gray-700">
+                      {clinic.openDate}
+                    </p>
+                  </div>
+                )}
                 
                 <div className="flex space-x-3 mb-6">
                   <a
@@ -210,4 +220,4 @@ export default function ClinicDetail() {
       <Footer />
     </>
   );
-} 
+}
