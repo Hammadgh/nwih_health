@@ -44,7 +44,7 @@ export default function ContactPage() {
                     </svg>
                     <div>
                       <h3 className="text-sm font-medium text-gray-900">Email</h3>
-                      <a href="mailto:info@nwihc.com" className="text-[#0077C8] hover:text-[#005fa0]">info@nwihc.com</a>
+                      <a href="mailto:info@nwih.com" className="text-[#0077C8] hover:text-[#005fa0]">info@nwih.com</a>
                     </div>
                   </div>
                   
