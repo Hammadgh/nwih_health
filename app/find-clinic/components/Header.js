@@ -13,11 +13,11 @@ export default function Header() {
         <div className="container mx-auto px-4 py-1 flex items-center justify-between">
           {/* Phone Number */}
           <div className="font-semibold">
-            <a href="tel:1-877-522-1275" className="flex items-center hover:text-[#16A53F] transition-colors duration-300">
+            <a href="tel:253-200-0300" className="flex items-center hover:text-[#16A53F] transition-colors duration-300">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              1-877-522-1275
+              253-200-0300
             </a>
           </div>
           
@@ -199,11 +199,11 @@ export default function Header() {
                   </Link>
                 </div>
                 <div className="py-3 text-center">
-                  <a href="tel:1-877-522-1275" className="font-semibold hover:text-[#16A53F] transition-colors duration-300 flex items-center justify-center">
+                  <a href="tel:253-200-0300" className="font-semibold hover:text-[#16A53F] transition-colors duration-300 flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
-                    1-877-522-1275
+                    253-200-0300
                   </a>
                 </div>
               </div>

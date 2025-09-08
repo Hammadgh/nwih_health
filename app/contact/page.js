@@ -71,9 +71,9 @@ export default function ContactPage() {
                   </svg>
                   <div>
                     <h3 className="text-sm font-medium text-gray-900">Address</h3>
-                    <p className="text-gray-600">10116 36th Avenue Ct SW, Lakewood, WA 98499</p>
+                    <p className="text-gray-600">9720 South Tacoma Way Lakewood, Washington</p>
                     <a 
-                      href="https://www.google.com/maps/search/?api=1&query=10116+36th+Avenue+Ct+SW+Lakewood+WA+98499" 
+                      href="https://maps.app.goo.gl/gkiCdwfbSEB1UuCr5" 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="text-[#0077C8] hover:text-[#005fa0] text-sm inline-flex items-center mt-2"

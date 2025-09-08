@@ -11,7 +11,7 @@ const GetToKnowUs = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50">
       <Header />
       
-             {/* Hero Section with Mission & Vision */}
+             {/* Hero Section with Mission & Vision (combined in one banner) */}
        <section className="relative bg-gradient-to-r from-[#0077C8] to-[#16A53F] text-white py-12 md:py-16 overflow-hidden">
          <div className="absolute inset-0 bg-black/20"></div>
          <div className="container mx-auto px-4 relative z-10">
@@ -19,46 +19,38 @@ const GetToKnowUs = () => {
              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 sm:mb-8 leading-tight">
                Get to Know <span className="text-white">Northwest Integrated Health</span>
              </h1>
+             <div className="mx-auto mb-6 sm:mb-8 h-1.5 w-full rounded-full bg-gradient-to-r from-white/80 via-white to-white/80"></div>
              
-             {/* Mission Statement */}
-             <div className="bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-8 max-w-5xl mx-auto">
-               <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 drop-shadow-lg">
-                 Our Mission
-               </h2>
-               <p className="text-white text-base sm:text-lg md:text-xl leading-relaxed mb-4">
-                 At Northwest Integrated Health, our mission is to provide compassionate, evidence-based care for individuals and families impacted by substance use disorders.
-               </p>
-               <p className="text-white text-base sm:text-lg md:text-xl leading-relaxed">
-                 We take an interdisciplinary approach that integrates counseling, education, medical treatment, and ongoing support to create a comprehensive model of recovery.
-               </p>
+             {/* Mission & Vision Cards */}
+             <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 sm:gap-6 max-w-6xl mx-auto">
+               {/* Mission */}
+               <div className="bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-5 sm:p-6 border border-white/20 shadow-lg">
+                 <h2 className="text-2xl sm:text-2xl font-bold text-white mb-4 drop-shadow-lg">Our Mission</h2>
+                 <p className="text-white/95 text-base sm:text-lg leading-relaxed mb-3">
+                   At Northwest Integrated Health, our mission is to provide compassionate, evidence-based care for individuals and families impacted by substance use disorders.
+                 </p>
+                 <p className="text-white/95 text-base sm:text-lg leading-relaxed">
+                   We take an interdisciplinary approach that integrates counseling, education, medical treatment, and ongoing support to create a comprehensive model of recovery.
+                 </p>
+               </div>
+               {/* Vision */}
+               <div className="bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-5 sm:p-6 border border-white/20 shadow-lg">
+                 <h2 className="text-2xl sm:text-2xl font-bold text-white mb-4 drop-shadow-lg">Our Vision</h2>
+                 <p className="text-white/95 text-base sm:text-lg leading-relaxed mb-3">
+                   We believe addiction is a chronic medical condition—similar to diabetes or hypertension—that cannot always be cured but can be successfully managed. With the right combination of lifestyle changes, behavioral therapy, medication, and strong support networks, long-term recovery is possible.
+                 </p>
+                 <p className="text-white/95 text-base sm:text-lg leading-relaxed mb-3">
+                   While medications cannot "cure" addiction, they play an important role in stabilizing health, reducing harm, and giving patients the foundation they need to rebuild their lives.
+                 </p>
+                 <p className="text-white/95 text-base sm:text-lg leading-relaxed">
+                   Our dedicated team is here to walk alongside you, offering patient-centered treatment that respects your dignity, values, and goals. With care rooted in science and compassion, we are committed to helping our community heal and thrive across the Pacific Northwest.
+                 </p>
+               </div>
              </div>
            </div>
          </div>
        </section>
 
-      {/* Our Vision */}
-      <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0077C8]/5 to-[#16A53F]/5"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6">
-              Our <span className="text-[#0077C8]">Vision</span>
-            </h2>
-            
-            <div className="bg-white rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-xl max-w-5xl mx-auto mb-12 border border-gray-100">
-              <p className="text-gray-700 text-lg sm:text-xl leading-relaxed mb-6">
-                We believe addiction is a chronic medical condition—similar to diabetes or hypertension—that cannot always be cured but can be successfully managed. With the right combination of lifestyle changes, behavioral therapy, medication, and strong support networks, long-term recovery is possible.
-              </p>
-              <p className="text-gray-700 text-lg sm:text-xl leading-relaxed mb-6">
-                While medications cannot "cure" addiction, they play an important role in stabilizing health, reducing harm, and giving patients the foundation they need to rebuild their lives.
-              </p>
-              <p className="text-gray-700 text-lg sm:text-xl leading-relaxed">
-                Our dedicated team is here to walk alongside you, offering patient-centered treatment that respects your dignity, values, and goals. With care rooted in science and compassion, we are committed to helping our community heal and thrive across the Pacific Northwest.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Our Approach */}
       <section className="py-12 sm:py-16 md:py-20 bg-gray-50">

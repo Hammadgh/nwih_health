@@ -135,9 +135,9 @@ body {
   transform: translateY(0);
 }
 
-/* Prevent layout shifts during transitions */
-.transition-all {
-  will-change: transform, opacity, height, padding, max-height;
+/* Prevent layout shifts during transitions without forcing layout on every element */
+.header-transition {
+  will-change: transform, opacity, max-height, padding;
   transform: translateZ(0);
   backface-visibility: hidden;
 }

@@ -10,14 +10,14 @@ export default function Header() {
   const lastScrollY = useRef(0);
   const ticking = useRef(false);
   
-  // Improved scroll handler with hysteresis to prevent flickering
+  // Improved scroll handler with stronger hysteresis to prevent flickering
   const handleScroll = useCallback(() => {
     const currentScrollY = window.scrollY;
-    const scrollThreshold = 100; // Higher threshold for more stability
-    const hysteresis = 20; // Buffer zone to prevent rapid toggling
+    const scrollThreshold = 140; // Higher threshold for more stability
+    const hysteresis = 60; // Larger buffer zone to prevent rapid toggling
     
     // Only update if we've scrolled enough to matter
-    if (Math.abs(currentScrollY - lastScrollY.current) < 5) {
+    if (Math.abs(currentScrollY - lastScrollY.current) < 2) {
       return;
     }
     
@@ -79,7 +79,7 @@ export default function Header() {
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
               </svg>
               <span>Help Available: Call</span>
-              <a href="tel:1-877-522-1275" className="font-bold hover:text-gray-200 transition-colors pointer-events-auto">
+              <a href="tel:253-200-0300" className="font-bold hover:text-gray-200 transition-colors pointer-events-auto">
                 253-200-0300
               </a>
               <span>— Walk-ins Welcome!</span>
@@ -91,8 +91,8 @@ export default function Header() {
                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
               </svg>
               <span className="animate-text-pulse"> Help: Call</span>
-              <a href="tel:1-877-522-1275" className="font-bold hover:text-gray-200 transition-colors animate-text-pulse pointer-events-auto">
-                1-877-522-1275
+              <a href="tel:253-200-0300" className="font-bold hover:text-gray-200 transition-colors animate-text-pulse pointer-events-auto">
+                253-200-0300
               </a>
               <span className="animate-text-pulse">— Walk-ins Welcome!</span>
             </div>
@@ -167,7 +167,7 @@ export default function Header() {
             {/* Call Now Button - Right aligned */}
             <div className="hidden xl:block ml-auto relative z-[2147483647]">
               <a 
-                href="tel:1-877-522-1275" 
+                href="tel:253-200-0300" 
                 className="cta-button animate-pulse bg-gradient-to-r from-[#16A53F] to-[#128a35] hover:from-[#128a35] hover:to-[#0f7a2e] text-white font-semibold px-4 2xl:px-6 py-2 2xl:py-3 rounded-full text-sm 2xl:text-base shadow-lg flex items-center cursor-pointer"
                 style={{
                   pointerEvents: 'auto',
