@@ -6,16 +6,20 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next build && next export",
+    "deploy": "npm run build && npm run export"
   },
   "dependencies": {
     "@react-google-maps/api": "^2.20.6",
+    "@vercel/speed-insights": "^1.2.0",
     "leaflet": "^1.9.4",
     "next": "14.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
-    "react-leaflet": "^4.2.1"
+    "react-leaflet": "^4.2.1",
+    "web-vitals": "^5.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.17",

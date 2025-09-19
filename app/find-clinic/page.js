@@ -8,6 +8,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import StructuredData from '../components/StructuredData';
 
 // Dynamically import the map component with no SSR
 const ClinicsMap = dynamic(() => import('../components/maps/ClinicsMap'), { ssr: false });
@@ -109,8 +110,14 @@ export default function FindClinic() {
     setError('');
   };
 
+  const breadcrumbs = [
+    { name: 'Home', url: 'https://nwihc.com' },
+    { name: 'Find a Clinic', url: 'https://nwihc.com/find-clinic/' }
+  ];
+
   return (
     <>
+      <StructuredData type="breadcrumb" data={{ breadcrumbs }} />
       <Header />
       <main>
         {/* Hero section with background image */}

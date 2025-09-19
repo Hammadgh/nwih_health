@@ -1,12 +1,20 @@
-'use client';
-
+import { generateMetadata } from '../utils/metadata';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ContactForm from '../components/ui/ContactForm';
+import StructuredData from '../components/StructuredData';
+
+export const metadata = generateMetadata({ page: 'contact' });
 
 export default function ContactPage() {
+  const breadcrumbs = [
+    { name: 'Home', url: 'https://nwihc.com' },
+    { name: 'Contact Us', url: 'https://nwihc.com/contact/' }
+  ];
+
   return (
     <>
+      <StructuredData type="breadcrumb" data={{ breadcrumbs }} />
       <Header />
       <main className="bg-gray-50">
         {/* Page Header */}

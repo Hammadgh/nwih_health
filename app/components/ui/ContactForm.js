@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { submitFormToHIPAAEmail, validateFormData } from '../../utils/formSubmission';
 
 const ContactForm = ({ className = '' }) => {
   const [formData, setFormData] = useState({
@@ -36,24 +35,52 @@ const ContactForm = ({ className = '' }) => {
     }
   };
   
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitError('');
-    
-    // Validate form
-    const { isValid, errors } = validateFormData(formData, 'contact');
-    
-    if (!isValid) {
-      setValidationErrors(errors);
-      setIsSubmitting(false);
-      return;
-    }
-    
-    try {
-      // Send form to HIPAA-compliant email service
-      const response = await submitFormToHIPAAEmail(formData, 'contact');
-      
+
+    // Create a hidden iframe for form submission
+    const iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+    iframe.name = 'web3forms-submit';
+    document.body.appendChild(iframe);
+
+    // Create a temporary form that submits to the iframe
+    const tempForm = document.createElement('form');
+    tempForm.action = 'https://api.web3forms.com/submit';
+    tempForm.method = 'POST';
+    tempForm.target = 'web3forms-submit';
+
+    // Add form fields
+    const fields = {
+      'access_key': 'e394568b-613d-42ab-b90a-b6e8d8f31c97',
+      'subject': 'New Contact Form Submission',
+      // Web3Forms requires at least name, email, message. Include extras too.
+      'name': `${formData.firstName} ${formData.lastName}`.trim(),
+      'email': formData.email,
+      'message': formData.message,
+      // Additional fields will be stored with the submission
+      'firstName': formData.firstName,
+      'lastName': formData.lastName,
+      'phone': formData.phone,
+      'reason': formData.reason,
+      // Honeypot field
+      'botcheck': ''
+    };
+
+    Object.entries(fields).forEach(([name, value]) => {
+      const input = document.createElement('input');
+      input.type = 'hidden';
+      input.name = name;
+      input.value = value;
+      tempForm.appendChild(input);
+    });
+
+    document.body.appendChild(tempForm);
+
+    // Handle iframe load (success)
+    iframe.onload = () => {
       // Clear the form
       setFormData({
         firstName: '',
@@ -64,20 +91,36 @@ const ContactForm = ({ className = '' }) => {
         message: '',
         consent: false
       });
-      
+
       setSubmitSuccess(true);
       setTimeout(() => setSubmitSuccess(false), 5000);
-    } catch (error) {
-      setSubmitError('There was a problem submitting your form. Please try again.');
-      console.error('Form submission error:', error);
-    } finally {
       setIsSubmitting(false);
-    }
+
+      // Clean up
+      document.body.removeChild(tempForm);
+      document.body.removeChild(iframe);
+    };
+
+    // Handle iframe error
+    iframe.onerror = () => {
+      setSubmitError('There was a problem submitting your form. Please try again.');
+      setIsSubmitting(false);
+      
+      // Clean up
+      document.body.removeChild(tempForm);
+      document.body.removeChild(iframe);
+    };
+
+    // Submit the form
+    tempForm.submit();
   };
   
   return (
     <div className={`bg-white rounded-lg shadow-md p-6 ${className}`}>
       <h2 className="text-2xl font-bold mb-6 text-gray-800">Open Monday to Saturday — walk-ins always welcome!</h2>
+      <div className="mb-4 p-3 bg-yellow-50 border border-yellow-200 text-yellow-800 rounded text-sm">
+        Please do not include medical details, diagnoses, medications, insurance IDs, or other sensitive information. This form is for general inquiries only.
+      </div>
       
       {submitSuccess && (
         <div className="mb-4 p-4 bg-green-50 border border-green-200 text-green-800 rounded">
@@ -227,6 +270,9 @@ const ContactForm = ({ className = '' }) => {
           ></textarea>
           {validationErrors.message && (
             <p className="mt-1 text-sm text-red-600">{validationErrors.message}</p>
+          )}
+          {!validationErrors.message && (
+            <p className="mt-1 text-xs text-gray-500">General questions only. Don’t share medical or sensitive personal information.</p>
           )}
         </div>
         

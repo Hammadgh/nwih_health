@@ -1,28 +1,27 @@
-'use client';
 // File: clinic-detail.js
 // Purpose: Shows detailed information for a specific clinic location including services, contact info, and hours
 
-import { useParams } from 'next/navigation';
-import { useState, useEffect } from 'react';
-import { getClinicById } from '../../../../app/data/clinicData';
+import { getAllClinics, getClinicById } from '../../../data/clinicData';
 import Header from '../../../components/Header';
 import Footer from '../../../components/Footer';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 
 // Dynamically import the map component with no SSR
-const ClinicMap = dynamic(() => import('../../../../app/components/maps/ClinicMap'), { ssr: false });
+const ClinicMap = dynamic(() => import('../../../components/maps/ClinicMap'), { ssr: false });
 
-export default function ClinicDetail() {
-  const params = useParams();
+export async function generateStaticParams() {
+  const clinics = getAllClinics();
+  return clinics.map((clinic) => ({
+    state: clinic.state,
+    id: String(clinic.id)
+  }));
+}
+
+export default function ClinicDetail({ params }) {
   const { id } = params;
-  const [clinic, setClinic] = useState(null);
-  
-  useEffect(() => {
-    if (id) {
-      setClinic(getClinicById(id));
-    }
-  }, [id]);
+  const clinic = getClinicById(id);
   
   if (!clinic) {
     return (
@@ -31,7 +30,7 @@ export default function ClinicDetail() {
         <main className="bg-slate-100 min-h-screen py-12">
           <div className="container mx-auto px-4">
             <div className="text-center py-12">
-              <p className="text-gray-600">Loading clinic information...</p>
+              <p className="text-gray-600">Clinic not found.</p>
             </div>
           </div>
         </main>
@@ -77,7 +76,8 @@ export default function ClinicDetail() {
                 </svg>
               </li>
               <li className="flex items-center">
-                <Link href={`/find-clinic/${clinic.state}`} className="text-[#0090c6] hover:text-[#007ba8]">
+                <Link href={`/find-clinic/${clinic.state}`}
+                  className="text-[#0090c6] hover:text-[#007ba8]">
                   {clinic.state}
                 </Link>
                 <svg className="w-3 h-3 mx-2" fill="currentColor" viewBox="0 0 20 20">
@@ -195,6 +195,145 @@ export default function ClinicDetail() {
                 Hours may vary by location. Please call to confirm exact hours for this clinic.
               </p>
             </div>
+
+            {/* Location Photos */}
+            {(() => {
+              const guideContentByClinicId = {
+                // Lakewood
+                1: [
+                  {
+                    src: '/images/lakewood_images/IMG_4016.jpg',
+                    title: 'Clinic Exterior'
+                  },
+                  {
+                    src: '/images/lakewood_images/IMG_4018.jpg',
+                    title: 'Street View'
+                  },
+                  {
+                    src: '/images/lakewood_images/IMG_4019.jpg',
+                    title: 'Building Entrance'
+                  },
+                  {
+                    src: '/images/lakewood_images/IMG_4020.jpg',
+                    title: 'Accessible Entrance'
+                  },
+                  {
+                    src: '/images/lakewood_images/IMG_4034.jpg',
+                    title: 'Parking Area'
+                  },
+                  {
+                    src: '/images/lakewood_images/IMG_4035.jpg',
+                    title: 'Reception Area'
+                  }
+                ],
+                // Tacoma – 38th Street
+                2: [
+                  {
+                    src: '/images/38th_st_images/IMG_4028.jpg',
+                    title: 'Clinic Exterior'
+                  },
+                  {
+                    src: '/images/38th_st_images/IMG_4029.jpg',
+                    title: 'Street View'
+                  },
+                  {
+                    src: '/images/38th_st_images/IMG_4030.jpg',
+                    title: 'Parking Entrance'
+                  },
+                  {
+                    src: '/images/38th_st_images/image000000.JPG',
+                    title: 'Street Corner'
+                  },
+                  {
+                    src: '/images/38th_st_images/image000001.JPG',
+                    title: 'Building Approach'
+                  },
+                  {
+                    src: '/images/38th_st_images/image000002.JPG',
+                    title: 'Patient Parking'
+                  },
+                  {
+                    src: '/images/38th_st_images/image000003.JPG',
+                    title: 'Main Entrance'
+                  }
+                ],
+                // Tacoma – Westgate
+                4: [
+                  {
+                    src: '/images/westgate_pictures/IMG_4009.jpg',
+                    title: 'Clinic Building'
+                  },
+                  {
+                    src: '/images/westgate_pictures/IMG_2406.jpg',
+                    title: 'Suite Signage'
+                  },
+                  {
+                    src: '/images/westgate_pictures/IMG_2407.jpg',
+                    title: 'Entrance Area'
+                  },
+                  {
+                    src: '/images/westgate_pictures/IMG_2409.jpg',
+                    title: 'Building View'
+                  }
+                ],
+                // Parkland
+                6: [
+                  {
+                    src: '/images/parkland_images/IMG_3999.jpg',
+                    title: 'Area View'
+                  },
+                  {
+                    src: '/images/parkland_images/IMG_4002.jpg',
+                    title: 'Street Location'
+                  },
+                  {
+                    src: '/images/parkland_images/IMG_4004.jpg',
+                    title: 'Building Exterior'
+                  },
+                  {
+                    src: '/images/parkland_images/IMG_4005.jpg',
+                    title: 'Parking Area'
+                  },
+                  {
+                    src: '/images/parkland_images/IMG_4008.jpg',
+                    title: 'Entrance Walkway'
+                  }
+                ]
+              };
+
+              const items = guideContentByClinicId[clinic.id];
+              if (!items || items.length === 0) return null;
+
+              return (
+                <div className="p-6 border-t border-gray-200">
+                  <h2 className="text-2xl font-bold text-gray-900 mb-4">Location Photos</h2>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {items.map((item) => (
+                      <div key={item.src} className="group">
+                        <a href={item.src} target="_blank" rel="noopener noreferrer" className="block">
+                          <div className="relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                            <Image
+                              src={item.src}
+                              alt={item.title}
+                              width={400}
+                              height={300}
+                              className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                            />
+                            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
+                              <svg className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clipRule="evenodd" />
+                              </svg>
+                            </div>
+                          </div>
+                        </a>
+                        <h3 className="text-sm font-medium text-gray-800 mt-3 text-center">{item.title}</h3>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              );
+            })()}
           </div>
           
           {/* Call to Action */}

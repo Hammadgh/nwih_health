@@ -1,5 +1,4 @@
-'use client';
-
+import { generateMetadata } from './utils/metadata';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomeBanner from './components/ui/HomeBanner';
@@ -9,12 +8,16 @@ import WhatToExpect from './components/ui/WhatToExpect';
 import InsuranceProviders from './components/ui/InsuranceProviders';
 import FullWidthCTA from './components/ui/FullWidthCTA';
 import ClinicLocations from './components/ui/ClinicLocations';
+import StructuredData from './components/StructuredData';
 
 import InsurancePopup from './components/ui/InsurancePopup';
+
+export const metadata = generateMetadata({ page: 'home' });
 
 export default function Home() {
   return (
     <>
+      <StructuredData type="medicalClinic" />
       <Header />
       <main>
         {/* Hero Banner */}
