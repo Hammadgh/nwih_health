@@ -7,6 +7,7 @@ import Footer from '../../../components/Footer';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
+import ClinicImageSlider from '../../components/ClinicImageSlider';
 
 // Dynamically import the map component with no SSR
 const ClinicMap = dynamic(() => import('../../../components/maps/ClinicMap'), { ssr: false });
@@ -307,30 +308,7 @@ export default function ClinicDetail({ params }) {
               return (
                 <div className="p-6 border-t border-gray-200">
                   <h2 className="text-2xl font-bold text-gray-900 mb-4">Location Photos</h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {items.map((item) => (
-                      <div key={item.src} className="group">
-                        <a href={item.src} target="_blank" rel="noopener noreferrer" className="block">
-                          <div className="relative overflow-hidden rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-                            <Image
-                              src={item.src}
-                              alt={item.title}
-                              width={400}
-                              height={300}
-                              className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                              sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                            />
-                            <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-20 transition-all duration-300 flex items-center justify-center">
-                              <svg className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" fill="currentColor" viewBox="0 0 20 20">
-                                <path fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clipRule="evenodd" />
-                              </svg>
-                            </div>
-                          </div>
-                        </a>
-                        <h3 className="text-sm font-medium text-gray-800 mt-3 text-center">{item.title}</h3>
-                      </div>
-                    ))}
-                  </div>
+                  <ClinicImageSlider items={items} />
                 </div>
               );
             })()}
