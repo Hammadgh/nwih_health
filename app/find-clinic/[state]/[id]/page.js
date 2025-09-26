@@ -220,7 +220,7 @@ export default function ClinicDetail({ params }) {
                   },
                   {
                     src: '/images/lakewood_images/IMG_4034.jpg',
-                    title: 'Parking Area'
+                    title: 'Sitting Area'
                   },
                   {
                     src: '/images/lakewood_images/IMG_4035.jpg',
@@ -231,11 +231,11 @@ export default function ClinicDetail({ params }) {
                 2: [
                   {
                     src: '/images/38th_st_images/IMG_4028.jpg',
-                    title: 'Clinic Exterior'
+                    title: 'Clinic Exterior and Parking'
                   },
                   {
                     src: '/images/38th_st_images/IMG_4029.jpg',
-                    title: 'Street View'
+                    title: 'Clinic Exterior and Parking'
                   },
                   {
                     src: '/images/38th_st_images/IMG_4030.jpg',
@@ -243,11 +243,11 @@ export default function ClinicDetail({ params }) {
                   },
                   {
                     src: '/images/38th_st_images/image000000.JPG',
-                    title: 'Street Corner'
+                    title: 'Front desk and waiting area'
                   },
                   {
                     src: '/images/38th_st_images/image000001.JPG',
-                    title: 'Building Approach'
+                    title: 'Waiting Area'
                   },
                   {
                     src: '/images/38th_st_images/image000002.JPG',
@@ -281,11 +281,11 @@ export default function ClinicDetail({ params }) {
                 6: [
                   {
                     src: '/images/parkland_images/IMG_3999.jpg',
-                    title: 'Area View'
+                    title: 'Welcome'
                   },
                   {
                     src: '/images/parkland_images/IMG_4002.jpg',
-                    title: 'Street Location'
+                    title: 'Reception'
                   },
                   {
                     src: '/images/parkland_images/IMG_4004.jpg',
@@ -293,7 +293,7 @@ export default function ClinicDetail({ params }) {
                   },
                   {
                     src: '/images/parkland_images/IMG_4005.jpg',
-                    title: 'Parking Area'
+                    title: 'Sitting Area'
                   },
                   {
                     src: '/images/parkland_images/IMG_4008.jpg',
