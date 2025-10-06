@@ -26,8 +26,8 @@ const HomeBanner = () => {
               priority
               onError={() => setImageError(true)}
               sizes="100vw"
-              quality={72}
-              style={{ objectPosition: '50% 25%' }}
+              quality={90}
+              style={{ objectPosition: '50%_25%' }}
             />
           </div>
         ) : (

@@ -43,7 +43,7 @@ export default function RootLayout({ children }) {
         {/* Structured Data */}
         <StructuredData type="organization" />
         
-        {/* Preload hero image to improve LCP on mobile */}
+        {/* Preload critical resources */}
         <link rel="preload" href="/images/homepagebannernew.jpg" as="image" type="image/jpeg" />
       </head>
       <body className="antialiased">
