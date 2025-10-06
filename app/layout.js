@@ -43,8 +43,7 @@ export default function RootLayout({ children }) {
         {/* Structured Data */}
         <StructuredData type="organization" />
         
-        {/* Preload critical resources */}
-        <link rel="preload" href="/images/homepagebannernew.jpg" as="image" type="image/jpeg" />
+        {/* Next/Image with priority handles preloading of the hero image */}
       </head>
       <body className="antialiased">
         <GoogleAnalytics />
