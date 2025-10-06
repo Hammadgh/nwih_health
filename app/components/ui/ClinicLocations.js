@@ -22,7 +22,7 @@ const ClinicLocations = () => {
       {/* Map Background with opacity */}
       <div className="absolute inset-0 opacity-100">
         <img 
-          src="/high_quality_map.png" 
+          src="/high_quality_map.jpg" 
           alt="High Quality Pierce County Map with NWIH Clinic Locations" 
           className="w-full h-full object-cover object-center scale-105 transition-transform duration-1000"
           style={{ filter: 'grayscale(5%) brightness(1.05)' }}

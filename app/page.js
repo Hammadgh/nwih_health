@@ -10,8 +10,6 @@ import FullWidthCTA from './components/ui/FullWidthCTA';
 import ClinicLocations from './components/ui/ClinicLocations';
 import StructuredData from './components/StructuredData';
 
-import InsurancePopup from './components/ui/InsurancePopup';
-
 export const metadata = generateMetadata({ page: 'home' });
 
 export default function Home() {
@@ -33,10 +31,6 @@ export default function Home() {
         {/* What to Expect Section */}
         <WhatToExpect />
 
-        
-
-        
-
         {/* Clinic Locations Section */}
         <ClinicLocations />
 
@@ -44,9 +38,6 @@ export default function Home() {
         <InsuranceProviders />
       </main>
       <Footer />
-      
-      {/* Insurance Verification Popup
-      <InsurancePopup /> */}
     </>
   );
 }
