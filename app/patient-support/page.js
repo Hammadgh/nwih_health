@@ -15,13 +15,6 @@ export default function PatientSupport() {
       features: ["Methadone Treatment", "Buprenorphine/Suboxone", "Naltrexone/Vivitrol", "Naloxone Access"]
     },
     {
-      title: "Hepatitis C Treatment",
-      description: "Specialized testing and treatment for Hepatitis C, with a focus on patients with injection drug use history.",
-      icon: <FaHeart className="w-6 h-6 sm:w-8 sm:h-8" />,
-      link: "/patient-support/hepatitis-c",
-      features: ["Testing & Diagnosis", "Treatment Programs", "Needle Exchange Support", "Recovery Integration"]
-    },
-    {
       title: "Chemical Dependency Counseling",
       description: "Professional counseling to help examine addiction causes and develop personalized recovery strategies.",
       icon: <FaBrain className="w-6 h-6 sm:w-8 sm:h-8" />,

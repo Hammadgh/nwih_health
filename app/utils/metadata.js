@@ -157,7 +157,6 @@ export function generateSitemapData() {
     { url: '/patient-support/mat/', priority: 0.7, changefreq: 'monthly' },
     { url: '/patient-support/peer-counseling/', priority: 0.7, changefreq: 'monthly' },
     { url: '/patient-support/recovery-coaching/', priority: 0.7, changefreq: 'monthly' },
-    { url: '/patient-support/hepatitis-c/', priority: 0.7, changefreq: 'monthly' },
     { url: '/careers/', priority: 0.6, changefreq: 'weekly' },
     { url: '/get-to-know-us/', priority: 0.6, changefreq: 'monthly' },
     { url: '/start-treatment/', priority: 0.8, changefreq: 'monthly' },
