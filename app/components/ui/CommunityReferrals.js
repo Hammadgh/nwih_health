@@ -43,6 +43,26 @@ const CommunityReferrals = () => {
   return (
     <section className="py-20 bg-gradient-to-br from-blue-50 to-gray-50">
       <div className="container mx-auto px-4">
+        {/* Referral Line Info */}
+        <div className="bg-white rounded-2xl p-6 md:p-8 shadow-xl border border-gray-100 mb-10">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-start space-x-4">
+              <div className="text-[#16A53F] mt-1">
+                <FaPhone className="w-7 h-7" />
+              </div>
+              <div>
+                <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Referral Line Hours</h3>
+                <p className="text-gray-700">
+                  Monday–Friday: 4:30 AM – 4:00 PM<br />
+                  Saturday: 6:30 AM – 11:00 AM
+                </p>
+                <p className="text-gray-600 mt-2 text-sm">
+                  The referral line rings in all Intake offices and at the 38th Street front desk.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
         {/* Main Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
