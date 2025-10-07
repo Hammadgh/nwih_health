@@ -175,26 +175,53 @@ export default function ClinicDetail({ params }) {
             {/* Hours Section */}
             <div className="p-6 border-t border-gray-200">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">Hours of Operation</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-800 mb-2">Medication Hours</h3>
-                  <ul className="space-y-1 text-gray-700">
-                    <li>Monday - Friday: 6:00 AM - 2:30 PM</li>
-                    <li>Saturday: 7:00 AM - 11:00 AM</li>
-                    <li>Sunday: Closed</li>
-                  </ul>
-                </div>
-                <div>
-                  <h3 className="text-lg font-semibold text-gray-800 mb-2">Counseling Hours</h3>
-                  <ul className="space-y-1 text-gray-700">
-                    <li>Monday - Friday: 8:00 AM - 5:00 PM</li>
-                    <li>Saturday & Sunday: Closed</li>
-                  </ul>
-                </div>
-              </div>
-              <p className="mt-4 text-sm text-gray-500">
-                Hours may vary by location. Please call to confirm exact hours for this clinic.
-              </p>
+              {clinic.id === 1 ? (
+                <>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-800 mb-2">Medication Hours</h3>
+                      <ul className="space-y-1 text-gray-700">
+                        <li>Monday - Friday: Dosing 5:00 AM - 7:30 PM</li>
+                        <li className="text-gray-600">Clinic opens at 4:30 AM; doors lock at 8:00 PM</li>
+                        <li>Saturday: Dosing 7:00 AM - 10:30 AM</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-800 mb-2">Counseling Hours</h3>
+                      <ul className="space-y-1 text-gray-700">
+                        <li>Monday - Friday: 4:30 AM - 8:00 PM</li>
+                        <li>Saturday: 6:30 AM - 11:00 AM</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <p className="mt-4 text-sm text-gray-600">
+                    New patient intake availability varies by day; please call to confirm. No new patients on Saturday.
+                  </p>
+                </>
+              ) : (
+                <>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-800 mb-2">Medication Hours</h3>
+                      <ul className="space-y-1 text-gray-700">
+                        <li>Monday - Friday: 6:00 AM - 2:30 PM</li>
+                        <li>Saturday: 7:00 AM - 11:00 AM</li>
+                        <li>Sunday: Closed</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-800 mb-2">Counseling Hours</h3>
+                      <ul className="space-y-1 text-gray-700">
+                        <li>Monday - Friday: 8:00 AM - 5:00 PM</li>
+                        <li>Saturday & Sunday: Closed</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <p className="mt-4 text-sm text-gray-500">
+                    Hours may vary by location. Please call to confirm exact hours for this clinic.
+                  </p>
+                </>
+              )}
             </div>
 
             {/* Location Photos */}
