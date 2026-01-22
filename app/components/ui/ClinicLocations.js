@@ -47,7 +47,7 @@ const ClinicLocations = () => {
           {/* Location Information */}
           <div className="bg-white/80 backdrop-blur-md rounded-xl sm:rounded-2xl shadow-2xl border border-gray-200/50 p-4 sm:p-6 lg:p-8">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#16A53F] mb-6 text-center">
-              {Object.keys(cityStats).length} Convenient Locations Across Pierce County
+              4 Convenient Locations Across Pierce County
             </h3>
             <div className="flex flex-col sm:flex-row sm:items-center mb-6 sm:mb-8">
               <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-[#0077C8] to-[#16A53F] rounded-lg sm:rounded-xl flex items-center justify-center mr-3 sm:mr-4 mb-3 sm:mb-0">
